@@ -9,6 +9,8 @@ export default {
       colors: {
         'primary': '#0063AE',
         'secondary': '#F2802E',
+        'black': '#000000',
+        'white': '#ffffff'
       },
       fontSize: {
         'xsmall': '0.75rem',
