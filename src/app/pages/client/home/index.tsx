@@ -68,26 +68,22 @@ export function Home() {
                 <hr className="mt-3 mx-2" />
               
                 <section className="flex p-3 mx-20 max-sm:grid grid-cols-1 gap-10 ">
-                    <div className="flex flex-col w-1/2 justify-center items-center  border-r border-gray-300 max-sm:border-r-0 border-b-2  mx-auto">
+                    <div className="flex flex-col justify-center items-center max-md:border-b-0 w-1/2 max-sm:mx-auto mt-5">
                         <Eye color="#0063AE" size={32} />
-                        <p className="text-medium text-black text-jost mt-1 font-bold lg:text-large">Visão</p>
-                        <p className="text-small text-black text-jost mt-5 text-center lg:text-medium max-sm:mb-10 w-96">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
+                        <p className="text-xlarge text-black text-jost font-bold max-md:text-large max-sm:text-medium">Visão</p>
+                        <p className="text-large text-black text-jost mt-5 text-center max-md:text-medium  max-sm:text-small mb-10 w-full ">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
                
-                    </div>
-                    <div className="">
-
-                    </div>
-
-                    <div className="flex flex-col w-1/2 h-full justify-center items-center max-sm:mx-auto border-b-2">
+                    </div>                    
+                    <div className="flex flex-col h-full justify-center items-center max-md:border-b-0 w-1/2 mt-5 max-sm:mx-auto">
                         <TreasureChest color="#0063AE" size={32} />
-                        <p className="text-medium text-black text-jost mt-1 font-bold lg:text-large">Valores</p>
-                        <div className="flex text-small text-black text-jost mt-5 text-center gap-10 items-center max-sm:mb-10">
-                            <ul className="flex flex-col items-center list-disc lg:text-medium max-sm:mb-10">
+                        <p className="text-xlarge text-black text-jost font-bold max-md:text-large max-sm:text-medium">Valores</p>
+                        <div className="flex  text-large text-black text-jost mt-5 text-center gap-10 items-center max-md:text-medium max-sm:text-small mb-10 ">
+                            <ul className="flex flex-col items-center list-disc max-sm:mb-10">
                                 <li>Honestidade</li>
                                 <li>Integridade</li>
                                 <li>Respeito</li>
                             </ul>
-                            <ul className="flex flex-col items-center list-disc lg:text-medium max-sm:mb-10">
+                            <ul className="flex flex-col items-center list-disc max-sm:mb-10">
                                 <li>Segurança</li>
                                 <li>Inovação</li>
                                 <li>Qualidade</li>
@@ -100,13 +96,13 @@ export function Home() {
 
                 <section className="max-sm:grid grid-cols-1">
                     <div className="flex flex-col justify-center text-center mt-5">
-                        <p className="text-medium text-black text-jost font-bold max-sm:text-large">Política de Qualidade</p>
-                        <p className=" text-black text-jost mt-3 ">A HXF compromete-se a fornecer soluções e serviços com alta qualidade sempre buscando a satisfação do cliente através de:</p>
+                        <p className="text-xlarge text-black text-jost font-bold max-md:text-large max-sm:text-medium">Política de Qualidade</p>
+                        <p className=" text-black text-jost mt-3 text-large max-md:text-medium max-sm:text-small ">A HXF compromete-se a fornecer soluções e serviços com alta qualidade sempre buscando a satisfação do cliente através de:</p>
 
                     </div>
-                    <div className="flex justify-center my-5">
-                    <ul className="flex flex-col gap-7 max-sm:mx-auto text-small mt-5">
-                        <li className="flex items-center  text-black text-jost w-full">
+                    <div className="flex justify-center my-5 ">
+                    <ul className="flex flex-col gap-7 max-md:grid grid-cols-2 px-3 mb-5 max-md:text-medium max-sm:grid-cols-1 mx-auto text-small mt-5">
+                        <li className="flex items-center   text-black text-jost w-full">
                             <Headset color="#0063AE" size={24} className="mr-3" />
                             Atender aos requisitos dos clientes
                         </li>
