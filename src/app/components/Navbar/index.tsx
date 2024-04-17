@@ -9,12 +9,12 @@ export function Navbar() {
         setMenuOpen(!menuOpen);
     };
     return (
-        <div className="bg-blue-100 py-4 w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500">
+        <div className="fixed top-0 z-10 bg-white bg-opacity-40 py-4 w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500">
             <div className="ml-3">
                 <img src={logo} className="w-50 h-20" alt="Logo Azul" />
             </div>
 
-            <div className="hidden sm:flex justify-center space-x-12  ">
+            <div className="hidden sm:flex justify-center gap-8  ">
                 <div>
                     <Link to={'/'} className="text-black duration-500 hover:text-primary text-medium">Home</Link>
                 </div>
