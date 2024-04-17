@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logoPreta.svg"
+
 import { useEffect, useState } from "react";
 
 export function Navbar({page} : {page: string}) {
@@ -36,6 +37,9 @@ export function Navbar({page} : {page: string}) {
                 </div>
                 <div>
                     <Link to={'/service'} className={`font-bold ${page == "Service" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Serviços</Link>
+                </div>
+                <div>
+                    <Link to={'/admin/login'} className={`font-bold ${page == "SignIn" ? "text-primary underline decoration-primary" : "text-secondary"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>SignIn</Link>
                 </div>
             </div>
 
