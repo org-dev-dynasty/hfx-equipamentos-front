@@ -1,10 +1,9 @@
 import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
-import { IoEyeOutline } from "react-icons/io5";
 import PhotoMaquina from "../../../assets/maquina1.png"
-import Medal from "../../../assets/medalha.png"
-import { GiChest } from "react-icons/gi";
+import Medal from "../../../assets/medalha.png";
 import { CardProduct } from "../../../components/CardProduct";
+import { Eye, TreasureChest } from "@phosphor-icons/react";
 
 import Tools from "../../../assets/Rompedor.png";
 import Tools2 from "../../../assets/Tesoura.png";
@@ -69,7 +68,7 @@ export function Home() {
 
                 <section className="flex p-3">
                     <div className="flex flex-col w-1/2 justify-center items-center">
-                        <IoEyeOutline color="#0063AE" size='30px' />
+                        <Eye color="#0063AE" size={32} />
                         <p className="text-medium text-black text-jost mt-1 font-bold">Visão</p>
                         <p className="text-small text-black text-jost mt-5 text-center">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
                     </div>
@@ -77,7 +76,7 @@ export function Home() {
 
                     </div>
                     <div className="flex flex-col w-1/2 justify-center items-center">
-                        <GiChest color="#0063AE" size='30px' />
+                        <TreasureChest color="#0063AE" size={32} />
                         <p className="text-medium text-black text-jost mt-1 font-bold">Visão</p>
                         <p className="text-small text-black text-jost mt-5 text-center">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
                     </div>
