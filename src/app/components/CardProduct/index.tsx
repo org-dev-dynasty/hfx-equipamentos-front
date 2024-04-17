@@ -21,7 +21,7 @@ export function CardProduct({ image, name } : { image: string, name: string}) {
     }, [])
 
     return (
-        <button type="button" onClick={()=>handleNavigate()} onMouseEnter={()=> setVisible(true)} onMouseLeave={()=> setVisible(false)} className={`duration-500 opacity-${opacity} shadow-2xl rounded-xl hover:cursor-pointer`}>
+        <button type="button" onClick={()=>handleNavigate()} onMouseEnter={()=> setVisible(true)} onMouseLeave={()=> setVisible(false)} className={`duration-500 opacity-${opacity} shadow-2xl rounded-xl hover:cursor-pointer duration-200 hover:scale-105`}>
             <img className="w-full h-72 rounded-t-xl" src={image} alt="Imagem do Produto" />
             <div className="flex flex-col items-center py-4">
                 <h5 className="text-center font-semibold">{name}</h5>
