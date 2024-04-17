@@ -16,13 +16,13 @@ export function Navbar({page} : {page: string}) {
 
             <div className="hidden sm:flex justify-center gap-8  ">
                 <div>
-                    <Link to={'/'} className="text-black duration-500 hover:text-primary text-medium">Home</Link>
+                    <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-500 hover:text-primary text-medium`}>Home</Link>
                 </div>
                 <div>
-                    <Link to={'/product'} className="text-black duration-500 hover:text-primary text-medium">Produtos</Link>
+                    <Link to={'/product'} className={`font-bold ${page == "Product" ? "text-primary underline decoration-primary" : "text-black"} duration-500 hover:text-primary text-medium`}>Produtos</Link>
                 </div>
                 <div>
-                    <Link to={'/service'} className="text-black duration-500 hover:text-primary text-medium">Serviços</Link>
+                    <Link to={'/service'} className="font-bold text-black duration-500 hover:text-primary text-medium">Serviços</Link>
                 </div>
             </div>
 
