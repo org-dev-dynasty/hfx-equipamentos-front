@@ -4,7 +4,6 @@ import { Navbar } from "../../../components/Navbar";
 import Tornearia from "../../../assets/Tornearia.png";
 import Soldagem from "../../../assets/Soldagem.png";
 import Fresagem from "../../../assets/Fresagem.png";
-
 export function Service() {
     return (
         <>
@@ -14,7 +13,7 @@ export function Service() {
                 <p className="w-1/2 max-md:w-full text-small text-center mt-4 mb-12">Conheça os serviços especializados em equipamentos de construção e demolição que a HFX oferece:</p>
 
                 <section className="w-full gap-32 grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
-                    <div className="flex justify-center">
+                    <div className={`flex justify-center hover:duration-200 hover:scale-105`}>
                         <div className="w-full text-center max-md:w-1/2 max-sm:w-full">
                             <div className="bg-white rounded-xl shadow-2xl mb-4">
                                 <div className="p-4 border-b-2">
@@ -26,7 +25,7 @@ export function Service() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-center duration-200 hover:scale-105">
                         <div className="w-full text-center max-md:w-1/2 max-sm:w-full">
                             <div className="bg-white rounded-xl shadow-2xl mb-4">
                                 <div className="p-4 border-b-2">
@@ -38,7 +37,7 @@ export function Service() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-center duration-200 hover:scale-105">
                         <div className="w-full text-center max-md:w-1/2 max-sm:w-full">
                             <div className="bg-white rounded-xl shadow-2xl mb-4">
                                 <div className="p-4 border-b-2">
