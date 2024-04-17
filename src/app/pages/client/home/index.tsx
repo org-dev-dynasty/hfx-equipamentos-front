@@ -3,7 +3,7 @@ import { Navbar } from "../../../components/Navbar";
 import PhotoMaquina from "../../../assets/maquina1.png"
 import Medal from "../../../assets/medalha.png";
 import { CardProduct } from "../../../components/CardProduct";
-import { Eye, TreasureChest, Gear, Headset, Lightbulb } from "@phosphor-icons/react";
+import { Eye, TreasureChest, Gear, Headset, Lightbulb, Check } from "@phosphor-icons/react";
 
 import Tools from "../../../assets/Rompedor.png";
 import Tools2 from "../../../assets/Tesoura.png";
@@ -67,27 +67,27 @@ export function Home() {
                 </section>
                 <hr className="mt-3 mx-2" />
               
-                <section className="flex p-3 mx-20">
-                    <div className="flex flex-col w-1/2 justify-center items-center  border-r border-gray-300 ">
+                <section className="flex p-3 mx-20 max-sm:grid grid-cols-1 gap-10 ">
+                    <div className="flex flex-col w-1/2 justify-center items-center  border-r border-gray-300 max-sm:border-r-0 border-b-2  mx-auto">
                         <Eye color="#0063AE" size={32} />
                         <p className="text-medium text-black text-jost mt-1 font-bold lg:text-large">Visão</p>
-                        <p className="text-small text-black text-jost mt-5 text-center lg:text-medium">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
+                        <p className="text-small text-black text-jost mt-5 text-center lg:text-medium max-sm:mb-10 w-96">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
                
                     </div>
                     <div className="">
 
                     </div>
 
-                    <div className="flex flex-col w-1/2 h-full justify-center items-center">
+                    <div className="flex flex-col w-1/2 h-full justify-center items-center max-sm:mx-auto border-b-2">
                         <TreasureChest color="#0063AE" size={32} />
                         <p className="text-medium text-black text-jost mt-1 font-bold lg:text-large">Valores</p>
-                        <div className="flex text-small text-black text-jost mt-5 text-center gap-10 items-center">
-                            <ul className="flex flex-col items-center list-disc lg:text-medium">
+                        <div className="flex text-small text-black text-jost mt-5 text-center gap-10 items-center max-sm:mb-10">
+                            <ul className="flex flex-col items-center list-disc lg:text-medium max-sm:mb-10">
                                 <li>Honestidade</li>
                                 <li>Integridade</li>
                                 <li>Respeito</li>
                             </ul>
-                            <ul className="flex flex-col items-center list-disc lg:text-medium">
+                            <ul className="flex flex-col items-center list-disc lg:text-medium max-sm:mb-10">
                                 <li>Segurança</li>
                                 <li>Inovação</li>
                                 <li>Qualidade</li>
@@ -98,30 +98,34 @@ export function Home() {
                     </div>
                 </section>
 
-                <section>
+                <section className="max-sm:grid grid-cols-1">
                     <div className="flex flex-col justify-center text-center mt-5">
-                        <p className="text-medium text-black text-jost font-bold lg:text-large">Política de Qualidade</p>
-                        <p className=" text-black text-jost mt-3 lg:text-medium ">A HXF compromete-se a fornecer soluções e serviços com alta qualidade sempre buscando a satisfação do cliente através de:</p>
+                        <p className="text-medium text-black text-jost font-bold max-sm:text-large">Política de Qualidade</p>
+                        <p className=" text-black text-jost mt-3 ">A HXF compromete-se a fornecer soluções e serviços com alta qualidade sempre buscando a satisfação do cliente através de:</p>
 
                     </div>
                     <div className="flex justify-center my-5">
-                        <ul className="flex text-small text-black text-jost gap-7 text-center mx-auto mt-5">
-                            <Headset color="#0063AE" size={24} />
-                            <li className="text-medium text-black text-jost w-1/3">
-                                Atender aos requisitos dos clientes
-                            </li>
-                            <Gear color="#0063AE" size={24} />
-                            <li className="w-1/3 text-medium text-black text-jost">
-                                Seguir normas técnicas de mecânica e normas aplicáveis
-                            </li>
-                            <Lightbulb color="#0063AE" size={24} />
-                            <li className="w-1/3 text-medium text-black text-jost max-sm:text-small">
-                                Fornecer soluções aos nossos clientes
-                            </li>
-                        </ul>
-                    </div>
+                    <ul className="flex flex-col gap-7 max-sm:mx-auto text-small mt-5">
+                        <li className="flex items-center  text-black text-jost w-full">
+                            <Headset color="#0063AE" size={24} className="mr-3" />
+                            Atender aos requisitos dos clientes
+                        </li>
+                        <li className="flex items-center  text-black text-jost w-full">
+                            <Gear color="#0063AE" size={24} className="mr-3" />
+                            Seguir normas técnicas de mecânica e normas aplicáveis
+                        </li>
+                        <li className="flex items-center  text-black text-jost w-full">
+                            <Lightbulb color="#0063AE" size={24} className="mr-3" />
+                            Fornecer soluções aos nossos clientes
+                        </li>
+                        <li className="flex items-center  text-black text-jost w-full">
+                            <Check color="#0063AE" size={24} className="mr-3" />
+                            Tudo isso aliado a melhoria continua de nossos processos e serviços.
+                        </li>
+                    </ul>
+                </div>
 
-                    <p className="text-center my-5 lg:text-medium">Tudo isso aliado a melhoria continua de nossos processos e serviços.</p>
+                    <p className="text-center my-5 lg:text-medium max-sm:text-small"></p>
 
                 </section>
             </main>
