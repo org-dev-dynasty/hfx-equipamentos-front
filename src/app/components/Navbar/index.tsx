@@ -38,6 +38,9 @@ export function Navbar({page} : {page: string}) {
                 <div>
                     <Link to={'/service'} className={`font-bold ${page == "Service" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Serviços</Link>
                 </div>
+                <div>
+                    <Link to={'/videos'} className={`font-bold ${page == "Videos" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Videos</Link>
+                </div>
             </div>
 
             <button className="hidden sm:inline-flex bg-primary w-32 h-12 justify-center items-center text-center rounded-md  hover:bg-blue-300 duration-500 mr-5 ">
