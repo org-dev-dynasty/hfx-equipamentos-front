@@ -5,6 +5,7 @@ import { Service } from "../service";
 import { ProductDetail } from "../productDetail";
 import Error404 from "../404";
 import { SignIn } from "../../admin/Login";
+import { Videos } from "../videos";
 
 export default function AppRoutes() {
     return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
                 <Route path={"/productDetail"} element={<ProductDetail />} />
                 <Route path={"/service"} element={<Service />} />
                 <Route path={"/admin/login"} element={<SignIn />} />
+                <Route path={"/videos"} element={<Videos />} />
             </Routes>
         </BrowserRouter>
     );
