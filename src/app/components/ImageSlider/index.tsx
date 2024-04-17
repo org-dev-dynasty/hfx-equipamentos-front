@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image1 from '../../assets/photo1.png';
 import Image2 from '../../assets/photo2 (1).png';
 import { IoIosArrowBack } from "react-icons/io"
@@ -30,7 +30,7 @@ export function ImageSlider() {
             </div>
 
             
-            <div className="absolute flex justify-between w-full top-1/2  transform -translate-y-1/2 ">
+            <div className="absolute flex justify-between w-full top-1/2  transform -translate-y-1/2 max-lg:hidden">
                 <button onClick={goToPreviousImage} className="bg-transparent p-2 rounded-full mr-2">
                     <IoIosArrowBack color='white' size='40px' />
                 </button>
@@ -41,6 +41,6 @@ export function ImageSlider() {
             </div>
         </section>
     );
-};
+}
 
 export default ImageSlider;
