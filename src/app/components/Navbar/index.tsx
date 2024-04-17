@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logoPreta.svg"
 import { useState } from "react";
 
-export function Navbar() {
+export function Navbar({page} : {page: string}) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
     return (
-        <div className="fixed top-0 z-10 bg-white bg-opacity-40 py-4 w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500">
+        <div className={`${page != "Home" ? "" : "fixed"} top-0 z-10 bg-white bg-opacity-40 py-4 w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
             <div className="ml-3">
                 <img src={logo} className="w-50 h-20" alt="Logo Azul" />
             </div>

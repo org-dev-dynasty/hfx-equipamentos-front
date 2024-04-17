@@ -8,7 +8,7 @@ import { GiChest } from "react-icons/gi";
 export function Home() {
     return (
         <>
-            <Navbar />
+            <Navbar page="Home"/>
             <ImageSlider />
             <section className="mt-10">
                 <div className="text-center">

@@ -7,10 +7,10 @@ import Tools2 from "../../../assets/Tesoura.png";
 import Tools3 from "../../../assets/Engate.png";
 import Tools4 from "../../../assets/Compactador.png";
 
-export function Products () {
+export function Product () {
     return (
         <>
-        <Navbar />
+        <Navbar page="Product"/>
         <main className="p-8 flex flex-col items-center bg-gray-100 font-jost">
             <h1 className="text-2xlarge font-bold text-center">Produtos HXF</h1>
             <p className="w-1/2 max-md:w-full text-medium text-center mt-4 mb-12">A HXF tem como diferencial a qualidade inquestionável nos produtos e serviços ofertados, além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhorar atendermos nossos clientes e parceiros.</p>
