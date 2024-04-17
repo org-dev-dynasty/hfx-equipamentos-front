@@ -13,11 +13,11 @@ export function SignIn() {
 
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
 
-            <div className="z-10 bg-white bg-opacity-80 p-6 rounded-lg shadow-md w-1/3">
+            <div className="z-10 bg-white bg-opacity-80 p-6 rounded-lg shadow-md w-2/5 max-md:w-4/5 max-sm:w-4/5">
                 <img src={Logo} alt="Logo" className="w-56 mb-10 mx-auto" />
                 <form className="flex flex-col items-center space-y-4">
                     <div className="w-full mb-4">
-                        <label htmlFor="username" className="block mb-2 font-">Email:</label>
+                        <label htmlFor="username" className="block mb-2 font-bold font-jost">Email:</label>
                         <input
                             type="text"
                             id="username"
@@ -28,7 +28,7 @@ export function SignIn() {
                         />
                     </div>
                     <div className="w-full mb-10">
-                        <label htmlFor="password" className="block mb-1">Senha:</label>
+                        <label htmlFor="password" className="block mb-1 font-bold font-jost">Senha:</label>
                         <input
                             type="password"
                             id="password"
