@@ -3,17 +3,13 @@ import { Navbar } from "../../../components/Navbar";
 import PhotoMaquina from "../../../assets/maquina1.png"
 import Medal from "../../../assets/medalha.png";
 import { CardProduct } from "../../../components/CardProduct";
-import { Eye, TreasureChest } from "@phosphor-icons/react";
+import { Eye, TreasureChest, Gear, Headset, Lightbulb } from "@phosphor-icons/react";
 
 import Tools from "../../../assets/Rompedor.png";
 import Tools2 from "../../../assets/Tesoura.png";
 import Tools3 from "../../../assets/Engate.png";
 import Tools4 from "../../../assets/Compactador.png";
 import { Footer } from "../../../components/Footer";
-
-import { TfiHeadphoneAlt } from "react-icons/tfi";
-import { IoSettingsOutline } from "react-icons/io5";
-import { PiLightbulbThin } from "react-icons/pi";
 
 export function Home() {
     return (
@@ -73,7 +69,7 @@ export function Home() {
               
                 <section className="flex p-3 mx-20">
                     <div className="flex flex-col w-1/2 justify-center items-center  border-r border-gray-300 ">
-                        <IoEyeOutline color="#0063AE" size='30px' />
+                        <Eye color="#0063AE" size={32} />
                         <p className="text-medium text-black text-jost mt-1 font-bold lg:text-large">Visão</p>
                         <p className="text-small text-black text-jost mt-5 text-center lg:text-medium">Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.</p>
                
@@ -83,7 +79,7 @@ export function Home() {
                     </div>
 
                     <div className="flex flex-col w-1/2 h-full justify-center items-center">
-                        <GiChest color="#0063AE" size='30px' />
+                        <TreasureChest color="#0063AE" size={32} />
                         <p className="text-medium text-black text-jost mt-1 font-bold lg:text-large">Valores</p>
                         <div className="flex text-small text-black text-jost mt-5 text-center gap-10 items-center">
                             <ul className="flex flex-col items-center list-disc lg:text-medium">
@@ -110,15 +106,15 @@ export function Home() {
                     </div>
                     <div className="flex justify-center my-5">
                         <ul className="flex text-small text-black text-jost gap-7 text-center mx-auto mt-5">
-                            <TfiHeadphoneAlt color="#0063AE" size="20px" />
+                            <Headset color="#0063AE" size={24} />
                             <li className="text-medium text-black text-jost w-1/3">
                                 Atender aos requisitos dos clientes
                             </li>
-                            <IoSettingsOutline color="#0063AE" size="20px" />
+                            <Gear color="#0063AE" size={24} />
                             <li className="w-1/3 text-medium text-black text-jost">
                                 Seguir normas técnicas de mecânica e normas aplicáveis
                             </li>
-                            <PiLightbulbThin color="#0063AE" size="20px" />
+                            <Lightbulb color="#0063AE" size={24} />
                             <li className="w-1/3 text-medium text-black text-jost max-sm:text-small">
                                 Fornecer soluções aos nossos clientes
                             </li>
