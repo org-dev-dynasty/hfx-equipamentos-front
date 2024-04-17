@@ -12,8 +12,8 @@ export function Product () {
         <>
         <Navbar page="Product"/>
         <main className="p-8 flex flex-col items-center bg-gray-100 font-jost">
-            <h1 className="text-2xlarge font-bold text-center">Produtos HXF</h1>
-            <p className="w-1/2 max-md:w-full text-medium text-center mt-4 mb-12">A HXF tem como diferencial a qualidade inquestionável nos produtos e serviços ofertados, além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhorar atendermos nossos clientes e parceiros.</p>
+            <h1 className="text-xlarge font-bold text-center">Produtos HXF</h1>
+            <p className="w-1/2 max-md:w-full text-small text-center mt-4 mb-12">A HXF tem como diferencial a qualidade inquestionável nos produtos e serviços ofertados, além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhorar atendermos nossos clientes e parceiros.</p>
             
             <div className="h-[1px] w-[90%] bg-primary" />
 
