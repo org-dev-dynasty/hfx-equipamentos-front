@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function CardProduct({ image, name } : { image: string, name: string}) {
     const [visible, setVisible] = useState(false);
+    const [opacity, setOpacity] = useState(0);
 
     const labelStyle = {
         opacity: visible ? 1 : 0,
@@ -13,8 +14,14 @@ export function CardProduct({ image, name } : { image: string, name: string}) {
         window.location.href = "/";
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            setOpacity(1);
+        }, 200);
+    }, [])
+
     return (
-        <button type="button" onClick={()=>handleNavigate()} onMouseEnter={()=> setVisible(true)} onMouseLeave={()=> setVisible(false)} className="shadow-2xl rounded-xl hover:cursor-pointer">
+        <button type="button" onClick={()=>handleNavigate()} onMouseEnter={()=> setVisible(true)} onMouseLeave={()=> setVisible(false)} className={`duration-500 opacity-${opacity} shadow-2xl rounded-xl hover:cursor-pointer`}>
             <img className="w-full h-72 rounded-t-xl" src={image} alt="Imagem do Produto" />
             <div className="flex flex-col items-center py-4">
                 <h5 className="text-center font-semibold">{name}</h5>

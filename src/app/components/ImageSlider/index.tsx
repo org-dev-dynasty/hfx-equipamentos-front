@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image1 from '../../assets/photo1.png';
 import Image2 from '../../assets/photo2 (1).png';
 import { IoIosArrowBack } from "react-icons/io"
@@ -7,6 +7,7 @@ import { IoIosArrowForward } from "react-icons/io"
 export function ImageSlider() {
     const images = [Image1, Image2];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [opacity, setOpacity] = useState(0);
 
     const goToPreviousImage = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
@@ -16,8 +17,14 @@ export function ImageSlider() {
         setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     };
 
+    useEffect(() => {
+        setTimeout(() => {
+            setOpacity(1);
+        }, 200);
+    })
+
     return (
-        <section>
+        <section className={`opacity-${opacity} duration-500`}>
             <div className="flex w-full space-x-4 transition-transform duration-500 ease-in-out transform">
                 {images.map((imageUrl, index) => (
                     <img
