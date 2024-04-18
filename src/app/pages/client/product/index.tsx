@@ -17,7 +17,6 @@ export function Product () {
             
             <div className="h-[1px] w-[90%] bg-primary" />
 
-            {/* CARDS */}
             <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
                 <CardProduct image={Tools} name="Rompedores Hidráulicos"/>
                 <CardProduct image={Tools2} name="Tesoura Hidráulica"/>
