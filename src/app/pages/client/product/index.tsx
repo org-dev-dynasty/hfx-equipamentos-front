@@ -1,13 +1,26 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Navbar } from "../../../components/Navbar";
 import { Footer } from "../../../components/Footer";
 import { CardProduct } from "../../../components/CardProduct";
 
-import Tools from "../../../assets/Rompedor.png";
-import Tools2 from "../../../assets/Tesoura.png";
-import Tools3 from "../../../assets/Engate.png";
-import Tools4 from "../../../assets/Compactador.png";
+import { useContext, useEffect, useState } from "react";
+import { ProductContext } from "../../../context/product_context";
 
 export function Product () {
+    const { getAll } = useContext(ProductContext)
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        const response = getAll()
+        response.then((res : any) => {
+            setProducts(res.products)
+            console.log(res.products)
+        }).catch((error) => {
+            console.log("error "+ error)
+        })
+    }, [])
+
     return (
         <>
         <Navbar page="Product"/>
@@ -19,10 +32,12 @@ export function Product () {
 
             {/* CARDS */}
             <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-                <CardProduct image={Tools} name="Rompedores Hidráulicos"/>
-                <CardProduct image={Tools2} name="Tesoura Hidráulica"/>
-                <CardProduct image={Tools3} name="Engate Rápido"/>
-                <CardProduct image={Tools4} name="Compactadores"/>
+                {products.map((product : any) => {
+                    return (
+                        <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+                    )
+                })
+                }
             </div>
         </main>
         <Footer />

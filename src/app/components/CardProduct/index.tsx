@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function CardProduct({ image, name } : { image: string, name: string}) {
+export function CardProduct({ id, image, name } : { id: string, image: string, name: string}) {
     const [visible, setVisible] = useState(false);
     const [opacity, setOpacity] = useState(0);
 
@@ -11,7 +11,8 @@ export function CardProduct({ image, name } : { image: string, name: string}) {
     }
 
     function handleNavigate() {
-        window.location.href = "/";
+        localStorage.setItem("product", id);
+        window.location.href = "/productDetail";
     }
 
     useEffect(() => {
