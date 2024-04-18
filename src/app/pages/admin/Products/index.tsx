@@ -40,7 +40,7 @@ export function Products() {
 
             <div className="flex flex-wrap gap-10 justify-center">
                 {products.map((product) => (
-                    <div key={product.id} className="w-72 cursor-pointer" onClick={() => openModal(product)}>
+                    <div key={product.id} className="w-72 cursor-pointer" onClick={() => {}}>
                         <div className="group overflow-hidden rounded shadow-md">
                             <img
                                 src={product.image}

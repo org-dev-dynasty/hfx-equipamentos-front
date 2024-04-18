@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react';
 import { Navbar } from "../../../components/Navbar";
 
@@ -9,7 +10,7 @@ export function Contact() {
         message: ''
     });
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e : any) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -17,7 +18,7 @@ export function Contact() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e : any) => {
         e.preventDefault();
         console.log(formData); // Exemplo: enviar para uma API, etc.
     };
@@ -72,7 +73,7 @@ export function Contact() {
                             value={formData.message}
                             onChange={handleInputChange}
                             className="text-medium mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 max-sm:text-sm"
-                            rows="8"
+                            rows={8}
                             required
                             placeholder='Mensagem'
                         ></textarea>
