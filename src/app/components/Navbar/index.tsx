@@ -48,7 +48,7 @@ export function Navbar({ page }: { page: string }) {
                 </div>
 
                 <button className="hidden sm:flex bg-primary w-40 h-12 justify-center items-center text-center  hover:bg-blue-900 font-bold font-jost duration-500 mr-5 rounded-full">
-                    <Link to={'/contato'} className="text-white ">Contato</Link>
+                    <Link to={'/contact'} className="text-white ">Contato</Link>
                 </button>
             </div>
             <div className="sm:hidden mr-5">
