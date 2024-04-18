@@ -26,10 +26,10 @@ export function Navbar({ page }: { page: string }) {
         <nav className={`${page != "Home" ? "" : "fixed"} top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-transparent' : ''} py-4 px-4  w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
 
             <div className="ml-3">
-                <img src={logo} className="h-10 max-md:h-10 max-sm:h-50" alt="Logo Azul" />
+                <img src={logo} className="h-10 w-full" alt="Logo Azul" />
             </div>
             <div className="flex ">
-                <div className="hidden sm:flex gap-8 mx-20 mt-2">
+                <div className="hidden sm:flex gap-8 mx-20 mt-2 font-main">
                     <div>
                         <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>HOME</Link>
                     </div>
@@ -47,7 +47,7 @@ export function Navbar({ page }: { page: string }) {
                     </div>
                 </div>
 
-                <button className="hidden sm:flex bg-primary w-40 h-12 justify-center items-center text-center  hover:bg-blue-900 font-bold font-jost duration-500 mr-5 rounded-full">
+                <button className="hidden sm:flex bg-primary w-40 h-12 justify-center items-center text-center  hover:bg-blue-900 font-bold font-main duration-500 mr-5 rounded-full">
                     <Link to={'/contact'} className="text-white ">Contato</Link>
                 </button>
             </div>

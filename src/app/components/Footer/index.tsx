@@ -1,4 +1,4 @@
-import logo from '../../assets/logoPreta.svg';
+import logo from '../../assets/logoBranca.png';
 
 export function Footer() {
     return (

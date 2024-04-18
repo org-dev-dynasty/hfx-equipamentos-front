@@ -10,7 +10,7 @@ export default {
         'primary': '#0063AE',
         'secondary': '#F2802E',
         'black': '#000000',
-        'white': '#ffffff'
+        'white': '#EFEFEF'
       },
       fontSize: {
         'xsmall': '0.75rem',
@@ -29,7 +29,7 @@ export default {
         'extrabold': 800,
       },
       fontFamily: {
-        'jost': ['Jost', 'sans-serif'],
+        'main': ['Encode Sans Expanded', 'sans-serif'],
       }
     },
   },
