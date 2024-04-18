@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logoPreta.svg"
+import logo from "../../assets/logoLogin.png"
 
 import { useEffect, useState } from "react";
 
-export function Navbar({page} : {page: string}) {
+export function Navbar({ page }: { page: string }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -13,42 +13,46 @@ export function Navbar({page} : {page: string}) {
 
     useEffect(() => {
         const handleScroll = () => {
-          const position = window.pageYOffset;
-          setScrollPosition(position);
+            const position = window.pageYOffset;
+            setScrollPosition(position);
         };
-    
+
         window.addEventListener('scroll', handleScroll);
         return () => {
-          window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
-      }, []);
+    }, []);
     return (
-        <nav className={`${page != "Home" ? "" : "fixed"} top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-opacity-40' : ''} py-4 w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
+        <nav className={`${page != "Home" ? "" : "fixed"} top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-transparent' : ''} py-4 px-4  w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
+
             <div className="ml-3">
-                <img src={logo} className="w-50 h-20" alt="Logo Azul" />
+                <img src={logo} className="h-10 max-md:h-10 max-sm:h-50" alt="Logo Azul" />
             </div>
+            <div className="flex ">
+                <div className="hidden sm:flex gap-8 mx-20 mt-2">
+                    <div>
+                        <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>HOME</Link>
+                    </div>
+                    <div>
+                        <Link to={'/company'} className={`font-bold ${page == "Company" ? "text-primary underline decoration-primary" : "text-black"} duration-500  text-medium hover:text-primary hover:underline hover:decoration-primary`}>SOBRE À HFX</Link>
+                    </div>
+                    <div>
+                        <Link to={'/product'} className={`font-bold ${page == "Product" ? "text-primary underline decoration-primary" : "text-black"} duration-500  text-medium hover:text-primary hover:underline hover:decoration-primary`}>PRODUTOS</Link>
+                    </div>
+                    <div>
+                        <Link to={'/service'} className={`font-bold ${page == "Service" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>SERVIÇOS</Link>
+                    </div>
+                    <div>
+                        <Link to={'/videos'} className={`font-bold ${page == "Videos" ? "text-primary underline decoration-primary " : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>VIDEOS</Link>
+                    </div>
+                </div>
 
-            <div className="hidden sm:flex justify-center gap-8  ">
-                <div>
-                    <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Home</Link>
-                </div>
-                <div>
-                    <Link to={'/product'} className={`font-bold ${page == "Product" ? "text-primary underline decoration-primary" : "text-black"} duration-200  text-medium hover:text-primary hover:underline hover:decoration-primary`}>Produtos</Link>
-                </div>
-                <div>
-                    <Link to={'/service'} className={`font-bold ${page == "Service" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Serviços</Link>
-                </div>
-                <div>
-                    <Link to={'/videos'} className={`font-bold ${page == "Videos" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Videos</Link>
-                </div>
+                <button className="hidden sm:flex bg-primary w-40 h-12 justify-center items-center text-center  hover:bg-blue-900 font-bold font-jost duration-500 mr-5 rounded-full">
+                    <Link to={'/contato'} className="text-white ">Contato</Link>
+                </button>
             </div>
-
-            <button className="hidden sm:inline-flex bg-primary w-32 h-12 justify-center items-center text-center rounded-md  hover:bg-blue-300 duration-500 mr-5 ">
-                <Link to={'/contato'} className="text-white ">Contato</Link>
-            </button>
-
             <div className="sm:hidden mr-5">
-                <button onClick={toggleMenu} className="text-black hover:text-primary focus:outline-none">
+                <button onClick={toggleMenu} className="text-secondary hover:text-primary focus:outline-none">
                     <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {menuOpen ? (
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -65,11 +69,15 @@ export function Navbar({page} : {page: string}) {
                         <button className=" hover:text-white w-full text-center">
                             <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Home</Link>
                         </button>
-                        
+
+                        <button className="w-full h-full text-center">
+                            <Link to={'/company'} className={`font-bold ${page == "Company" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Sobre à HFX</Link>
+                        </button>
+
                         <button className="w-full h-full text-center">
                             <Link to={'/product'} className={`font-bold ${page == "Product" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Produtos</Link>
                         </button>
-                        
+
                         <button className="w-full text-center">
                             <Link to={'/service'} className={`font-bold ${page == "Service" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Serviços</Link>
                         </button>
@@ -81,5 +89,5 @@ export function Navbar({page} : {page: string}) {
 
     );
 }
-// className="text-white hover:text-gray-200 transition duration-300 hover:bg-primary"
+
 
