@@ -10,4 +10,13 @@ export class ProductRepositoryHttp {
             console.log("Error: "+error);
         }
     }
+
+    async getById(id: string) {
+        try {
+            const response = await http.get(`/get-product-by-id?id=${id}`);
+            return response.data;
+        } catch (error: any){
+            console.log("Error: "+error);
+        }
+    }
 }
