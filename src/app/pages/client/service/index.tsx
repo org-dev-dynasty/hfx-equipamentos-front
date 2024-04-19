@@ -8,7 +8,7 @@ export function Service() {
     return (
         <>
             <Navbar page="Service"/>
-            <main className="p-8 flex flex-col items-center bg-gray-100 font-jost">
+            <main className="p-8 flex flex-col items-center bg-gray-100 font-main">
                 <h1 className="text-xlarge font-bold text-center">Serviços</h1>
                 <p className="w-1/2 max-md:w-full text-small text-center mt-4 mb-12">Conheça os serviços especializados em equipamentos de construção e demolição que a HFX oferece:</p>
 

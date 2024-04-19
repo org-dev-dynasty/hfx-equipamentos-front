@@ -15,12 +15,12 @@ export function Home() {
     return (
         <>
             <Navbar page="Home" />
-            <main className="bg-gray-100">
+            <main className="bg-gray-100 font-main">
                 <ImageSlider />
                 <section className="mt-10">
                     <div className="text-center">
-                        <h1 className="text-xlarge font-jost font-bold max-md:text-large max-sm:text-medium ">Produtos do mês</h1>
-                        <p className="text-large font-jost max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
+                        <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
+                        <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
                     </div>
                     <hr className="mt-3 mx-2 " />
 
@@ -36,14 +36,14 @@ export function Home() {
 
                 <section className="flex mt-5">
                     <div className="bg-primary w-3/5 h-86 p-3">
-                        <h1 className="text-large font-jost font-bold text-white lg:text-xlarge">Sobre a HFX</h1>
-                        <p className="text-large text-white text-jost mt-3 max-md:text-medium max-sm:text-small">
+                        <h1 className="text-large font-bold text-white lg:text-xlarge">Sobre a HFX</h1>
+                        <p className="text-large text-white mt-3 max-md:text-medium max-sm:text-small">
                             A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
                         </p>
-                        <p className="text-large text-white text-jost mt-3 max-md:text-medium max-sm:text-small">
+                        <p className="text-large text-white mt-3 max-md:text-medium max-sm:text-small">
                             Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
                         </p>
-                        <p className="text-large text-white text-jost mt-3 max-md:text-medium max-sm:text-small">
+                        <p className="text-large text-white mt-3 max-md:text-medium max-sm:text-small">
                             Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
                         </p>
                     </div>

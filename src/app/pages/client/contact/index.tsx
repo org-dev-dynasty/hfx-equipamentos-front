@@ -22,17 +22,7 @@ export function Contact() {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        console.log(formData); // Exemplo: enviar para uma API, etc.
-    };
-
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
+        console.log(formData); 
     };
 
     return (
@@ -41,8 +31,8 @@ export function Contact() {
             <div className="bg-primary h-48 mt-10 items-center">
                 <p className="flex text-center justify-center p-14 text-2xlarge font-main text-white">Entre em contato!</p>
             </div>
-            <section className='flex gap-10 p-10 max-md:grid grid-cols-1'>
-                <div className=" w-1/2 mx-auto font-main max-md:w-full">
+            <main className='flex gap-10 p-10 max-md:grid grid-cols-1'>
+                <section className=" w-1/2 mx-auto font-main max-md:w-full">
                     <p className='font-bold text-large mb-10'>Formulário para contato!</p>
                     <form onSubmit={handleSubmit}>
                         <div className="flex mb-4 p-3 border border-secondary border-opacity-1 rounded-md">
@@ -100,14 +90,14 @@ export function Contact() {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-primary h-16 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                            className="w-full mt-10 bg-primary h-16 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         >
                             Enviar Mensagem
                         </button>
                     </form>
-                </div>
+                </section>
                 <div className="border-r border-gray-300 h-50 max-sm:border-b "></div>
-                <div className='w-1/2 font-main max-md:w-full '>
+                <section className='w-1/2 font-main max-md:w-full '>
                     <p className='font-bold text-large mb-10'>Canais de comunicação</p>
                     <div className='flex h-auto mb-20 w-full relative hover:bg-primary duration-700 '>
                         <div className='bg-primary p-3 h-30'>
@@ -122,7 +112,7 @@ export function Contact() {
                     </div>
                     <div className='flex h-auto mb-20 w-full relative hover:bg-primary duration-700'>
                         <div className='bg-primary p-3 h-30'>
-                            <Phone size={34} className={`text-${isHovered ? 'white duration-500' : 'white'}`} />
+                            <Phone size={34}  className='text-white'/>
                         </div>
                         <a
                             className='self-center text-large ml-10 hover:text-white'
@@ -135,7 +125,7 @@ export function Contact() {
                         className='flex h-auto mb-20 w-full relative hover:bg-primary duration-700'
                     >
                         <div className='bg-primary p-3 h-30'>
-                            <Envelope size={34} className={`text-${isHovered ? 'white duration-500' : 'white'}`} />
+                            <Envelope size={34} className='text-white' />
                         </div>
                         <a
                             href="mailto:hxf@hxfequipamentos.com.br"
@@ -146,17 +136,17 @@ export function Contact() {
                     </div>
                     <div className='flex h-auto mb-20 w-full relative hover:bg-primary duration-700'>
                         <div className='bg-primary p-3 h-30'>
-                            <MapPinSimpleArea size={34} className={`text-${isHovered ? 'white duration-500' : 'white'}`} />
+                            <MapPinSimpleArea size={34} className='text-white' />
                         </div>
                         <a
-                            href='https://www.google.com.br/maps/place/R.+Marte,+81+-+Serraria,+Diadema+-+SP,+09981-540/@-23.6968427,-46.6095694,16.53z/data=!4m6!3m5!1s0x94ce446410aff7f9:0x3b653ae235cc43c5!8m2!3d-23.6967624!4d-46.6071269!16s%2Fg%2F11c5lcd51g?entry=ttu' 
+                            href='https://www.google.com.br/maps/place/R.+Marte,+81+-+Serraria,+Diadema+-+SP,+09981-540/@-23.6968427,-46.6095694,16.53z/data=!4m6!3m5!1s0x94ce446410aff7f9:0x3b653ae235cc43c5!8m2!3d-23.6967624!4d-46.6071269!16s%2Fg%2F11c5lcd51g?entry=ttu'
                             className='self-center text-large ml-10 hover:text-white'
                         >
                             <span className='font-bold'>Endereço:</span> R. Marte, 81 - Serraria, Diadema - SP, 09980-075, Brasil
                         </a>
                     </div>
-                </div>
-            </section>
+                </section>
+            </main>
             <Footer />
         </>
     );
