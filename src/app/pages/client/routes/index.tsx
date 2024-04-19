@@ -8,7 +8,7 @@ import { SignIn } from "../../admin/Login";
 import { Videos } from "../videos";
 import { Products } from "../../admin/Products";
 import { Contact } from "../contact";
-import { HFX } from "../hfx";
+import { HXF } from "../hxf";
 
 export default function AppRoutes() {
     return (
@@ -21,7 +21,7 @@ export default function AppRoutes() {
                 <Route path={"/service"} element={<Service />} />
                 <Route path={"/videos"} element={<Videos />} />
                 <Route path={"/contact"} element={<Contact />} />
-                <Route path={"/hfx"} element={<HFX />} />
+                <Route path={"/hfx"} element={<HXF />} />
                 <Route path={"/admin/login"} element={<SignIn />} />
                 <Route path={"/admin/products"} element={<Products />} />
             </Routes>

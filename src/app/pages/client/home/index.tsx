@@ -3,12 +3,12 @@ import { Navbar } from "../../../components/Navbar";
 import PhotoCard from "../../../assets/image 11.png"
 
 
-import { Invoice, Timer } from "@phosphor-icons/react";
+import { Gear, Invoice, Leaf, Lightbulb, Timer } from "@phosphor-icons/react";
 
 import { Footer } from "../../../components/Footer";
 // import { ProductContext } from "../../../context/product_context";
 // import { useContext, useEffect, useState } from "react";
-import {FeedbackSlider} from "../../../components/FeedbackSlider";
+import { FeedbackSlider } from "../../../components/FeedbackSlider";
 
 export function Home() {
     // const { getAll } = useContext(ProductContext);
@@ -30,44 +30,9 @@ export function Home() {
         { nome: 'Carlos', imagem: 'client3.jpg', comentario: 'Rápidos e eficazes. Superou minhas expectativas.', estrelas: 5 },
         { nome: 'Ana', imagem: 'client4.jpg', comentario: 'Excelente atendimento ao cliente.', estrelas: 5 },
         { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
+        { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
+        { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
     ];
-
-    // Função para criar e exibir os cards de feedback
-    function exibirFeedbacks() {
-        const feedbackContainer = document.getElementById('feedbackCarousel')
-
-        if (!feedbackContainer) return
-
-        // Limpar o conteúdo existente no container
-        feedbackContainer.innerHTML = '';
-
-        // Criar e adicionar os cards de feedback dinamicamente
-        clients.forEach(client => {
-            const card = document.createElement('div');
-            card.className = 'flex-shrink-0 bg-white rounded-lg shadow-lg p-6';
-            card.style.width = '320px';
-
-            // Conteúdo do card
-            const conteudoCard = `
-                <div className="flex items-center mb-4">
-                    <img src="${client.imagem}" alt="${client.nome}" className="w-12 h-12 rounded-full mr-4">
-                    <p className="font-bold text-lg">${client.nome}</p>
-                </div>
-                <p className="text-gray-700 mb-4">"${client.comentario}"</p>
-                <div className="flex items-center">
-                    <div className="text-yellow-500 mr-2">${'★'.repeat(client.estrelas)}</div>
-                </div>
-            
-            `;
-
-            card.innerHTML = conteudoCard;
-            feedbackContainer.appendChild(card);
-        });
-    }
-
-    // Chamar a função para exibir os feedbacks ao carregar a página
-    document.addEventListener('DOMContentLoaded', exibirFeedbacks);
-
     return (
         <>
             <Navbar page="Home" />
@@ -92,9 +57,8 @@ export function Home() {
                     </div>
                 </section> */}
 
-                <div className="w-full ">
-
-                    <section className="flex justify-end relative bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5 mb-5">
+<div className="w-full bg-gray mt-10">
+                    <section className="flex justify-end relative mt-5  bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5 mb-5">
                         <div className="self-center w-full p-2">
                             <div className="flex my-auto absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
                                 <div>
@@ -122,16 +86,49 @@ export function Home() {
                         </section>
                     </div>
 
-                    <section className="flex justify-end relative bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5">
+                    <section className="flex justify-end relative mt-5  bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5 mb-5">
                         <div className="self-center w-full p-2">
-                            <div className="absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
-                                <p className="text-center text-white text-large mt-5 font-bold max-sm:text-medium">Soluções Personalizadas</p>
-                                <p className="text-center  text-white text-medium mt-5 max-sm:small ">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
+                            <div className="flex my-auto absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
+                                <div>
+                                    <Gear size={32} className="text-white ml-2" />
+                                </div>
+                                <div>
+                                    <p className="text-center text-white text-large mt-2 font-bold max-sm:text-medium">Soluções Personalizadas</p>
+                                    <p className="text-center  text-white text-medium mt-5 max-sm:text-small ">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div className="flex flex-row-reverse">
+                        <section className="flex justify-start relative mb-5 bg-secondary h-96 w-2/5 rounded-l-3xl max-sm:w-3/5">
+                            <div className="flex absolute -left-80 max-lg:top-16 bg-blue-800 w-full rounded-3xl self-center p-2 max-md:-right-10  md:top-2 bottom-2 max-sm:-left-40 ">
+                                <div className="">
+                                    <Lightbulb size={32} className="text-white ml-2" />
+                                </div>
+                                <div>
+                                    <p className="text-center text-white text-large font-bold max-sm:text-medium ">Inovação Contínua</p>
+                                    <p className="text-center  text-white text-medium mt-5 max-sm:text-small ">Possuímos compromisso com a inovação, destacando o desenvolvimento de soluções de última geração que não apenas melhoram a eficiência operacional, mas também minimizam o impacto ambiental.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <section className="flex justify-end relative mt-5  bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5 mb-5">
+                        <div className="self-center w-full p-2">
+                            <div className="flex my-auto absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
+                                <div>
+                                    <Leaf size={32} className="text-white ml-2" />
+                                </div>
+                                <div>
+                                    <p className="text-center text-white text-large mt-2 font-bold max-sm:text-medium">Sustentabilidade</p>
+                                    <p className="text-center  text-white text-medium mt-5 max-sm:text-small ">A HXF pode destacar seu compromisso com a a sustentabilidade, promovendo seus produtos como soluções eficientes e ambientalmente conscientes.</p>
+                                </div>
                             </div>
                         </div>
                     </section>
                 </div>
-
+                
                 <section className="flex justify-center my-10">
                     <div className="relative w-4/6">
                         <img src={PhotoCard} alt="Photo Card" className="object-cover h-full brightness-50 mx-auto" />
@@ -156,9 +153,9 @@ export function Home() {
                     </div>
                 </section>
 
-                    <div>
-                        <FeedbackSlider clients={clients} />
-                    </div>
+                <div>
+                    <FeedbackSlider clients={clients} />
+                </div>
             </main>
             <Footer />
         </>

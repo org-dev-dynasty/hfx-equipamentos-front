@@ -40,7 +40,7 @@ export function Navbar({ page }: { page: string }) {
                         <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>HOME</Link>
                     </div>
                     <div className="self-center">
-                        <Link to={'/hfx'} className={`font-bold ${page == "HFX" ? "text-primary underline decoration-primary" : "text-black"} duration-500  text-medium hover:text-primary hover:underline hover:decoration-primary`}>HFX</Link>
+                        <Link to={'/hfx'} className={`font-bold ${page == "HXF" ? "text-primary underline decoration-primary" : "text-black"} duration-500  text-medium hover:text-primary hover:underline hover:decoration-primary`}>HXF</Link>
                     </div>
                     <div className="self-center">
                         <div >
