@@ -1,31 +1,56 @@
-import { useState } from 'react';
-import { MagnifyingGlass, MagnifyingGlassPlus } from '@phosphor-icons/react';
-// import Modal from './Modal'; 
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useContext, useEffect, useState } from 'react';
+import { MagnifyingGlass, Plus, X } from '@phosphor-icons/react';
+import { ProductContext } from '../../../context/product_context';
+
+import CreateProductImage from '../../../assets/CreateProductImage.png';
+import CreateProductExistImage from '../../../assets/CreateProductExistImage.png';
+import { ModalCreateProduct } from '../../../components/ModalCreateProduct';
 
 export function Products() {
     const [searchInput, setSearchInput] = useState('');
-    // const [selectedProduct, setSelectedProduct] = useState(null); 
+    const [showModal, setShowModal] = useState(false);
+    const [createProductModal, setCreateProductModal] = useState(false);
+    
+    const { getAll } = useContext(ProductContext)
+    const [products, setProducts] = useState([])
 
-    const products = [
-        { id: 1, title: 'Produto 1', image: 'https://example.com/product1.jpg', description: 'Descrição do Produto 1' },
-        { id: 2, title: 'Produto 2', image: 'https://example.com/product2.jpg', description: 'Descrição do Produto 2' },
-        { id: 3, title: 'Produto 3', image: 'https://example.com/product3.jpg', description: 'Descrição do Produto 3' },
-        { id: 4, title: 'Produto 4', image: 'https://example.com/product4.jpg', description: 'Descrição do Produto 4' }
-    ];
+    // const products = [
+    //     { id: 1, title: 'Produto 1', image: 'https://via.placeholder.com/500x500' },
+    //     { id: 2, title: 'Produto 2', image: 'https://via.placeholder.com/500x500' },
+    //     { id: 3, title: 'Produto 3', image: 'https://via.placeholder.com/500x500' },
+    //     { id: 4, title: 'Produto 4', image: 'https://via.placeholder.com/500x500' }
+    // ];
 
-    // const openModal = (product) => {
-    //     setSelectedProduct(product);
-    // };
+    function handleCreateProduct() {
+        setShowModal(false)
+        setCreateProductModal(true)
+    }
 
-    // const closeModal = () => {
-    //     setSelectedProduct(null);
-    // };
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if (!token) {
+            window.location.href = "/admin/login"
+        }
+    }, [])
+
+    useEffect(() => {
+        const response = getAll()
+        response.then((res : any) => {
+            setProducts(res.products)
+            console.log(res.products)
+        }).catch((error) => {
+            console.log("error "+ error)
+        })
+    }, [])
 
     return (
-        <div className="m-4">
+        <>
+        <main className="m-4">
             <h1 className="text-3xl font-jost mb-2">Produtos</h1>
             <hr className="border-black"/>
-            <div className="flex items-center my-5 ">
+            <section className="flex items-center my-5">
                 <input
                     type="text"
                     placeholder="Buscar produtos..."
@@ -36,34 +61,71 @@ export function Products() {
                 <button className="mr-auto h-10 ml-1 bg-blue-500 text-white px-4 py-2 rounded-r-lg flex items-center justify-center">
                     <MagnifyingGlass size={24} className="h-5 w-5" />
                 </button>
-            </div>
+            </section>
 
-            <div className="flex flex-wrap gap-10 justify-center">
-                {products.map((product) => (
-                    <div key={product.id} className="w-72 cursor-pointer" onClick={() => {}}>
-                        <div className="group overflow-hidden rounded shadow-md">
-                            <img
-                                src={product.image}
-                                alt={product.title}
-                                className="w-full h-40 object-cover transition-transform duration-300 transform group-hover:scale-105"
-                            />
-                            <div className="overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 transition-opacity duration-300">
-                                <MagnifyingGlassPlus size={32} className="h-10 w-10 text-orange-500"/>
+            <section>    
+                <div className="flex flex-wrap gap-10 justify-center">
+                    {products.map((product : any) => (
+                        <div key={product.id} className="group w-72 cursor-pointer" onClick={() => {}}>
+                            <button type='button' className="w-full relative group overflow-hidden rounded-t-xl shadow-md duration-300">
+                                <MagnifyingGlass size={42} className="absolute z-10 top-[64px] left-[128px] text-secondary opacity-0 duration-300 group-hover:opacity-100" />
+                                <img
+                                    src={product.image ? product.image : 'https://via.placeholder.com/500x500'}
+                                    alt={product.name}
+                                    className="w-full h-40 object-cover transition-transform duration-300 group-hover:brightness-50 transform group-hover:scale-110"
+                                />
+                            </button>
+                            <div className="bg-white p-4 rounded-b-xl text-center">
+                                <p className="text-lg font-semibold">{product.name}</p>
+                                <button className="text-primary w-full font-bold opacity-0 duration-300 group-hover:opacity-100">Editar</button>
                             </div>
                         </div>
-                        <div className="bg-white p-4 rounded-b">
-                            <p className="text-lg font-semibold">{product.title}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+                <div className="flex justify-end mt-4 mr-8">
+                    <button type='button' onClick={()=>setShowModal(true)} className="flex gap-2 items-center bg-green-600 px-4 py-2 text-white font-bold rounded-md duration-300 hover:bg-green-700">
+                        <Plus size={20} />
+                        Adicionar
+                    </button>
+                </div>
+            </section>
+        </main>
 
-            {/* {selectedProduct && (
-                <Modal
-                    product={selectedProduct}
-                    closeModal={closeModal}
-                />
-            )} */}
-        </div>
+        {showModal && (
+            <section className='bg-[rgba(0,0,0,0.6)] fixed top-0 w-full min-h-screen p-4 z-50'>
+                <div className="flex items-center justify-end">
+                    <button onClick={()=>setShowModal(false)}>
+                        <X className='text-white' size={42}/>
+                    </button>
+                </div>
+                <div className='min-h-screen flex justify-evenly items-center gap-4 max-sm:flex-col'>
+                    <button type='button' onClick={handleCreateProduct} className="h-auto relative group overflow-hidden rounded-xl shadow-md duration-300">
+                        <img
+                            src={CreateProductImage}
+                            alt='name'
+                            className="w-full md:h-96 object-cover transition-transform duration-300 brightness-50 transform group-hover:scale-110"
+                        />
+                        <div className="w-full h-full flex justify-center items-center absolute top-0 left-0">
+                            <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Criar um novo Produto</label>
+                        </div>
+                    </button>
+                    <button type='button' className="h-auto relative group overflow-hidden rounded-xl shadow-md duration-300">
+                        <img
+                            src={CreateProductExistImage}
+                            alt='name'
+                            className="w-full md:h-96 object-cover transition-transform duration-300 brightness-50 transform group-hover:scale-110"
+                        />
+                        <div className="w-full h-full flex justify-center items-center absolute top-0 left-0">
+                            <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Criar um modelo/categoria de um produto existente</label>
+                        </div>
+                    </button>
+                </div>
+            </section>
+        )}
+
+        {createProductModal && (
+            <ModalCreateProduct callbackParent={(bool : boolean)=> setCreateProductModal(bool)}/>
+        )}
+        </>
     );
 }
