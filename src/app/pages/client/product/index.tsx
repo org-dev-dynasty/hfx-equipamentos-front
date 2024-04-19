@@ -38,6 +38,15 @@ export function Product () {
                 })
                 }
             </div>
+
+            <section className="w-full mt-8">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.418004768813!2d-46.60970718789276!3d-23.6967623786182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce446410aff7f9%3A0x3b653ae235cc43c5!2sR.%20Marte%2C%2081%20-%20Serraria%2C%20Diadema%20-%20SP%2C%2009981-540!5e0!3m2!1spt-BR!2sbr!4v1713319162086!5m2!1spt-BR!2sbr" 
+                    height="400"
+                    loading="lazy"
+                    className='p-4 w-full'
+                ></iframe>
+            </section>
         </main>
         <Footer />
         </>
