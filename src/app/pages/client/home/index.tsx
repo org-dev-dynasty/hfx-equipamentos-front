@@ -1,23 +1,79 @@
 import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
-import PhotoMaquina from "../../../assets/maquina1.png"
-import Medal from "../../../assets/medalha.png";
-import { CardProduct } from "../../../components/CardProduct";
-import { Eye, TreasureChest, Gear, Headset, Lightbulb, Check } from "@phosphor-icons/react";
+import PhotoCard from "../../../assets/image 11.png"
 
-import Tools from "../../../assets/Rompedor.png";
-import Tools2 from "../../../assets/Tesoura.png";
-import Tools3 from "../../../assets/Engate.png";
-import Tools4 from "../../../assets/Compactador.png";
+
+import { Invoice, Timer } from "@phosphor-icons/react";
+
 import { Footer } from "../../../components/Footer";
+// import { ProductContext } from "../../../context/product_context";
+// import { useContext, useEffect, useState } from "react";
+import {FeedbackSlider} from "../../../components/FeedbackSlider";
 
 export function Home() {
+    // const { getAll } = useContext(ProductContext);
+    // const [products, setProducts] = useState([])
+
+    // useEffect(() => {
+    //     const response = getAll()
+    //     response.then((res: any) => {
+    //         setProducts(res.products)
+    //         console.log(res.products)
+    //     }).catch((error) => {
+    //         console.log("error " + error)
+    //     })
+    // }, [])
+
+    const clients = [
+        { nome: 'João', imagem: 'client1.jpg', comentario: 'Ótimo serviço! Recomendo muito.', estrelas: 5 },
+        { nome: 'Maria', imagem: 'client2.jpg', comentario: 'Equipe muito profissional e eficiente.', estrelas: 4 },
+        { nome: 'Carlos', imagem: 'client3.jpg', comentario: 'Rápidos e eficazes. Superou minhas expectativas.', estrelas: 5 },
+        { nome: 'Ana', imagem: 'client4.jpg', comentario: 'Excelente atendimento ao cliente.', estrelas: 5 },
+        { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
+    ];
+
+    // Função para criar e exibir os cards de feedback
+    function exibirFeedbacks() {
+        const feedbackContainer = document.getElementById('feedbackCarousel')
+
+        if (!feedbackContainer) return
+
+        // Limpar o conteúdo existente no container
+        feedbackContainer.innerHTML = '';
+
+        // Criar e adicionar os cards de feedback dinamicamente
+        clients.forEach(client => {
+            const card = document.createElement('div');
+            card.className = 'flex-shrink-0 bg-white rounded-lg shadow-lg p-6';
+            card.style.width = '320px';
+
+            // Conteúdo do card
+            const conteudoCard = `
+                <div className="flex items-center mb-4">
+                    <img src="${client.imagem}" alt="${client.nome}" className="w-12 h-12 rounded-full mr-4">
+                    <p className="font-bold text-lg">${client.nome}</p>
+                </div>
+                <p className="text-gray-700 mb-4">"${client.comentario}"</p>
+                <div className="flex items-center">
+                    <div className="text-yellow-500 mr-2">${'★'.repeat(client.estrelas)}</div>
+                </div>
+            
+            `;
+
+            card.innerHTML = conteudoCard;
+            feedbackContainer.appendChild(card);
+        });
+    }
+
+    // Chamar a função para exibir os feedbacks ao carregar a página
+    document.addEventListener('DOMContentLoaded', exibirFeedbacks);
+
     return (
         <>
             <Navbar page="Home" />
             <main className="bg-gray-100 font-main">
                 <ImageSlider />
-                <section className="mt-10">
+                {/* <section className="mt-10">
                     <div className="text-center">
                         <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
                         <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
@@ -26,114 +82,83 @@ export function Home() {
 
                     <div className="flex justify-center">
                         <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-                            <CardProduct image={Tools} name="Rompedores Hidráulicos" />
-                            <CardProduct image={Tools2} name="Tesoura Hidráulica" />
-                            <CardProduct image={Tools3} name="Engate Rápido" />
-                            <CardProduct image={Tools4} name="Compactadores" />
+                            {products.map((product: any) => {
+                                return (
+                                    <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+                                )
+                            })
+                            }
                         </div>
                     </div>
-                </section>
+                </section> */}
 
-                <section className="flex mt-5">
-                    <div className="bg-primary w-3/5 h-86 p-3">
-                        <h1 className="text-large font-bold text-white lg:text-xlarge">Sobre a HFX</h1>
-                        <p className="text-large text-white mt-3 max-md:text-medium max-sm:text-small">
-                            A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
-                        </p>
-                        <p className="text-large text-white mt-3 max-md:text-medium max-sm:text-small">
-                            Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
-                        </p>
-                        <p className="text-large text-white mt-3 max-md:text-medium max-sm:text-small">
-                            Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
-                        </p>
-                    </div>
-                    <img
-                        src={PhotoMaquina}
-                        alt="Foto da maquina"
-                        className="w-2/5 h-86"
-                    />
-                </section>
+                <div className="w-full ">
 
-                <section className="mt-10">
-                    <div className="text-center">
-                        <h1 className="text-xlarge font-jost font-bold max-md:text-large max-sm:text-medium ">Certificações</h1>
-                        <p className="text-large font-jost max-md:text-medium max-sm:text-small">Abaixo encontram-se as certificações HXF.</p>
-                    </div>
-                    <hr className="mt-3 mx-2 " />
-                    <div className="flex justify-center mt-3">
-                        <img src={Medal} alt="Medalha" className="w-32 h-32 " />
-                    </div>
-
-                </section>
-                <hr className="mt-3 mx-2" />
-
-                <section className="flex p-3 mx-20 max-sm:grid grid-cols-1 gap-10 mt-5">
-                    <div className="flex flex-col justify-center items-center  max-md:border-b-0 w-1/2 max-sm:mx-auto mt-5">
-                        <Eye color="#0063AE" size={32} />
-                        <p className="text-xlarge text-black text-jost font-bold max-md:text-large max-sm:text-medium">
-                            Visão
-                        </p>
-                        <p className="text-large text-black text-jost mt-5 text-center max-md:text-medium  max-sm:text-small mb-10 w-full ">
-                            Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos/produtos destinados à construção civil, mineração e afins.
-                        </p>
-                    </div>
-
-                    <div className="border-r border-gray-300 h-50 max-sm:border-b "></div>
-
-                    <div className="flex flex-col h-full justify-center items-center max-md:border-b-0 w-1/2  max-sm:mx-auto">
-                        <TreasureChest color="#0063AE" size={32} />
-                        <p className="text-xlarge text-black text-jost font-bold max-md:text-large max-sm:text-medium">
-                            Valores
-                        </p>
-                        <div className="flex text-large text-black text-jost mt-10 text-center gap-20 items-center max-md:text-medium max-sm:text-small mb-10 ">
-                            <ul className="flex flex-col list-disc max-sm:mb-10">
-                                <li>Honestidade</li>
-                                <li>Integridade</li>
-                                <li>Respeito</li>
-                            </ul>
-                            <ul className="flex flex-col list-disc max-sm:mb-10">
-                                <li>Segurança</li>
-                                <li>Inovação</li>
-                                <li>Qualidade</li>
-                            </ul>
+                    <section className="flex justify-end relative bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5 mb-5">
+                        <div className="self-center w-full p-2">
+                            <div className="flex my-auto absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
+                                <div>
+                                    <Invoice size={32} className="text-white ml-2" />
+                                </div>
+                                <div>
+                                    <p className="text-center text-white text-large mt-2 font-bold max-sm:text-medium">ExperIência de Mercado</p>
+                                    <p className="text-center  text-white text-medium mt-5 max-sm:text-small ">Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
+                                </div>
+                            </div>
                         </div>
+                    </section>
 
+                    <div className="flex flex-row-reverse">
+                        <section className="flex justify-start relative mb-5 bg-secondary h-96 w-2/5 rounded-l-3xl max-sm:w-3/5">
+                            <div className="flex absolute -left-80 max-lg:top-16 bg-blue-800 w-full rounded-3xl self-center p-2 max-md:-right-10  md:top-2 bottom-2 max-sm:-left-40 ">
+                                <div className="">
+                                    <Timer size={32} className="text-white ml-2" />
+                                </div>
+                                <div>
+                                    <p className="text-center text-white text-large font-bold max-sm:text-medium ">Eficiência Garantida</p>
+                                    <p className="text-center  text-white text-medium mt-5 max-sm:text-small ">Fornecemos soluções eficientes e de alta qualidade para demolição, compactação de solos e mineração, garantindo que nossos clientes possam confiar na HXF para atender às suas necessidades. Nosso suporte especializado garante que você não perca dias de trabalho, devido ao auxílio técnico que irá te auxiliar para minimizar os impactos</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
 
+                    <section className="flex justify-end relative bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5">
+                        <div className="self-center w-full p-2">
+                            <div className="absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
+                                <p className="text-center text-white text-large mt-5 font-bold max-sm:text-medium">Soluções Personalizadas</p>
+                                <p className="text-center  text-white text-medium mt-5 max-sm:small ">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section className="flex justify-center my-10">
+                    <div className="relative w-4/6">
+                        <img src={PhotoCard} alt="Photo Card" className="object-cover h-full brightness-50 mx-auto" />
+                        <p className="absolute bottom-0 p-10 text-white lg:w-4/5 text-2xlarge  md:w-full max-md:text-xlarge sm:w-full max-sm:text-large">
+                            Nossas conquistas são melhores mostradas pelos nossos números
+                        </p>
                     </div>
                 </section>
 
-                <div className=" md:hidden lg:hidden  max-sm:border-b border-gray-300 w-50 "></div>
-
-                <section className="max-sm:grid grid-cols-1">
-                    <div className="flex flex-col justify-center text-center mt-5">
-                        <p className="text-xlarge text-black text-jost font-bold max-md:text-large max-sm:text-medium">Política de Qualidade</p>
-                        <p className=" text-black text-jost mt-3 text-large max-md:text-medium max-sm:text-small ">A HXF compromete-se a fornecer soluções e serviços com alta qualidade sempre buscando a satisfação do cliente através de:</p>
-
+                <section className="grid grid-cols-3 mx-auto w-4/6 gap-5 max-sm:grid-cols-1">
+                    <div className="bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
+                        <h1 className=" font-bold lg:text-2xlarge md:text-xlarge sm:text-large">+2 mil</h1>
+                        <p className="lg:text-large md:text-medium sm:text-small">Serviços prestados</p>
                     </div>
-                    <div className="flex justify-center my-5 ">
-                        <ul className="flex-col grid gap-7  max-md:grid grid-cols-2 px-3 mb-5  max-sm:grid-cols-1 mx-auto mt-5">
-                            <li className="flex items-center text-medium  text-black text-jost w-full mb-10 max-sm:text-small">
-                                <Headset color="#0063AE" size={24} className="mr-3" />
-                                Atender aos requisitos dos clientes
-                            </li>
-                            <li className="flex items-center text-medium text-black text-jost w-full mb-10 max-sm:text-small">
-                                <Gear color="#0063AE" size={24} className="mr-3" />
-                                Seguir normas técnicas de mecânica e normas aplicáveis
-                            </li>
-                            <li className="flex items-center text-medium text-black text-jost w-full max-sm:text-small mb-10">
-                                <Lightbulb color="#0063AE" size={24} className="mr-3" />
-                                Fornecer soluções aos nossos clientes
-                            </li>
-                            <li className="flex items-center text-medium text-black text-jost w-full max-sm:text-small ">
-                                <Check color="#0063AE" size={24} className="mr-3" />
-                                Tudo isso aliado a melhoria continua de nossos processos e serviços.
-                            </li>
-                        </ul>
+                    <div className="bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
+                        <h1 className="lg:text-2xlarge md:text-xlarge sm:text-large">+13 mil</h1>
+                        <p className="lg:text-large md:text-medium sm:text-small">Clientes satisfeitos</p>
                     </div>
-
-                    <p className="text-center my-5 lg:text-medium max-sm:text-small"></p>
-
+                    <div className="bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
+                        <h1 className="lg:text-2xlarge md:text-xlarge sm:text-large">+820</h1>
+                        <p className="lg:text-large md:text-medium sm:text-small">Especialistas qualificados</p>
+                    </div>
                 </section>
+
+                    <div>
+                        <FeedbackSlider clients={clients} />
+                    </div>
             </main>
             <Footer />
         </>
