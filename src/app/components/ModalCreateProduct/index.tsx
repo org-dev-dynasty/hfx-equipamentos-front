@@ -45,7 +45,7 @@ export function ModalCreateProduct(props: any) {
                     <ul className='flex gap-2 max-md:flex-col'>
                         <li onClick={()=>setActiveTab('InfoGerais')} className={`p-2 rounded-t-md cursor-pointer duration-100 hover:bg-primary hover:text-white ${activeTab == 'InfoGerais' ? "bg-primary text-white" : ""}`}>Informações Gerais</li>
                         <li onClick={()=>setActiveTab('Modelos')} className={`p-2 rounded-t-md cursor-pointer duration-100 hover:bg-primary hover:text-white ${activeTab == 'Modelos' ? "bg-primary text-white" : ""}`}>Modelos/Categorias</li>
-                        <li onClick={()=>models.length == 0 ? alert('Sem Modelos') : setActiveTab('Atributos')} className={`p-2 rounded-t-md cursor-pointer duration-100 ${models.length == 0 ? "bg-gray-400" : "hover:bg-primary hover:text-white"} ${activeTab == 'Atributos' ? "bg-primary text-white" : ""}`}>Atributos</li>
+                        <li onClick={()=>models.length == 0 ? alert('Sem Modelos') : setActiveTab('Atributos')} className={`p-2 rounded-t-md cursor-pointer duration-100 ${models.length == 0 ? "bg-gray" : "hover:bg-primary hover:text-white"} ${activeTab == 'Atributos' ? "bg-primary text-white" : ""}`}>Atributos</li>
                     </ul>
                     <button onClick={() => props.callbackParent(false)}>
                         <X size={32}/>
@@ -108,8 +108,8 @@ export function ModalCreateProduct(props: any) {
                     <aside className='border-2 border-primary p-4'>
                         {/* ESCOLHER TIPO */}
                         <div className="flex gap-2">
-                            <button onClick={()=>setSelectTab('Models')} className={`text-white w-1/2 py-2 font-semibold rounded-lg ${selectTab == "Models" ? "bg-primary" : "bg-gray-500 hover:bg-gray-600"}`}>Modelo</button>
-                            <button onClick={()=>setSelectTab('Category')} className={`text-white w-1/2 py-2 font-semibold rounded-lg ${selectTab == "Category" ? "bg-primary" : "bg-gray-500 hover:bg-gray-600"}`}>Categoria</button>
+                            <button onClick={()=>setSelectTab('Models')} className={`text-white w-1/2 py-2 font-semibold rounded-lg ${selectTab == "Models" ? "bg-primary" : "bg-gray hover:bg-gray-600"}`}>Modelo</button>
+                            <button onClick={()=>setSelectTab('Category')} className={`text-white w-1/2 py-2 font-semibold rounded-lg ${selectTab == "Category" ? "bg-primary" : "bg-gray hover:bg-gray-600"}`}>Categoria</button>
                         </div>
                         <div>
                             {selectTab != '' && (
