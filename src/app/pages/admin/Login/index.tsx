@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import LoginImage from "../../../assets/loginImage1.png";
 import Logo from "../../../assets/logoLogin.png";
 import { UserContext } from "../../../context/user_context";
@@ -27,7 +27,17 @@ export function SignIn() {
             progress: undefined,
             theme: "light",
         });
+        setTimeout(() => {
+            window.location.href = "/admin/products"
+        }, 3000);
     }
+
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            window.location.href = "/admin/products"
+        }
+    })
 
     return (
         <div className="flex justify-center items-center h-screen">
