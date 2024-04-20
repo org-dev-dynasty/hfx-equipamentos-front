@@ -13,15 +13,14 @@ export function ModalCreateProduct(props: any) {
     const [models, setModels] = useState([])
     const [categories, setCategories] = useState([])
     const [attributes, setAttributes] = useState([])
-
-    function addingCategoryOrModels(type: string, item: string) {
+    function addingCategoryOrModels(type: string) {
         if(type == 'Models') {
-            setModels([...models, item])
+            setModels([])
         } else {
-            setCategories([...categories, item])
+            setCategories([])
         }
     }
-
+        
     function createProduct() {
         const json = {
             name: nameProduct,
@@ -35,6 +34,7 @@ export function ModalCreateProduct(props: any) {
 
     useEffect(() => {
         setAttributes([])
+        addingCategoryOrModels(item)
     }, [models, categories, attributes])
 
     return (
@@ -115,7 +115,7 @@ export function ModalCreateProduct(props: any) {
                             {selectTab != '' && (
                                 <div className="flex gap-4 mt-4">
                                     <input onChange={(e)=>setItem(e.target.value)} className="border-b-2 border-l-2 p-2 border-primary rounded-bl-lg bg-white focus:outline-none" type="text" placeholder={selectTab == 'Models' ? 'Modelo' : 'Categoria'} />
-                                    <button onClick={()=>addingCategoryOrModels(selectTab, item)} className="flex items-center gap-2 p-2 rounded-md text-white bg-green-500 hover:bg-green-700"><PlusCircle size={24}/> Adicionar</button>
+                                    <button onClick={()=>{}} className="flex items-center gap-2 p-2 rounded-md text-white bg-green-500 hover:bg-green-700"><PlusCircle size={24}/> Adicionar</button>
                                 </div>
                             )}
                             {selectTab == 'Models' && (

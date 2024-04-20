@@ -87,7 +87,7 @@ export function ProductDetail() {
                     <div className="w-full p-4">
                         <h3 className="font-bold text-medium text-center">Especificações</h3>
                         <div className="gap-4 mt-2 grid grid-cols-2 max-lg:grid-cols-1">
-                            {attributes != undefined && Object.keys(attributes).map((key: string) => (
+                            {attributes != undefined && Object.keys(attributes).map((key: any) => (
                                 key !== 'modelId' && key !== 'categoria' ?
                                 <div className="flex gap-2 max-sm:flex-col max-sm:items-center" key={key}>
                                     <label className="font-bold">{key}:</label>

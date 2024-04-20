@@ -26,7 +26,7 @@ export function HFX() {
                         <div className="p-8 flex flex-col gap-8">
                             <div className="flex items-center text-2xlarge gap-4">
                                 <h2>Missão</h2>
-                                <ListChecks color="#F2802E" size={64} />
+                                <ListChecks color="#F2802E" size={48} />
                             </div>
                             <p className="text-large">
                                 Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
@@ -38,7 +38,7 @@ export function HFX() {
                     <div className="w-3/4 flex flex-row-reverse justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
                         <div className="p-8 flex flex-col gap-8">
                             <div className="flex flex-row-reverse items-center text-2xlarge gap-4 max-md:flex-row">
-                                <Eye color="#F2802E" size={64} />
+                                <Eye color="#F2802E" size={48} />
                                 <h2>Visão</h2>
                             </div>
                             <p className="text-large text-end max-md:text-start">
@@ -51,7 +51,7 @@ export function HFX() {
                         <div className="p-8 flex flex-col gap-8">
                             <div className="flex items-center gap-4">
                                 <h2 className="text-2xlarge">Valores</h2>
-                                <TreasureChest color="#F2802E" size={64} />
+                                <TreasureChest color="#F2802E" size={48} />
                             </div>
                             <ul className="ml-8 list-disc text-large">
                                 <li>Honestidade</li>
@@ -75,19 +75,19 @@ export function HFX() {
                     <div className="flex justify-evenly mt-8 gap-4 max-md:flex-col">
                         <div className="flex flex-col items-center">
                             <div className="bg-white p-2 rounded-full border-2 border-primary duration-150 hover:scale-110">
-                                <Headset color="#0063AE" size={64}/>
+                                <Headset color="#0063AE" size={48}/>
                             </div>
                             <label className="text-medium w-1/2 text-center">Atender aos requisitos dos clientes</label>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="bg-white p-2 rounded-full border-2 border-primary duration-150 hover:scale-110">
-                                <Gear color="#0063AE" size={64}/>
+                                <Gear color="#0063AE" size={48}/>
                             </div>
                             <label className="text-medium w-1/2 text-center">Seguir normas técnicas de mecânica e normas aplicáveis</label>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="bg-white p-2 rounded-full border-2 border-primary duration-150 hover:scale-110">
-                                <Lightbulb color="#0063AE" size={64}/>
+                                <Lightbulb color="#0063AE" size={48}/>
                             </div>
                             <label className="text-medium w-1/2 text-center">Fornecer soluções aos nossos clientes</label>
                         </div>

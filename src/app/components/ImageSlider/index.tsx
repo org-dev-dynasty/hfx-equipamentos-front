@@ -7,7 +7,6 @@ export function ImageSlider() {
     const refCarousel = useRef<HTMLDivElement>(null);
     const [widthScreen, setWidthScreen] = useState(window.innerWidth);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
         const scroll = () => {
@@ -27,16 +26,10 @@ export function ImageSlider() {
         }, 5000);
     }, [currentImageIndex, images.length, widthScreen]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setOpacity(100);
-        });
-    }, []);
-
     return (
-        <section className={`w-full h-[90%] flex items-center duration-500 opacity-${opacity}`}>
-            <div className='flex h-full items-center relative bg-black'>
-                <div className='w-full h-full flex overflow-x-hidden scroll-smooth' ref={refCarousel}>
+        <section className='w-full flex items-center duration-500 brightness-50'>
+            <div className='flex items-center relative bg-black'>
+                <div className='w-full flex overflow-x-hidden scroll-smooth' ref={refCarousel}>
                     {images.map((imageUrl, index) => (
                         <img
                             key={index}
@@ -45,6 +38,7 @@ export function ImageSlider() {
                             className='w-full h-full object-cover'
                         />
                     ))}
+                    <p></p>
                 </div>
             </div>
         </section>
