@@ -10,7 +10,8 @@ export default {
         'primary': '#0063AE',
         'secondary': '#F2802E',
         'black': '#000000',
-        'white': '#EFEFEF',
+        'white': '#FFFFFF',
+        'l-gray': '#EFEFEF',
         'gray': "#AAB7CC"
       },
       fontSize: {

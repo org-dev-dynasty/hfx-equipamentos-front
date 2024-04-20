@@ -3,26 +3,27 @@ import { Navbar } from "../../../components/Navbar";
 import PhotoCard from "../../../assets/image 11.png"
 
 
-import { Gear, Invoice, Leaf, Lightbulb, Timer } from "@phosphor-icons/react";
+// import { Gear, Invoice, Leaf, Lightbulb, Timer } from "@phosphor-icons/react";
 
 import { Footer } from "../../../components/Footer";
-// import { ProductContext } from "../../../context/product_context";
-// import { useContext, useEffect, useState } from "react";
+import { ProductContext } from "../../../context/product_context";
+import { useContext, useEffect, useState } from "react";
 import { FeedbackSlider } from "../../../components/FeedbackSlider";
+import { CardProduct } from "../../../components/CardProduct";
 
 export function Home() {
-    // const { getAll } = useContext(ProductContext);
-    // const [products, setProducts] = useState([])
+    const { getAll } = useContext(ProductContext);
+    const [products, setProducts] = useState([])
 
-    // useEffect(() => {
-    //     const response = getAll()
-    //     response.then((res: any) => {
-    //         setProducts(res.products)
-    //         console.log(res.products)
-    //     }).catch((error) => {
-    //         console.log("error " + error)
-    //     })
-    // }, [])
+    useEffect(() => {
+        const response = getAll()
+        response.then((res: any) => {
+            setProducts(res.products)
+            console.log(res.products)
+        }).catch((error) => {
+            console.log("error " + error)
+        })
+    }, [])
 
     const clients = [
         { nome: 'João', imagem: 'client1.jpg', comentario: 'Ótimo serviço! Recomendo muito.', estrelas: 5 },
@@ -36,28 +37,20 @@ export function Home() {
     return (
         <>
             <Navbar page="Home" />
-            <main className="bg-gray-100 font-main">
+            <main className="bg-l-gray font-main">
                 <ImageSlider />
-                {/* <section className="mt-10">
-                    <div className="text-center">
-                        <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
-                        <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
-                    </div>
-                    <hr className="mt-3 mx-2 " />
 
-                    <div className="flex justify-center">
-                        <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-                            {products.map((product: any) => {
-                                return (
-                                    <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
-                                )
-                            })
-                            }
+                <section>
+                    <div className="bg-primary">
+                        <div className="bg-blue-800">
+                            <h1>ExperIência de Mercado</h1>
+                            <p>Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
                         </div>
                     </div>
-                </section> */}
+                </section>
 
-<div className="w-full bg-gray mt-10">
+
+                {/* <div className="w-full mt-10">
                     <section className="flex justify-end relative mt-5  bg-primary h-96 w-2/5 rounded-r-3xl max-sm:w-3/5 mb-5">
                         <div className="self-center w-full p-2">
                             <div className="flex my-auto absolute top-14 bg-blue-800 w-full h-2/3 rounded-3xl self-center p-2 max-md:w-full max-sm:w-full -right-40">
@@ -127,12 +120,32 @@ export function Home() {
                             </div>
                         </div>
                     </section>
-                </div>
-                
+                </div> */}
+
+
+                <section className="mt-10">
+                    <div className="text-center">
+                        <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
+                        <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
+                    </div>
+                    <hr className="mt-3 mx-2 " />
+
+                    <div className="flex justify-center">
+                        <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
+                            {products.map((product: any) => {
+                                return (
+                                    <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+                                )
+                            })
+                            }
+                        </div>
+                    </div>
+                </section>
+
                 <section className="flex justify-center my-10">
                     <div className="relative w-4/6">
                         <img src={PhotoCard} alt="Photo Card" className="object-cover h-full brightness-50 mx-auto" />
-                        <p className="absolute bottom-0 p-10 text-white lg:w-4/5 text-2xlarge  md:w-full max-md:text-xlarge sm:w-full max-sm:text-large">
+                        <p className="absolute bottom-0 p-10 text-white lg:w-4/5 text-2xlarge  md:w-full max-md:text-xlarge sm:w-full max-sm:text-small">
                             Nossas conquistas são melhores mostradas pelos nossos números
                         </p>
                     </div>
@@ -158,8 +171,8 @@ export function Home() {
                 </section>
 
                 <section>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.418004768813!2d-46.60970718789276!3d-23.6967623786182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce446410aff7f9%3A0x3b653ae235cc43c5!2sR.%20Marte%2C%2081%20-%20Serraria%2C%20Diadema%20-%20SP%2C%2009981-540!5e0!3m2!1spt-BR!2sbr!4v1713319162086!5m2!1spt-BR!2sbr" 
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.418004768813!2d-46.60970718789276!3d-23.6967623786182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce446410aff7f9%3A0x3b653ae235cc43c5!2sR.%20Marte%2C%2081%20-%20Serraria%2C%20Diadema%20-%20SP%2C%2009981-540!5e0!3m2!1spt-BR!2sbr!4v1713319162086!5m2!1spt-BR!2sbr"
                         height="400"
                         loading="lazy"
                         className='p-4 w-full'
