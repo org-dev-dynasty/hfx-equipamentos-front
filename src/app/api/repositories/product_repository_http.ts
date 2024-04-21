@@ -19,4 +19,13 @@ export class ProductRepositoryHttp {
             console.log("Error: "+error);
         }
     }
+
+    async create(product: any) {
+        try {
+            const response = await http.post("/create-product", product);
+            return response.data;
+        } catch (error: any){
+            console.log("Error: "+error);
+        }
+    }
 }

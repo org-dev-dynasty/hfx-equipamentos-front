@@ -16,13 +16,6 @@ export function Products() {
     const { getAll } = useContext(ProductContext)
     const [products, setProducts] = useState([])
 
-    // const products = [
-    //     { id: 1, title: 'Produto 1', image: 'https://via.placeholder.com/500x500' },
-    //     { id: 2, title: 'Produto 2', image: 'https://via.placeholder.com/500x500' },
-    //     { id: 3, title: 'Produto 3', image: 'https://via.placeholder.com/500x500' },
-    //     { id: 4, title: 'Produto 4', image: 'https://via.placeholder.com/500x500' }
-    // ];
-
     function handleCreateProduct() {
         setShowModal(false)
         setCreateProductModal(true)

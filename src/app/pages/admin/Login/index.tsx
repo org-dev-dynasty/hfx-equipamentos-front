@@ -6,7 +6,6 @@ import { UserContext } from "../../../context/user_context";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 
-
 export function SignIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")

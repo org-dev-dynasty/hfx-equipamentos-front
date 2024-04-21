@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { PropsWithChildren, createContext } from "react";
 import { ProductRepositoryHttp } from "../api/repositories/product_repository_http";
@@ -5,6 +6,7 @@ import { ProductRepositoryHttp } from "../api/repositories/product_repository_ht
 type ProductContextType = {
     getAll: () => Promise<object | undefined>
     getById: (id: string) => Promise<object | undefined>
+    create: (product: any) => Promise<object | undefined>
 }
 
 const defaultProductContext: ProductContextType = {
@@ -12,6 +14,9 @@ const defaultProductContext: ProductContextType = {
         return {};
     },
     getById: async (_id: string) => {
+        return {};
+    },
+    create: async (_product: any) => {
         return {};
     }
 }
@@ -39,8 +44,17 @@ export function ProductContextProvider({ children } : PropsWithChildren){
         }
     }
 
+    async function create(product: any){
+        try {
+            const response = await productRepositoryHttp.create(product);
+            return response;
+        } catch (error) {
+            return error;
+        }
+    }
+
     return (
-        <ProductContext.Provider value={{ getAll, getById }}>
+        <ProductContext.Provider value={{ getAll, getById, create }}>
             {children}
         </ProductContext.Provider>
     )
