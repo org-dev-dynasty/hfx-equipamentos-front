@@ -306,9 +306,9 @@ export function Home() {
                     </div>
                 </section>
 
-                <section >
+                {/* <section >
                     <FeedbackSlider clients={clients} />
-                </section>
+                </section> */}
 
                 <section>
                     <iframe
