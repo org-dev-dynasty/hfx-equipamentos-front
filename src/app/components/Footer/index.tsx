@@ -23,6 +23,8 @@ export function Footer() {
                     <p>Endereço: R. Marte, 81 - Serraria, Diadema - SP, 09980-075, Brasil</p>
                 </div>
             </div>
+            
+            <p className='text-center w-full text-white'>&copy; Desenvolvido por: Dev Dynasty</p>
         </footer>
     )
 }

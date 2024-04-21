@@ -7,7 +7,7 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 export function Navbar({ page }: { page: string }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [submenuOpen, setSubmenuOpen] = useState(false); // Estado para controlar o submenu de Produtos
+    const [submenuOpen, setSubmenuOpen] = useState(false);
 
     const toggleSubmenu = () => {
         setSubmenuOpen(!submenuOpen);
@@ -30,10 +30,12 @@ export function Navbar({ page }: { page: string }) {
     }, []);
     return (
         <nav className={`${page != "Home" ? "" : "fixed"} top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-transparent' : ''} py-4 px-4  w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
+            <Link to={'/'}>
+                <button className="ml-3" >
+                    <img src={logo} className="h-10 w-full " alt="Logo Azul" />
+                </button>
+            </Link>
 
-            <div className="ml-3">
-                <img src={logo} className="h-10 w-full " alt="Logo Azul" />
-            </div>
             <div className="flex ">
                 <div className="hidden sm:flex gap-8  mt-2 font-main justify-center">
                     <div className="self-center">
