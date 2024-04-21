@@ -76,7 +76,7 @@ export function Navbar({ page }: { page: string }) {
                         <Link to={'/videos'} className={`font-bold ${page == "Videos" ? "text-primary underline decoration-primary " : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>VIDEOS</Link>
                     </div> */}
 
-                    <button className="hidden sm:flex bg-primary w-40 h-12 justify-center items-center text-center  hover:bg-blue-900 font-bold font-main duration-500 ml-10 rounded-full">
+                    <button className="hidden sm:flex bg-primary w-40 h-12 justify-center items-center text-center  hover:bg-blue-900 font-bold font-main duration-500 ml-10 rounded-xl">
                         <Link to={'/contact'} className="text-white ">CONTATO</Link>
                     </button>
                 </div>

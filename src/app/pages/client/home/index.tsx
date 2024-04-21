@@ -5,16 +5,16 @@ import PhotoCard from "../../../assets/image 11.png"
 import { useLayoutEffect } from "react";
 
 import gsap from 'gsap'
-import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-import { Gear, Invoice, Leaf, Lightbulb, Timer } from "@phosphor-icons/react";
+import { Gear, Invoice, Lightbulb, Timer } from "@phosphor-icons/react";
 
 import { Footer } from "../../../components/Footer";
 import { ProductContext } from "../../../context/product_context";
 import { useContext, useEffect, useState } from "react";
 import { FeedbackSlider } from "../../../components/FeedbackSlider";
-import { CardProduct } from "../../../components/CardProduct";
+// import { CardProduct } from "../../../components/CardProduct";
 
 export function Home() {
     const { getAll } = useContext(ProductContext);
@@ -43,13 +43,13 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".cardOne", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 650px",
+                end: "bottom 600px",
                 scrub: 1,
             }
         })
@@ -61,13 +61,13 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".cardTwo", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 625px",
+                end: "bottom 600px",
                 scrub: 1,
             }
         })
@@ -79,13 +79,13 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".cardThree", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 625px",
+                end: "bottom 600px",
                 scrub: 1,
             }
         })
@@ -97,13 +97,13 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".cardFour", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 625px",
+                end: "bottom 600px",
                 scrub: 1,
             }
         })
@@ -114,28 +114,10 @@ export function Home() {
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardFive", {
-            y:0,
-            opacity:1,
-            scrollTrigger:{
-                trigger: ".cards",
-                // markers: true,
-                start: "top 200px",
-                end: "bottom 625px",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardFive")
-        }
-    }, [])
-
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
         gsap.to(".titleOne", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
                 start: "top 600px",
@@ -151,9 +133,9 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".productCard", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
                 start: "top 600px",
@@ -169,9 +151,9 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".imageData", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".datas",
                 // markers: true,
                 start: "top 600px",
@@ -187,9 +169,9 @@ export function Home() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".dataImage", {
-            x:0,
-            opacity:1,
-            scrollTrigger:{
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
                 trigger: ".imageDatas",
                 // markers: true,
                 start: "top 600px",
@@ -204,19 +186,19 @@ export function Home() {
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".feedbackSlider", {
-            y:0,
-            opacity:1,
-            scrollTrigger:{
-                trigger: ".feedback",
+        gsap.to(".firstTitle", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".title",
                 // markers: true,
-                start: "top 600px",
-                end: "bottom 800px",
+                start: "top 300px",
+                end: "bottom 300px",
                 scrub: 1,
             }
         })
         return () => {
-            gsap.killTweensOf(".feedbackSlider")
+            gsap.killTweensOf(".firstTitle")
         }
     }, [])
 
@@ -225,24 +207,27 @@ export function Home() {
             <Navbar page="Home" />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 <ImageSlider />
+                <section className="title">
+                    <h1 className="firstTitle translate-y-[80rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium">Alguns de nossos principios</h1>
+                </section>
 
-                <section className="cards lg:grid-cols-2 max-lg:grid-cols-2 sm:grid grid-cols-1 max-md:grid-cols-2 gap-5 mx-[4%]">
-                    <div className="cardOne opacity-0 -translate-x-[30rem]  h-[70%] mx-auto bg-primary p-3 rounded-xl w-[90%] max-md:h-[60%]  max-sm:w-[80%]  mt-10 max-md:w-[100%] ">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto">
+                <section className="cards bg-primary p-5  lg:grid-cols-2 max-lg:grid-cols-2 sm:grid grid-cols-1 max-md:grid-cols-2 gap-5 ">
+                    <div className="cardOne opacity-0 -translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[60%] max-sm:w-[80%]">
+                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
                             <div className="h-0">
-                                <Invoice size={24} className="text-white ml-2" />
+                                <Invoice size={24} className="text-secondary ml-2" />
                             </div>
-                            <div className="w-5/6">
+                            <div>
                                 <h1 className=" text-large max-md:text-medium">ExperIência de Mercado</h1>
-                                <p className="mt-5 w-[100%] text-medium max-md:text-small">Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
+                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="cardTwo opacity-0 translate-x-[30rem] bg-secondary p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
+                    <div className="cardTwo opacity-0 translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
                         <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
                             <div className="h-0">
-                                <Timer size={24} className="text-white ml-2" />
+                                <Timer size={24} className="text-secondary ml-2" />
                             </div>
                             <div>
                                 <h1 className=" text-large max-md:text-medium">Eficiência Garantida</h1>
@@ -251,46 +236,33 @@ export function Home() {
                         </div>
                     </div>
 
-                    <div className="cardThree opacity-0 -translate-x-[30rem] bg-primary p-3 w-[90%]  rounded-xl mx-auto max-sm:w-[80%]  mt-10 max-md:w-[100%]">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto">
+                    <div className="cardThree opacity-0 -translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
+                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
                             <div className="h-0">
-                                <Gear size={24} className="text-white ml-2" />
-                            </div>
-                            <div className="w-5/6">
-                                <h1 className="text-large max-md:text-medium">Soluções Personalizadas</h1>
-                                <p className="mt-5 w-[100%] text-medium max-md:text-small h-[100%] ">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="cardFour opacity-0 translate-x-[30rem] bg-secondary p-3 w-[80%] rounded-xl mx-auto mt-10">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto">
-                            <div className="h-0">
-                                <Lightbulb size={24} className="text-white ml-2" />
+                                <Gear size={24} className="text-secondary ml-2" />
                             </div>
                             <div>
-                                <h1 className="text-large max-md:text-medium">Inovação Continua</h1>
-                                <p className="mt-5 w-[100%] text-medium">Possuímos compromisso com a inovação, destacando o desenvolvimento de soluções de última geração que não apenas melhoram a eficiência operacional, mas também minimizam o impacto ambiental.</p>
+                                <h1 className=" text-large max-md:text-medium">Soluções Personalizadas</h1>
+                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="col-span-2">
-                        <div className="cardFive opacity-0 translate-y-[30rem] bg-primary p-3 w-[50%] rounded-xl mx-auto mt-10 max-sm:w-[80%]">
-                            <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto">
-                                <div className="h-0">
-                                    <Leaf size={24} className="text-white ml-2" />
-                                </div>
-                                <div className="w-5/6">
-                                    <h1 className="text-large max-md:text-medium">Sustentabilidade</h1>
-                                    <p className="mt-5 w-[100%] text-medium max-md:text-small ">A HXF pode destacar seu compromisso com a a sustentabilidade, promovendo seus produtos como soluções eficientes e ambientalmente conscientes.</p>
-                                </div>
+
+                    <div className="cardFour opacity-0 translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
+                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
+                            <div className="h-0">
+                                <Lightbulb size={24} className="text-secondary ml-2" />
+                            </div>
+                            <div>
+                                <h1 className=" text-large max-md:text-medium">Inovação Continua</h1>
+                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Possuímos compromisso com a inovação, destacando o desenvolvimento de soluções de última geração que não apenas melhoram a eficiência operacional, mas também minimizam o impacto ambiental.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="products mt-10">
+                {/* <section className="products mt-10">
                     <div className="titleOne opacity-0 translate-x-[60rem] text-center">
                         <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
                         <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
@@ -307,7 +279,7 @@ export function Home() {
                             }
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 <section className="datas flex justify-center my-10">
                     <div className="imageData -translate-x-[80rem] relative w-4/5">
@@ -333,8 +305,8 @@ export function Home() {
                     </div>
                 </section>
 
-                <section className="feedback">
-                    <FeedbackSlider clients={clients} className='feedbackSlider opacity-0 translate-y-[90rem]' />
+                <section >
+                    <FeedbackSlider clients={clients} />
                 </section>
 
                 <section>

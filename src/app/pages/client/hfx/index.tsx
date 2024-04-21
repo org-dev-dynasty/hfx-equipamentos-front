@@ -2,29 +2,154 @@ import { Eye, Gear, Headset, Lightbulb, TreasureChest, ListChecks } from "@phosp
 import PhotoMaquina from "../../../assets/maquina1.png"
 import { Navbar } from "../../../components/Navbar"
 import { Footer } from "../../../components/Footer";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import gsap from 'gsap'
+import { motion } from "framer-motion";
+import { AuroraBackground } from '../../../components/UI/index';
+import { useLayoutEffect } from "react";
 
 export function HFX() {
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardOne", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 800px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardOne")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardTwo", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 800px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardTwo")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardThree", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 800px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardThree")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".titlePolitie", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".polities",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 600px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".titlePolitie")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".politie", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".polities",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 500px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".politie")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".politieText", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".polities",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 400px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".politieText")
+        }
+    }, [])
+
     return (
         <>
             <Navbar page='HXF' />
-            <main className="p-8">
-                <section className="flex justify-center">
-                    <div className="w-1/2 p-4 text-center flex flex-col items-center rounded-xl max-lg:w-full">
-                        <h1 className="text-2xlarge font-bold mb-4">Conheça a HFX</h1>
-                        <p className="text-medium w-3/4 max-md:w-full">
-                            A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados. 
-                            <br /> 
-                            <br /> 
-                            Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
-                        </p>
-                    </div>
-                </section>
+            <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
 
-                <section className="flex flex-col items-center gap-8 mt-8">
-                    <div className="w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
+                <AuroraBackground>
+                        <motion.div
+                            initial={{ opacity: 0.0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                delay: 0.3,
+                                duration: 0.8,
+                                ease: "easeInOut",
+                            }}
+                            className="relative flex flex-col gap-4 items-center justify-center px-10 "
+                        >
+                            <div className="text-2xl md:text-7xl font-bold dark:text-white text-center">
+                                Conheça mais sobre à HXF!
+                            </div>
+                            <div className="font-extralight text-base md:text-3xl dark:text-neutral-200 py-4">
+                                A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
+
+                                Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
+                            </div>
+                        </motion.div>
+                </AuroraBackground>
+
+                <section className="cards flex flex-col items-center gap-8 ">
+                    <div className="cardOne opacity-0 -translate-x-[50rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
                         <div className="p-8 flex flex-col gap-8">
-                            <div className="flex items-center text-2xlarge gap-4">
+                            <div className="flex justify-between text-2xlarge gap-4">
                                 <h2>Missão</h2>
                                 <ListChecks color="#F2802E" size={48} />
                             </div>
@@ -32,12 +157,12 @@ export function HFX() {
                                 Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
                             </p>
                         </div>
-                        <img className="w-2/6 object-cover rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina"/>
+                        <img className="w-2/6 object-cover rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
                     </div>
 
-                    <div className="w-3/4 flex flex-row-reverse justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
+                    <div className="cardTwo opacity-0 translate-x-[40rem] w-3/4 flex flex-row-reverse justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
                         <div className="p-8 flex flex-col gap-8">
-                            <div className="flex flex-row-reverse items-center text-2xlarge gap-4 max-md:flex-row">
+                            <div className="flex justify-between text-2xlarge gap-4 max-md:flex-row">
                                 <Eye color="#F2802E" size={48} />
                                 <h2>Visão</h2>
                             </div>
@@ -45,12 +170,12 @@ export function HFX() {
                                 Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos ou produtos destinados à construção civil, mineração e afins.
                             </p>
                         </div>
-                        <img className="w-2/6 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina"/>
+                        <img className="w-2/6 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
                     </div>
-                    <div className="w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
-                        <div className="p-8 flex flex-col gap-8">
-                            <div className="flex items-center gap-4">
-                                <h2 className="text-2xlarge">Valores</h2>
+                    <div className="cardThree opacity-0 -translate-x-[40rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
+                        <div className="p-8 flex flex-col gap-8 ">
+                            <div className="flex justify-between gap-4 text-2xlarge">
+                                <h2 className="">Valores</h2>
                                 <TreasureChest color="#F2802E" size={48} />
                             </div>
                             <ul className="ml-8 list-disc text-large">
@@ -62,43 +187,43 @@ export function HFX() {
                                 <li>Qualidade</li>
                             </ul>
                         </div>
-                        <img className="w-2/6 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina"/>
+                        <img className="w-2/6 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
                     </div>
                 </section>
 
-                <section className="flex flex-col p-8">
-                    <div className="flex flex-col text-center items-center">
+                <section className="polities flex flex-col p-8 mt-10">
+                    <div className="titlePolitie opacity-0 translate-y-[20rem] flex flex-col text-center items-center">
                         <h2 className="text-2xlarge font-bold">Política de Qualidade</h2>
                         <p className="text-medium">A HXF compromete-se a fornecer soluções e serviços com alta qualidade sempre buscando a satisfação do cliente através de:</p>
                     </div>
 
-                    <div className="flex justify-evenly mt-8 gap-4 max-md:flex-col">
+                    <div className="politie opacity-0 translate-y-[30rem] flex justify-evenly mt-8 gap-4 max-md:flex-col">
                         <div className="flex flex-col items-center">
                             <div className="bg-white p-2 rounded-full border-2 border-primary duration-150 hover:scale-110">
-                                <Headset color="#0063AE" size={48}/>
+                                <Headset color="#0063AE" size={48} />
                             </div>
                             <label className="text-medium w-1/2 text-center">Atender aos requisitos dos clientes</label>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="bg-white p-2 rounded-full border-2 border-primary duration-150 hover:scale-110">
-                                <Gear color="#0063AE" size={48}/>
+                                <Gear color="#0063AE" size={48} />
                             </div>
                             <label className="text-medium w-1/2 text-center">Seguir normas técnicas de mecânica e normas aplicáveis</label>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="bg-white p-2 rounded-full border-2 border-primary duration-150 hover:scale-110">
-                                <Lightbulb color="#0063AE" size={48}/>
+                                <Lightbulb color="#0063AE" size={48} />
                             </div>
                             <label className="text-medium w-1/2 text-center">Fornecer soluções aos nossos clientes</label>
                         </div>
                     </div>
 
-                    <p className="text-center mt-12 text-medium">Tudo isso aliado a melhoria continua de nossos processos e serviços.</p>
+                    <p className="politieText opacity-0 translate-y-[40rem] text-center mt-12 text-large">Tudo isso aliado a melhoria continua de nossos processos e serviços.</p>
                 </section>
 
                 <section>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.418004768813!2d-46.60970718789276!3d-23.6967623786182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce446410aff7f9%3A0x3b653ae235cc43c5!2sR.%20Marte%2C%2081%20-%20Serraria%2C%20Diadema%20-%20SP%2C%2009981-540!5e0!3m2!1spt-BR!2sbr!4v1713319162086!5m2!1spt-BR!2sbr" 
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.418004768813!2d-46.60970718789276!3d-23.6967623786182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce446410aff7f9%3A0x3b653ae235cc43c5!2sR.%20Marte%2C%2081%20-%20Serraria%2C%20Diadema%20-%20SP%2C%2009981-540!5e0!3m2!1spt-BR!2sbr!4v1713319162086!5m2!1spt-BR!2sbr"
                         height="400"
                         loading="lazy"
                         className='p-4 w-full'
