@@ -28,4 +28,13 @@ export class ProductRepositoryHttp {
             console.log("Error: "+error);
         }
     }
+
+    async delete(id: string) {
+        try {
+            const response = await http.delete(`/delete-product?id=${id}`);
+            return response.data;
+        } catch (error: any){
+            console.log("Error: "+error);
+        }
+    }
 }

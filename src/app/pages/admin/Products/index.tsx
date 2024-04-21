@@ -8,17 +8,50 @@ import CreateProductImage from '../../../assets/CreateProductImage.png';
 import CreateProductExistImage from '../../../assets/CreateProductExistImage.png';
 import { ModalCreateProduct } from '../../../components/ModalCreateProduct';
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 export function Products() {
     const [searchInput, setSearchInput] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [createProductModal, setCreateProductModal] = useState(false);
     
-    const { getAll } = useContext(ProductContext)
+    const { getAll, deleteProduct } = useContext(ProductContext)
     const [products, setProducts] = useState([])
 
     function handleCreateProduct() {
         setShowModal(false)
         setCreateProductModal(true)
+    }
+
+    async function handleDeleteProduct(id: string) {
+        const response = await deleteProduct(id)
+        if((response as { message: string }).message === 'Product deleted successfully'){
+            toast.success('Produto deletado com sucesso!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 3000);
+        } else {
+            toast.error('Erro ao deletar produto!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
     }
 
     useEffect(() => {
@@ -32,7 +65,7 @@ export function Products() {
         const response = getAll()
         response.then((res : any) => {
             setProducts(res.products)
-            console.log(res.products)
+            // console.log(res.products)
         }).catch((error) => {
             console.log("error "+ error)
         })
@@ -41,6 +74,7 @@ export function Products() {
     return (
         <>
         <main className="m-4">
+            <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
             <h1 className="text-3xl font-jost mb-2">Produtos</h1>
             <hr className="border-black"/>
             <section className="flex items-center my-5">
@@ -61,7 +95,9 @@ export function Products() {
                     {products.map((product : any) => (
                         <div key={product.id} className="group w-72 cursor-pointer" onClick={() => {}}>
                             <button type='button' className="w-full relative group overflow-hidden rounded-t-xl shadow-md duration-300">
-                                <MagnifyingGlass size={42} className="absolute z-10 top-[64px] left-[128px] text-secondary opacity-0 duration-300 group-hover:opacity-100" />
+                                <div className='absolute z-10 w-full h-full flex justify-center items-center'>
+                                    <MagnifyingGlass size={42} className="text-secondary opacity-0 duration-300 group-hover:opacity-100" />
+                                </div>
                                 <img
                                     src={product.image ? product.image : 'https://via.placeholder.com/500x500'}
                                     alt={product.name}
@@ -70,7 +106,10 @@ export function Products() {
                             </button>
                             <div className="bg-white p-4 rounded-b-xl text-center">
                                 <p className="text-lg font-semibold">{product.name}</p>
-                                <button className="text-primary w-full font-bold opacity-0 duration-300 group-hover:opacity-100">Editar</button>
+                                <div className='flex'>
+                                    <button className="text-primary w-full font-bold opacity-0 duration-300 group-hover:opacity-100">Editar</button>
+                                    <button onClick={()=>handleDeleteProduct(product.id)} className="text-red-500 w-full font-bold opacity-0 duration-300 group-hover:opacity-100">Excluir</button>
+                                </div>
                             </div>
                         </div>
                     ))}
