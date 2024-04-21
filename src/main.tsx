@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <UserContextProvider>
         <AppRoutes/>
         <a href="https://api.whatsapp.com/send?phone=5511987175329&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20nosso%20servi%C3%A7o!">
-          <WhatsappLogo size={64} className='fixed bottom-4 right-4 bg-green-500 text-white p-2 rounded-full cursor-pointer'/>
+          <WhatsappLogo size={58} className='fixed bottom-6 right-6 bg-green-500 text-white p-2 rounded-full cursor-pointer'/>
         </a>
       </UserContextProvider>
     </ProductContextProvider>
