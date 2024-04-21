@@ -122,7 +122,7 @@ export function HFX() {
     return (
         <>
             <Navbar page='HXF' />
-            <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
+            <main className="bg-l-gray font-main max-w-screen overflow-x-hidden overflow-y-hidden">
 
                 <AuroraBackground>
                         <motion.div

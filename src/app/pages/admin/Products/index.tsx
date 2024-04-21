@@ -54,6 +54,11 @@ export function Products() {
         }
     }
 
+    function viewProduct(id: any) {
+        localStorage.setItem('product', id)
+        window.location.href = '/productDetail'
+    }
+
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (!token) {
@@ -93,8 +98,8 @@ export function Products() {
             <section>    
                 <div className="flex flex-wrap gap-10 justify-center">
                     {products.map((product : any) => (
-                        <div key={product.id} className="group w-72 cursor-pointer" onClick={() => {}}>
-                            <button type='button' className="w-full relative group overflow-hidden rounded-t-xl shadow-md duration-300">
+                        <div key={product.id} className="group w-72 cursor-pointer shadow-2xl rounded-b-xl" onClick={() => {}}>
+                            <button onClick={()=>viewProduct(product.id)} type='button' className="w-full relative group overflow-hidden rounded-t-xl shadow-md duration-300">
                                 <div className='absolute z-10 w-full h-full flex justify-center items-center'>
                                     <MagnifyingGlass size={42} className="text-secondary opacity-0 duration-300 group-hover:opacity-100" />
                                 </div>
