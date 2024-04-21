@@ -192,7 +192,7 @@ export function ModalCreateProduct(props: any) {
                             {selectTab != '' && (
                                 <div className="flex gap-4 mt-4 max-sm:flex-col">
                                     <input onChange={(e)=>setItem(e.target.value)} className="border-b-2 border-l-2 p-2 border-primary rounded-bl-lg bg-white focus:outline-none" type="text" placeholder={selectTab == 'Models' ? 'Modelo' : 'Categoria'} />
-                                    <button onClick={()=>{}} className="flex items-center gap-2 p-2 rounded-md text-white bg-green-500 hover:bg-green-700"><PlusCircle size={24}/> Adicionar</button>
+                                    <button onClick={()=>addingCategoryOrModels(selectTab, item)} className="flex items-center gap-2 p-2 rounded-md text-white bg-green-500 hover:bg-green-700"><PlusCircle size={24}/> Adicionar</button>
                                 </div>
                             )}
                             {selectTab == 'Models' && (
