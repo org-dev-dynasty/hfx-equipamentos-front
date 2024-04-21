@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
 import PhotoCard from "../../../assets/image 11.png"
@@ -14,7 +15,7 @@ import { Footer } from "../../../components/Footer";
 import { ProductContext } from "../../../context/product_context";
 import { useContext, useEffect, useState } from "react";
 import { FeedbackSlider } from "../../../components/FeedbackSlider";
-// import { CardProduct } from "../../../components/CardProduct";
+import { CardProduct } from "../../../components/CardProduct";
 
 export function Home() {
     const { getAll } = useContext(ProductContext);
@@ -262,7 +263,7 @@ export function Home() {
                     </div>
                 </section>
 
-                {/* <section className="products mt-10">
+                <section className="products mt-10">
                     <div className="titleOne opacity-0 translate-x-[60rem] text-center">
                         <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
                         <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
@@ -279,7 +280,7 @@ export function Home() {
                             }
                         </div>
                     </div>
-                </section> */}
+                </section>
 
                 <section className="datas flex justify-center my-10">
                     <div className="imageData -translate-x-[80rem] relative w-4/5">
