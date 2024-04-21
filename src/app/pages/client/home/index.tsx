@@ -14,7 +14,7 @@ import { Gear, Invoice, Lightbulb, Timer } from "@phosphor-icons/react";
 import { Footer } from "../../../components/Footer";
 import { ProductContext } from "../../../context/product_context";
 import { useContext, useEffect, useState } from "react";
-import { FeedbackSlider } from "../../../components/FeedbackSlider";
+// import { FeedbackSlider } from "../../../components/FeedbackSlider";
 import { CardProduct } from "../../../components/CardProduct";
 
 export function Home() {
@@ -31,15 +31,15 @@ export function Home() {
         })
     }, [])
 
-    const clients = [
-        { nome: 'João', imagem: 'client1.jpg', comentario: 'Ótimo serviço! Recomendo muito.', estrelas: 5 },
-        { nome: 'Maria', imagem: 'client2.jpg', comentario: 'Equipe muito profissional e eficiente.', estrelas: 4 },
-        { nome: 'Carlos', imagem: 'client3.jpg', comentario: 'Rápidos e eficazes. Superou minhas expectativas.', estrelas: 5 },
-        { nome: 'Ana', imagem: 'client4.jpg', comentario: 'Excelente atendimento ao cliente.', estrelas: 5 },
-        { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
-        { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
-        { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
-    ];
+    // const clients = [
+    //     { nome: 'João', imagem: 'client1.jpg', comentario: 'Ótimo serviço! Recomendo muito.', estrelas: 5 },
+    //     { nome: 'Maria', imagem: 'client2.jpg', comentario: 'Equipe muito profissional e eficiente.', estrelas: 4 },
+    //     { nome: 'Carlos', imagem: 'client3.jpg', comentario: 'Rápidos e eficazes. Superou minhas expectativas.', estrelas: 5 },
+    //     { nome: 'Ana', imagem: 'client4.jpg', comentario: 'Excelente atendimento ao cliente.', estrelas: 5 },
+    //     { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
+    //     { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
+    //     { nome: 'Pedro', imagem: 'client5.jpg', comentario: 'Serviço de qualidade e preço justo.', estrelas: 4 },
+    // ];
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
