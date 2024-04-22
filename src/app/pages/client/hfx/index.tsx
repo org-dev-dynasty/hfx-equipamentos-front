@@ -11,23 +11,43 @@ import { useLayoutEffect } from "react";
 
 export function HFX() {
 
-    useLayoutEffect(() => {
+    const mq = gsap.matchMedia();
+
+    mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardOne", {
-            x: 0,
+        gsap.to(".firstTitle", {
+            y: 0,
             opacity: 1,
             scrollTrigger: {
-                trigger: ".cards",
+                trigger: ".title",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 2000px",
+                end: "bottom 400px",
                 scrub: 1,
             }
         })
         return () => {
-            gsap.killTweensOf(".cardOne")
+            gsap.killTweensOf(".firstTitle")
         }
-    }, [])
+    })
+
+    // useLayoutEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardOne", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 600px",
+    //             end: "bottom 2000px",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardOne")
+    //     }
+    // }, [])
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
