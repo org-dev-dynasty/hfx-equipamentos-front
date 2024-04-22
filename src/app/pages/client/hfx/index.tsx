@@ -154,10 +154,10 @@ export function HFX() {
                             }}
                             className="relative flex flex-col gap-4 items-center justify-center px-10 "
                         >
-                            <div className="text-2xl md:text-7xl font-bold dark:text-white text-center">
+                            <div className="text-2xl md:text-7xl font-bold text-center">
                                 Conheça mais sobre à HXF!
                             </div>
-                            <div className="font-extralight text-base md:text-3xl dark:text-neutral-200 py-4">
+                            <div className="font-extralight text-base md:text-3xl py-4">
                                 A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
 
                                 Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
