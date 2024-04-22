@@ -45,20 +45,20 @@ export function Navbar({ page }: { page: string }) {
                         <Link to={'/hfx'} className={`font-bold ${page == "HXF" ? "text-primary underline decoration-primary" : "text-black"} duration-500  text-medium hover:text-primary hover:underline hover:decoration-primary`}>HXF</Link>
                     </div>
                     <div className="self-center">
-                        <div >
+                        <div>
                             <div className="hidden sm:flex gap-8 font-main">
                                 <div className="relative">
                                     <Link
                                         to={'/product'}
-                                        onMouseEnter={toggleSubmenu}
-                                        onMouseLeave={toggleSubmenu}
+                                        // onMouseEnter={toggleSubmenu}
+                                        // onMouseLeave={toggleSubmenu}
                                         className={`flex font-bold ${page === "Product" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}
                                     >
                                         PRODUTOS
-                                        {submenuOpen ? <FaAngleUp className="self-center  ml-1" /> : <FaAngleDown className=" self-center ml-1" />}
+                                        {submenuOpen ? <FaAngleUp onClick={toggleSubmenu} className="self-center  ml-1" /> : <FaAngleDown onClick={toggleSubmenu} className=" self-center ml-1" />}
                                     </Link>
                                     {submenuOpen && (
-                                        <div className="absolute top-full left-0 bg-white w-48 mt-1 py-2 px-4 border border-gray-200 rounded shadow-lg">
+                                        <div onMouseEnter={()=>setSubmenuOpen(true)} onMouseLeave={()=>setSubmenuOpen(false)} className={`${submenuOpen ? "absolute" : "hidden"} top-full left-0 bg-white w-48 mt-1 py-2 px-4 border border-gray-200 rounded shadow-lg`}>
                                             <Link to="/product/1" className="block text-black hover:text-primary duration-200 py-2">Engate Rápido</Link>
                                             <div className=" md:hidden lg:hidden  max-sm:border-b border-gray-300 w-50 "></div>
                                             <Link to="/product/2" className="block text-black hover:text-primary duration-200 py-2">Tesoura Hidraulica</Link>
@@ -110,6 +110,10 @@ export function Navbar({ page }: { page: string }) {
 
                             <button className="w-full text-center">
                                 <Link to={'/service'} className={`font-bold ${page == "Service" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Serviços</Link>
+                            </button>
+                            
+                            <button className="w-full text-center">
+                                <Link to={'/contact'} className={`font-bold ${page == "Contact" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Contato</Link>
                             </button>
                         </div>
                     </div>
