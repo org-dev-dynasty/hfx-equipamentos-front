@@ -39,9 +39,20 @@ export function ModalCreateProduct(props: any) {
         if(type == 'Models') {
             setModels([...models, item])
             setAttributes([...attributes, {modelId: item}])
-        } else {
+        } else if (type == 'Category') {
             setCategories([...categories, item])
             setAttributes([...attributes, {categoryId: item}])
+        } else {
+            toast.error("Erro ao Adicionar", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     }
     function deleteCategoryOrModels(type: string, item: string) {
@@ -74,21 +85,39 @@ export function ModalCreateProduct(props: any) {
                 console.log(attributes)
                 setSpecifi("")
                 setValueSpecifi("")
+            } else if(attributes[i].categoryId == model) {
+                attributes[i] = {...attributes[i], [String(specification)]: value}
+                setAttributes([...attributes])
+                setSpecifi("")
+                setValueSpecifi("")
             }
         }
     }
     function deleteAttributes(model: string, specification: string) {
         // console.log(model, specification)
         for(let i = 0; i < attributes.length; i++){
-            if(attributes[i].modelId == model){
+            if(attributes[i].categoryId == model){
                 delete attributes[i][specification]
+            } else if(attributes[i].modelId == model){
+                delete attributes[i][specification]
+            } else {
+                toast.error("Erro ao Deletar", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
             setSpecifi("")
             setValueSpecifi("")
         }
     }
         
-    function createProduct() {
+    async function createProduct() {
         const json: { name: string; description: string; attributes?: any[]; models?: any[]; categories?: any[]; } = {
             name: nameProduct,
             description: descriptionProduct,
@@ -102,22 +131,35 @@ export function ModalCreateProduct(props: any) {
         } else {
             ''
         }
-        console.log(json)
-        const response = create(json)
-        console.log(response)
-        toast.success('Produto Criado com Sucesso', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-        setTimeout(() => {
-            props.callbackParent(false)
-        }, 3000);
+        // console.log(json)
+        const response = await create(json)
+        // console.log(response)
+        if(response){
+            toast.success('Produto Criado com Sucesso', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            setTimeout(() => {
+                props.callbackParent(false)
+            }, 3000);
+        } else {
+            toast.error("Erro ao criar produto", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
     }
 
     useEffect(() => {
@@ -272,6 +314,23 @@ export function ModalCreateProduct(props: any) {
                                                                 <label>{item[key]}</label>
                                                             </div>
                                                             <X onClick={()=>deleteAttributes(item['modelId'], key)} className="cursor-pointer" size={24} color="#f00"/>
+                                                        </div>
+                                                    : null
+                                                ))
+                                            : null
+                                        ))
+                                    )}
+                                    {activeItem !== '' && (
+                                        attributes.map((item: any) => (
+                                            item.categoryId === activeItem ? 
+                                                Object.keys(item).map((key: any) => (
+                                                    key !== 'categoryId' ? 
+                                                        <div key={key} className="border-2 p-2 flex gap-4">
+                                                            <div>
+                                                                <label className="font-bold">{key}: </label>
+                                                                <label>{item[key]}</label>
+                                                            </div>
+                                                            <X onClick={()=>deleteAttributes(item['categoryId'], key)} className="cursor-pointer" size={24} color="#f00"/>
                                                         </div>
                                                     : null
                                                 ))
