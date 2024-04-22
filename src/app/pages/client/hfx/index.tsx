@@ -24,7 +24,7 @@ export function HFX() {
             opacity: 1,
             scrollTrigger: {
                 trigger: ".cards",
-                markers: true,
+                // markers: true,
                 start: "top 200px",
                 end: "bottom 6000px",
                 scrub: 1,
