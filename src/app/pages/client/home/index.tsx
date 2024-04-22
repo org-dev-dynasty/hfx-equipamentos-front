@@ -447,7 +447,7 @@ export function Home() {
                     <div className="imageData opacity-0 -translate-x-[80rem] relative w-4/5">
                         <img src={PhotoCard} alt="Photo Card" className="object-cover brightness-50 mx-auto" />
                         <p className="absolute bottom-0 p-10 text-white lg:w-4/5 text-2xlarge  md:w-full max-md:text-xlarge  max-sm:text-small">
-                            Nossas conquistas são melhores mostradas pelos nossos números
+                        Consultoria, Performance, Liderança
                         </p>
                     </div>
                 </section>
