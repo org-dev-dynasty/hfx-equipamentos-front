@@ -41,7 +41,7 @@ export function ModalCreateProduct(props: any) {
             setAttributes([...attributes, {modelId: item}])
         } else {
             setCategories([...categories, item])
-            setAttributes([...attributes, {modelId: item}])
+            setAttributes([...attributes, {categoryId: item}])
         }
     }
     function deleteCategoryOrModels(type: string, item: string) {
@@ -105,6 +105,16 @@ export function ModalCreateProduct(props: any) {
         console.log(json)
         const response = create(json)
         console.log(response)
+        toast.success('Produto Criado com Sucesso', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
         setTimeout(() => {
             props.callbackParent(false)
         }, 3000);

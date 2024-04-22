@@ -37,4 +37,18 @@ export class ProductRepositoryHttp {
             console.log("Error: "+error);
         }
     }
+
+    async deleteModelOrCategory(productId: string, type: string, id: string) {
+        try {
+            if(type === 'Model'){
+                const response = await http.put(`/delete-model-of-product`, {
+                    "productId": productId,
+                    "modelId": id
+                });
+                return response.data;
+            }
+        } catch (error: any){
+            console.log("Error: "+error);
+        }
+    }
 }
