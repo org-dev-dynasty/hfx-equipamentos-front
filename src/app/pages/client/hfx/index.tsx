@@ -24,9 +24,9 @@ export function HFX() {
             opacity: 1,
             scrollTrigger: {
                 trigger: ".cards",
-                // markers: true,
-                start: "top 0px",
-                end: "bottom 2000px",
+                markers: true,
+                start: "top 200px",
+                end: "bottom 6000px",
                 scrub: 1,
             }
         })
@@ -210,7 +210,7 @@ export function HFX() {
                 </AuroraBackground>
 
                 <section className="cards flex flex-col items-center gap-8 mt-10">
-                    <div className="cardOne opacity-0 -translate-x-[50rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse max-sm:h-[90%]">
+                    <div className="cardOne opacity-0 w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse max-sm:h-[90%]">
                         <div className="p-8 flex flex-col gap-8">
                             <div className="flex justify-between items-center text-2xlarge gap-4">
                                 <h2>Missão</h2>
