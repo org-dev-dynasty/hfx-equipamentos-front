@@ -10,11 +10,13 @@ import { ModalCreateProduct } from '../../../components/ModalCreateProduct';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { ModalProductExist } from '../../../components/ModalProductExist';
 
 export function Products() {
     const [searchInput, setSearchInput] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [createProductModal, setCreateProductModal] = useState(false);
+    const [createProductExistModal, setCreateProductExistModal] = useState(false);
     
     const { getAll, deleteProduct } = useContext(ProductContext)
     const [products, setProducts] = useState([])
@@ -22,6 +24,11 @@ export function Products() {
     function handleCreateProduct() {
         setShowModal(false)
         setCreateProductModal(true)
+    }
+
+    function handleCreateProductExist() {
+        setShowModal(false)
+        setCreateProductExistModal(true)
     }
 
     async function handleDeleteProduct(id: string) {
@@ -112,7 +119,6 @@ export function Products() {
                             <div className="bg-white p-4 rounded-b-xl text-center">
                                 <p className="text-lg font-semibold">{product.name}</p>
                                 <div className='flex'>
-                                    <button className="text-primary w-full font-bold opacity-0 duration-300 group-hover:opacity-100">Editar</button>
                                     <button onClick={()=>handleDeleteProduct(product.id)} className="text-red-500 w-full font-bold opacity-0 duration-300 group-hover:opacity-100">Excluir</button>
                                 </div>
                             </div>
@@ -146,14 +152,14 @@ export function Products() {
                             <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Criar um novo Produto</label>
                         </div>
                     </button>
-                    <button type='button' className="h-auto relative group overflow-hidden rounded-xl shadow-md duration-300">
+                    <button type='button' onClick={handleCreateProductExist} className="h-auto relative group overflow-hidden rounded-xl shadow-md duration-300">
                         <img
                             src={CreateProductExistImage}
                             alt='name'
                             className="w-full md:h-96 object-cover transition-transform duration-300 brightness-50 transform group-hover:scale-110"
                         />
                         <div className="w-full h-full flex justify-center items-center absolute top-0 left-0">
-                            <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Criar um modelo/categoria de um produto existente</label>
+                            <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Deletar um modelo/categoria de um produto existente</label>
                         </div>
                     </button>
                 </div>
@@ -163,6 +169,10 @@ export function Products() {
         {createProductModal && (
             <ModalCreateProduct callbackParent={(bool : boolean)=> setCreateProductModal(bool)}/>
         )}
+
+        {createProductExistModal && (
+            <ModalProductExist callbackParent={(bool : boolean)=> setCreateProductExistModal(bool)}/>
+        )}	
         </>
     );
 }
