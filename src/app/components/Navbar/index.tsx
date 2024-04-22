@@ -96,9 +96,9 @@ export function Navbar({ page }: { page: string }) {
                 {menuOpen && (
                     <div className="sm:hidden absolute top-16 right-0 bg-white w-full py-2 px-1 z-50">
                         <div className="flex flex-col items-center py-4 gap-4">
-                            <button className=" hover:text-white w-full text-center">
+                            {/* <button className=" hover:text-white w-full text-center">
                                 <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Home</Link>
-                            </button>
+                            </button> */}
 
                             <button className="w-full h-full text-center">
                                 <Link to={'/hfx'} className={`font-bold ${page == "HFX" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Sobre à HFX</Link>
