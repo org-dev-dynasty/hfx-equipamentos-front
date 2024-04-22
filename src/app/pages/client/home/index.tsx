@@ -2,7 +2,6 @@
 // import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
 import PhotoCard from "../../../assets/imagemCardHome.png"
-import videoHome from "../../../assets/videoHome.mp4"
 
 import { useLayoutEffect } from "react";
 
@@ -196,8 +195,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
-                start: "top 300px",
-                end: "bottom 1500px",
+                start: "top 400px",
+                end: "bottom 2000px",
                 scrub: 1,
             }
         })
@@ -374,17 +373,17 @@ export function Home() {
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 {/* <ImageSlider /> */}
 
-                <video src={videoHome} autoPlay loop muted className="w-full h-[80vh] object-cover" />
+                <video src={'https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/homeVideo.mp4'} autoPlay loop muted className="w-full h-[70vh] object-cover" />
 
-                <section className="products mt-10">
+                <section className="products mt-10 flex justify-center flex-col">
                     <div className="titleOne opacity-0 text-center">
                         <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
                         <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
                     </div>
                     <hr className="mt-3 mx-2 " />
 
-                    <div className="productCard opacity-0 -translate-x-[70rem] flex justify-center">
-                        <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
+                    <div className="productCard opacity-0 -translate-x-[70rem]  flex items-center justify-center">
+                        <div className="flex max-md:flex-col items-center">
                             {products.map((product: any) => {
                                 return (
                                     <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
