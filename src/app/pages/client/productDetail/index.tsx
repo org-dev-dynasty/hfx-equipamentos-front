@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Footer } from "../../../components/Footer";
 import { Navbar } from "../../../components/Navbar";
-import { Bulldozer, HardHat, Pipe } from "@phosphor-icons/react";
+import { Bulldozer, HardHat, Hammer } from "@phosphor-icons/react";
 
 import EngateRapido from "../../../assets/Engate.png";
 import TesouraHidraulica from "../../../assets/Tesoura.png";
@@ -17,6 +17,7 @@ export function ProductDetail() {
     const [models, setModels] = useState([])
     const [category, setCategory] = useState([])
     const [attributes, setAttributes] = useState([])
+    const [littleDescription, setLittleDescription] = useState([])
 
     const { getById } = useContext(ProductContext)
     const id = localStorage.getItem("product")
@@ -31,6 +32,7 @@ export function ProductDetail() {
                 setProduct(res);
                 setModels(res.models);
                 setCategory(res.categories);
+                setLittleDescription(res.littleDescription);
                 console.log(res);
             }).catch(err => {
                 console.error("Failed to fetch product details:", err);
@@ -45,29 +47,15 @@ export function ProductDetail() {
                 <p className="w-1/2 max-md:w-full text-small text-center mt-4 mb-12">{(product as { description: string }).description}</p>
 
                 <section className="flex items-start justify-evenly w-full gap-8 max-md:flex-col">
-                    <div className="w-1/5 max-md:w-full flex flex-col items-center">
-                        <Bulldozer color="#0063AE" size={32} />
-                        <div className="w-[80%] h-[1px] bg-primary" />
-                        <div className="text-center mt-2">
-                            <p>Abertura de valas.</p>
-                            <p>Demolição em geral.</p>
+                    {littleDescription.map((description: string, index: number) => (
+                        <div className="w-1/5 max-md:w-full flex flex-col items-center" key={index}>
+                            {index == 0 ? <Bulldozer color="#0063AE" size={32} /> : index == 1 ? <HardHat color="#0063AE" size={32} /> : <Hammer color="#0063AE" size={32} />}
+                            <div className="w-[80%] h-[1px] bg-primary" />
+                            <div className="text-center mt-2">
+                                <p>{description}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="w-1/5 max-md:w-full flex flex-col items-center">
-                        <HardHat color="#0063AE" size={32} />
-                        <div className="w-[80%] h-[1px] bg-primary" />
-                        <div className="text-center mt-2">
-                            <p>Quebra de matacos em pedreiras</p>
-                            <p>Desmonte de rocha</p>
-                        </div>
-                    </div>
-                    <div className="w-1/5 max-md:w-full flex flex-col items-center">
-                        <Pipe color="#0063AE" size={32} />
-                        <div className="w-[80%] h-[1px] bg-primary" />
-                        <div className="text-center mt-2">
-                            <p>Obras de saneamento básico</p>
-                        </div>
-                    </div>
+                    ))}
                 </section>
 
                 <section className="w-full mt-16">
