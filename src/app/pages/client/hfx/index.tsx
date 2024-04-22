@@ -216,7 +216,7 @@ export function HFX() {
                                 <h2>Missão</h2>
                                 <ListChecks color="#F2802E" size={48} />
                             </div>
-                            <p className="text-large">
+                            <p className="text-medium">
                                 Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
                             </p>
                         </div>
@@ -229,7 +229,7 @@ export function HFX() {
                                 <Eye color="#F2802E" size={48} />
                                 <h2>Visão</h2>
                             </div>
-                            <p className="text-large text-end max-md:text-start">
+                            <p className="text-medium text-end max-md:text-start">
                                 Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos ou produtos destinados à construção civil, mineração e afins.
                             </p>
                         </div>

@@ -27,7 +27,7 @@ export function CardProduct({ id, image, name } : { id: string, image: string, n
     }, [])
 
     return (
-        <button type="button" onClick={()=>handleNavigate()} onMouseEnter={()=> setVisible(true)} onMouseLeave={()=> setVisible(false)} className={`duration-500 h-30 ${name === 'Compactadores' ? 'h-[40%]' : '' } max-sm:w-[72%] opacity-${opacity} shadow-2xl flex flex-col items-center m-4 rounded-xl hover:cursor-pointer duration-200 hover:scale-105`}>
+        <button type="button" onClick={()=>handleNavigate()} onMouseEnter={()=> setVisible(true)} onMouseLeave={()=> setVisible(false)} className={`bg-white duration-500 max-sm:w-[72%] opacity-${opacity} shadow-2xl flex flex-col items-center m-4 rounded-xl hover:cursor-pointer duration-200 hover:scale-105`}>
             <img className="w-full object-cover h-60 rounded-t-xl" src={name == "Engate Rápido" ? EngateRapido : name == "Tesoura Hidráulica" ? TesouraHidraulica : name == "Compactadores" ? Compactadores : name == "Rompedores" ? Rompedores : image} alt="Imagem do Produto" />
             <div className="flex flex-col items-center py-4">
                 <h5 className="text-center font-semibold">{name}</h5>

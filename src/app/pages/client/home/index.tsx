@@ -373,7 +373,7 @@ export function Home() {
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 {/* <ImageSlider /> */}
 
-                <video src={'https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/homeVideo.mp4'} autoPlay loop muted className="w-full h-[70vh] object-cover" />
+                <video src={'https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/homeVideo.mp4'} autoPlay loop muted className="w-full md:h-[70vh] object-cover" />
 
                 <section className="products mt-10 flex justify-center flex-col">
                     <div className="titleOne opacity-0 text-center">
@@ -442,15 +442,13 @@ export function Home() {
 
                 </section>
 
-             
-
-                <section className="datas flex justify-center my-10">
-                    <div className="imageData opacity-0 -translate-x-[80rem] relative w-4/5 ">
-                        <img src={PhotoCard} alt="Photo Card" className="object-cover brightness-50 mx-auto w-full h-[30%] rounded-xl" />
-                        <p className="absolute bottom-0 h-[80%]  p-10 text-white lg:w-full text-2xlarge  md:w-full max-md:text-xlarge  max-sm:text-small max-sm:h-[85%]">
-                        Consultoria, Performance, Liderança
-                        </p>
-                    </div>
+                <section className="datas m-12 relative">
+                        <div className="imageData opacity-0 -translate-x-[80rem]">
+                            <img src={PhotoCard} alt="" className="w-full h-[650px] max-md:h-[450px] max-sm:h-[250px] object-cover rounded-xl brightness-50" />
+                            <p className="absolute bottom-0 p-4 text-white text-2xlarge max-md:text-xlarge max-sm:text-small">
+                            Consultoria, Performance, Liderança
+                            </p>
+                        </div>
                 </section>
 
                 <section className="imageDatas h-[100%] grid grid-cols-3 mx-auto w-4/6 gap-5 max-sm:grid-cols-1">
