@@ -84,7 +84,7 @@ export function ProductDetail() {
                                 })}
                             </select>
                             <a
-                                href="https://api.whatsapp.com/send?phone=5511987175329&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20nosso%20servi%C3%A7o!"
+                                href="https://api.whatsapp.com/send?phone=551140722525&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20nosso%20servi%C3%A7o!"
                                 className="bg-primary p-3 text-center text-white font-bold rounded-xl text-small duration-150 hover:bg-blue-500">
                                 Faça orçamento
                             </a>
