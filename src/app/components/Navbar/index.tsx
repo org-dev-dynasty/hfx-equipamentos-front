@@ -39,7 +39,7 @@ export function Navbar({ page }: { page: string }) {
             <div className="flex ">
                 <div className="hidden sm:flex gap-8  mt-2 font-main justify-center">
                     <div className="self-center">
-                        <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>HOME</Link>
+                        <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}>INÍCIO</Link>
                     </div>
                     <div className="self-center">
                         <Link to={'/hfx'} className={`font-bold ${page == "HXF" ? "text-primary underline decoration-primary" : "text-black"} duration-500  text-medium hover:text-primary hover:underline hover:decoration-primary`}>HXF</Link>

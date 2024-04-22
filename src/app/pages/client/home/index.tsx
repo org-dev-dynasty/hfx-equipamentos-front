@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ImageSlider } from "../../../components/ImageSlider";
+// import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
 import PhotoCard from "../../../assets/image 11.png"
+import videoHome from "../../../assets/videoHome.mp4"
 
 import { useLayoutEffect } from "react";
 
@@ -49,8 +50,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 200px",
-                end: "bottom 1300px",
+                start: "top 900px",
+                end: "bottom 2500px ",
                 scrub: 1,
             }
         })
@@ -67,8 +68,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 200px",
-                end: "bottom 1000px",
+                start: "top 900px",
+                end: "bottom 2300px",
                 scrub: 1,
             }
         })
@@ -85,8 +86,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 200px",
-                end: "bottom 700px",
+                start: "top 500px",
+                end: "bottom 1300px",
                 scrub: 1,
             }
         })
@@ -103,8 +104,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 200px",
-                end: "bottom 700px",
+                start: "top 500px",
+                end: "bottom 1500px",
                 scrub: 1,
             }
         })
@@ -121,7 +122,7 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
-                start: "top 200px",
+                start: "top 800px",
                 end: "bottom 1500px",
                 scrub: 1,
             }
@@ -139,8 +140,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
-                start: "top 200px",
-                end: "bottom 1400px",
+                start: "top 300px",
+                end: "bottom 1500px",
                 scrub: 1,
             }
         })
@@ -158,7 +159,7 @@ export function Home() {
                 trigger: ".datas",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 500px",
+                end: "bottom 1000px",
                 scrub: 1,
             }
         })
@@ -193,8 +194,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".title",
                 // markers: true,
-                start: "top 300px",
-                end: "bottom 300px",
+                start: "top 900px",
+                end: "bottom 900px",
                 scrub: 1,
             }
         })
@@ -207,10 +208,12 @@ export function Home() {
         <>
             <Navbar page="Home" />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
-                <ImageSlider />
-                {/* <iframe src=""></iframe> */}
+                {/* <ImageSlider /> */}
+
+                <video src={videoHome} autoPlay loop muted className="w-full" />
+
                 <section className="title">
-                    <h1 className="firstTitle translate-y-[100rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos principios</h1>
+                    <h1 className="firstTitle translate-y-[100rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
                 </section>
 
                 <section className="cards bg-primary p-5  lg:grid-cols-2 max-lg:grid-cols-2 sm:grid grid-cols-1 max-md:grid-cols-2 gap-5 ">
