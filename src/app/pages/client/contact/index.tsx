@@ -4,6 +4,9 @@ import { Navbar } from "../../../components/Navbar";
 import { Envelope, MapPinSimpleArea, PencilSimple, Phone, User, WhatsappLogo } from "@phosphor-icons/react";
 import { Footer } from '../../../components/Footer';
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 export function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -22,7 +25,17 @@ export function Contact() {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        console.log(formData); 
+        console.log(formData);
+        toast.success("Enviado com sucesso", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     };
 
     return (
@@ -32,7 +45,8 @@ export function Contact() {
                 <p className="flex text-center justify-center p-14 text-2xlarge font-main text-white">Entre em contato!</p>
             </div>
             <main className='flex gap-10 p-10 max-md:grid grid-cols-1'>
-                <section className=" w-1/2 mx-auto font-main max-md:w-full">
+                <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
+                    <section className=" w-1/2 mx-auto font-main max-md:w-full">
                     <p className='font-bold text-large mb-10'>Formulário para contato!</p>
                     <form onSubmit={handleSubmit}>
                         <div className="flex mb-4 p-3 border border-secondary border-opacity-1 rounded-md">
@@ -112,7 +126,7 @@ export function Contact() {
                     </div>
                     <div className='flex h-auto mb-20 w-full relative hover:bg-primary duration-700'>
                         <div className='bg-primary p-3 h-30'>
-                            <Phone size={34}  className='text-white'/>
+                            <Phone size={34} className='text-white' />
                         </div>
                         <a
                             className='self-center text-large ml-10 hover:text-white'
@@ -142,7 +156,7 @@ export function Contact() {
                             href='https://www.google.com.br/maps/place/R.+Marte,+81+-+Serraria,+Diadema+-+SP,+09981-540/@-23.6968427,-46.6095694,16.53z/data=!4m6!3m5!1s0x94ce446410aff7f9:0x3b653ae235cc43c5!8m2!3d-23.6967624!4d-46.6071269!16s%2Fg%2F11c5lcd51g?entry=ttu'
                             className='self-center text-large ml-10 hover:text-white'
                         >
-                            <span className='font-bold'>Endereço:</span> R. Marte, 81 - Serraria, Diadema - SP, 09980-075, Brasil
+                            <span className='font-bold'>Endereço:</span> R. Marte, 81 - Serraria, Diadema - SP, 09990-000, Brasil
                         </a>
                     </div>
                 </section>
