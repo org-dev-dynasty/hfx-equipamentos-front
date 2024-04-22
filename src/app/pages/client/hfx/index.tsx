@@ -2,7 +2,7 @@ import { Eye, Gear, Headset, Lightbulb, TreasureChest, ListChecks } from "@phosp
 
 import PhotoCard1 from "../../../assets/photo1.png"
 import PhotoCard2 from "../../../assets/image 11.png"
-import PhotoCard3 from "../../../assets/capaxeteAzul.png"
+import PhotoCard3 from "../../../assets/imagemCapaceteAzul.png"
 
 import { Navbar } from "../../../components/Navbar"
 import { Footer } from "../../../components/Footer";
@@ -19,21 +19,58 @@ export function HFX() {
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".firstTitle", {
-            y: 0,
+        gsap.to(".cardOne", {
+            x: 0,
             opacity: 1,
             scrollTrigger: {
-                trigger: ".title",
+                trigger: ".cards",
                 // markers: true,
-                start: "top 600px",
-                end: "bottom 400px",
+                start: "top 200px",
+                end: "bottom 2000px",
                 scrub: 1,
             }
         })
         return () => {
-            gsap.killTweensOf(".firstTitle")
+            gsap.killTweensOf(".cardOne")
         }
     })
+
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+            gsap.to(".cardTwo", {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: ".cards",
+                    // markers: true,
+                    start: "top 100px",
+                    end: "bottom 1200px",
+                    scrub: 1,
+                }
+            })
+            return () => {
+                gsap.killTweensOf(".cardTwo")
+            }
+    })
+
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+            gsap.to(".cardThree", {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: ".cards",
+                    // markers: true,
+                    start: "top 100px",
+                    end: "bottom 1000px",
+                    scrub: 1,
+                }
+            })
+            return () => {
+                gsap.killTweensOf(".cardThree")
+            }
+    })
+
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -107,6 +144,8 @@ export function HFX() {
         }
     }, [])
 
+
+
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".politie", {
@@ -147,26 +186,26 @@ export function HFX() {
         <>
             <Navbar page='HXF' />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden overflow-y-hidden">
-                <AuroraBackground className='relative'>
-                        <motion.div
-                            initial={{ opacity: 0.0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{
-                                delay: 0.3,
-                                duration: 0.8,
-                                ease: "easeInOut",
-                            }}
-                            className="relative flex flex-col gap-4 items-center justify-center px-10 "
-                        >
-                            <div className="text-2xl md:text-7xl font-bold text-center">
-                                Conheça mais sobre à HXF!
-                            </div>
-                            <div className="font-extralight text-base md:text-3xl py-4">
-                                A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
+                <AuroraBackground className='relative h-[90vh]'>
+                    <motion.div
+                        initial={{ opacity: 0.0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.3,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                        }}
+                        className="relative flex flex-col gap-4 items-center justify-center px-10 "
+                    >
+                        <div className="text-2xl md:text-7xl font-bold text-center">
+                            Conheça mais sobre à HXF!
+                        </div>
+                        <div className="font-extralight text-base md:text-3xl py-4">
+                            A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
 
-                                Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
-                            </div>
-                        </motion.div>
+                            Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
+                        </div>
+                    </motion.div>
 
                 </AuroraBackground>
 

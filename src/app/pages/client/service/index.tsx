@@ -59,7 +59,7 @@ export function Service() {
                                 </div>
                                 <h2 className="p-2 text-large text-center">Manutenção</h2>
                             </div>
-                            <p>"Nós da HXF Equipamentos estamos prontos para prestar uma manutenção eficaz para te ajudar a solucionar qualquer desafio que você tiver"</p>
+                            <p>Nós da HXF Equipamentos estamos prontos para prestar uma manutenção eficaz para te ajudar a solucionar qualquer desafio que você tiver</p>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@ export function Service() {
                                 </div>
                                 <h2 className="p-2 text-large text-center">Montagem de kits</h2>
                             </div>
-                            <p>"A equipe especializada da HXF se prontifica a instalar o kit hidráulico de cada um dos produtos vendidos, garantindo a melhor experiência possível"</p>
+                            <p>A equipe especializada da HXF se prontifica a instalar o kit hidráulico de cada um dos produtos vendidos, garantindo a melhor experiência possível</p>
                         </div>
                     </div>
                 </section>
