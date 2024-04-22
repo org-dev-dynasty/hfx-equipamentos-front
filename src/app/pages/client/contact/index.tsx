@@ -41,7 +41,7 @@ export function Contact() {
     return (
         <>
             <Navbar page="Contact" />
-            <div className="bg-primary h-48 mt-10 items-center">
+            <div className="bg-primary h-48  items-center">
                 <p className="flex text-center justify-center p-14 text-2xlarge font-main text-white">Entre em contato!</p>
             </div>
             <main className='flex gap-10 p-10 max-md:grid grid-cols-1'>
@@ -62,7 +62,7 @@ export function Contact() {
                                 placeholder='Nome'
                             />
                         </div>
-                        <div className="mb-4 flex gap-5 justify-between">
+                        <div className="mb-4 flex gap-5 justify-between max-md:grid grid-cols-1">
                             <div className='flex mb-4 p-3 border border-secondary border-opacity-1 rounded-md'>
                                 <Envelope size={24} className='self-center mr-5 text-gray-400 mt-1' />
                                 <input
@@ -121,7 +121,7 @@ export function Contact() {
                             href="https://api.whatsapp.com/send?phone=551140722525&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20nosso%20servi%C3%A7o!"
                             className='self-center text-large ml-10 hover:text-white'
                         >
-                            <span className='font-bold'>WhatsApp:</span> (11) 98717-5329
+                            <span className='font-bold'>WhatsApp:</span> (11) 4072-2525
                         </a>
                     </div>
                     <div className='flex h-auto mb-20 w-full relative hover:bg-primary duration-700'>

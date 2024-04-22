@@ -99,7 +99,7 @@ export function HFX() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 2000px",
+                end: "bottom 1000px",
                 scrub: 1,
             }
         })
@@ -117,7 +117,7 @@ export function HFX() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 2000px",
+                end: "bottom 400px",
                 scrub: 1,
             }
         })
