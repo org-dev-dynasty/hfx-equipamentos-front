@@ -25,7 +25,7 @@ export function HFX() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 200px",
+                start: "top 0px",
                 end: "bottom 2000px",
                 scrub: 1,
             }
@@ -186,7 +186,7 @@ export function HFX() {
         <>
             <Navbar page='HXF' />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden overflow-y-hidden">
-                <AuroraBackground className='relative h-[90vh]'>
+                <AuroraBackground className='relative h-[80vh]'>    
                     <motion.div
                         initial={{ opacity: 0.0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
