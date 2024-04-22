@@ -166,7 +166,7 @@ export function HFX() {
 
                 </AuroraBackground>
 
-                <section className="cards flex flex-col items-center gap-8 ">
+                <section className="cards flex flex-col items-center gap-8 mt-10">
                     <div className="cardOne opacity-0 -translate-x-[50rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse max-sm:h-[90%]">
                         <div className="p-8 flex flex-col gap-8">
                             <div className="flex justify-between items-center text-2xlarge gap-4">
