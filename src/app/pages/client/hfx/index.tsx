@@ -169,7 +169,7 @@ export function HFX() {
                 <section className="cards flex flex-col items-center gap-8 ">
                     <div className="cardOne opacity-0 -translate-x-[50rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse max-sm:h-[90%]">
                         <div className="p-8 flex flex-col gap-8">
-                            <div className="flex justify-between text-2xlarge gap-4">
+                            <div className="flex justify-between items-center text-2xlarge gap-4">
                                 <h2>Missão</h2>
                                 <ListChecks color="#F2802E" size={48} />
                             </div>
@@ -177,12 +177,12 @@ export function HFX() {
                                 Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
                             </p>
                         </div>
-                        <img className="w-2/6 object-cover rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
+                        <img className="w-1/4 object-cover rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
                     </div>
 
                     <div className="cardTwo opacity-0 translate-x-[40rem] w-3/4 flex flex-row-reverse justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
                         <div className="p-8 flex flex-col gap-8">
-                            <div className="flex justify-between text-2xlarge gap-4 max-md:flex-row">
+                            <div className="flex justify-between items-center text-2xlarge gap-4 max-md:flex-row">
                                 <Eye color="#F2802E" size={48} />
                                 <h2>Visão</h2>
                             </div>
@@ -190,15 +190,15 @@ export function HFX() {
                                 Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos ou produtos destinados à construção civil, mineração e afins.
                             </p>
                         </div>
-                        <img className="w-2/6 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
+                        <img className="w-1/4 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
                     </div>
                     <div className="cardThree opacity-0 -translate-x-[40rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
                         <div className="p-8 flex flex-col gap-8 ">
-                            <div className="flex justify-between gap-4 text-2xlarge">
+                            <div className="flex justify-between items-center gap-4 text-2xlarge">
                                 <h2 className="">Valores</h2>
                                 <TreasureChest color="#F2802E" size={48} />
                             </div>
-                            <ul className="ml-8 list-disc text-large">
+                            <ul className="ml-8 list-disc text-medium">
                                 <li>Honestidade</li>
                                 <li>Integridade</li>
                                 <li>Respeito</li>
@@ -207,7 +207,7 @@ export function HFX() {
                                 <li>Qualidade</li>
                             </ul>
                         </div>
-                        <img className="w-2/6 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
+                        <img className="w-1/4 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
                     </div>
                 </section>
 
