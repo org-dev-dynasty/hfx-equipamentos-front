@@ -69,7 +69,7 @@ export function Service() {
                                 <div className="p-4 border-b-2">
                                     <img className="w-full h-64 object-cover duration-200 hover:brightness-50" src={Kit} alt="Imagem de Fresagem" />
                                 </div>
-                                <h2 className="p-2 text-large text-center">Montagem de kits'</h2>
+                                <h2 className="p-2 text-large text-center">Montagem de kits</h2>
                             </div>
                             <p>"A equipe especializada da HXF se prontifica a instalar o kit hidráulico de cada um dos produtos vendidos, garantindo a melhor experiência possível"</p>
                         </div>

@@ -1,6 +1,9 @@
 import { Eye, Gear, Headset, Lightbulb, TreasureChest, ListChecks } from "@phosphor-icons/react"
-import PhotoMaquina from "../../../assets/maquina1.png"
-    
+
+import PhotoCard1 from "../../../assets/photo1.png"
+import PhotoCard2 from "../../../assets/image 11.png"
+import PhotoCard3 from "../../../assets/capaxeteAzul.png"
+
 import { Navbar } from "../../../components/Navbar"
 import { Footer } from "../../../components/Footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -178,7 +181,7 @@ export function HFX() {
                                 Nossa missão é oferecer ao mercado soluções em diversas áreas industriais, fabricação, manutenção e montagem de equipamentos industriais, soluções e implementos para escavadeiras e afins, serviços de caldeiraria e usinagem.
                             </p>
                         </div>
-                        <img className="w-1/4 object-cover rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
+                        <img className="w-1/4 object-cover rounded-2xl max-md:w-full" src={PhotoCard1} alt="Foto da maquina" />
                     </div>
 
                     <div className="cardTwo opacity-0 translate-x-[40rem] w-3/4 flex flex-row-reverse justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
@@ -191,7 +194,7 @@ export function HFX() {
                                 Ser referência no mercado como empresa fabricante de produtos e serviços para o segmento industrial metalmecânica e de equipamentos ou produtos destinados à construção civil, mineração e afins.
                             </p>
                         </div>
-                        <img className="w-1/4 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
+                        <img className="w-1/4 rounded-2xl max-md:w-full" src={PhotoCard2} alt="Foto da maquina" />
                     </div>
                     <div className="cardThree opacity-0 -translate-x-[40rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
                         <div className="p-8 flex flex-col gap-8 ">
@@ -208,7 +211,7 @@ export function HFX() {
                                 <li>Qualidade</li>
                             </ul>
                         </div>
-                        <img className="w-1/4 rounded-2xl max-md:w-full" src={PhotoMaquina} alt="Foto da maquina" />
+                        <img className="w-1/4 rounded-2xl max-md:w-full" src={PhotoCard3} alt="Foto da maquina" />
                     </div>
                 </section>
 
