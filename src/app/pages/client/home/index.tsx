@@ -62,6 +62,8 @@ export function Home() {
         }
     })
 
+
+
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".cardOne", {
@@ -206,8 +208,6 @@ export function Home() {
         }
     })
 
-    
-
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".productCard", {
@@ -226,23 +226,167 @@ export function Home() {
         }
     }, [])
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".firstTitle", {
-    //         y: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".title",
-    //             // markers: true,
-    //             start: "top 900px",
-    //             end: "bottom 900px",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".firstTitle")
-    //     }
-    // }, [])
+    mq.add("(max-width: 1280px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".firstTitle", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".title",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 400px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".firstTitle")
+        }
+    })
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".firstTitle", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".title",
+                // markers: true,
+                start: "top 400px",
+                end: "bottom 300px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".firstTitle")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardOne", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 1000px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardOne")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardTwo", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 1000px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardTwo")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardThree", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 900px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardThree")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardFour", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 900px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardFour")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".titleOne", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".products",
+                // markers: true,
+                start: "top 400px",
+                end: "bottom 1000px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".titleOne")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".imageData", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".datas",
+                // markers: true,
+                start: "top 350px",
+                end: "bottom 800px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".imageData")
+        }
+    }, [])
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".dataImage", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".imageDatas",
+                // markers: true,
+                start: "top 500px",
+                end: "bottom 600px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".imageData")
+        }
+    }, [])
 
     return (
         <>
@@ -320,7 +464,7 @@ export function Home() {
                 </section>
 
                 <section className="datas flex justify-center my-10">
-                    <div className="imageData -translate-x-[80rem] relative w-4/5">
+                    <div className="imageData opacity-0 -translate-x-[80rem] relative w-4/5">
                         <img src={PhotoCard} alt="Photo Card" className="object-cover brightness-50 mx-auto" />
                         <p className="absolute bottom-0 p-10 text-white lg:w-4/5 text-2xlarge  md:w-full max-md:text-xlarge  max-sm:text-small">
                             Nossas conquistas são melhores mostradas pelos nossos números
@@ -329,7 +473,7 @@ export function Home() {
                 </section>
 
                 <section className="imageDatas grid grid-cols-3 mx-auto w-4/6 gap-5 max-sm:grid-cols-1">
-                    <div className="dataImage translate-x-[80rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
+                    <div className="dataImage opacity-0 translate-x-[80rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
                         <p className="lg:text-large md:text-medium sm:text-small"> Somos referência nacional em compactação de valas para saneamento básico.</p>
                     </div>
                     <div className="dataImage translate-x-[70rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
@@ -349,7 +493,7 @@ export function Home() {
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.418004768813!2d-46.60970718789276!3d-23.6967623786182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce446410aff7f9%3A0x3b653ae235cc43c5!2sR.%20Marte%2C%2081%20-%20Serraria%2C%20Diadema%20-%20SP%2C%2009981-540!5e0!3m2!1spt-BR!2sbr!4v1713319162086!5m2!1spt-BR!2sbr"
                         height="400"
                         loading="lazy"
-                        className='p-4 w-full'
+                        className='p-4 w-full mt-10'
                     ></iframe>
                 </section>
             </main>
