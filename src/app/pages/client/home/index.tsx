@@ -210,7 +210,7 @@ export function Home() {
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 {/* <ImageSlider /> */}
 
-                <video src={videoHome} autoPlay loop muted className="w-full" />
+                <video src={videoHome} autoPlay playsInline loop muted className="w-full" />
 
                 <section className="title">
                     <h1 className="firstTitle translate-y-[100rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
