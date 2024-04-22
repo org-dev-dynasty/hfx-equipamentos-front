@@ -33,7 +33,10 @@ export function Product () {
             <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
                 {products.map((product : any) => {
                     return (
-                        <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+                        <div className="max-md:flex max-md:flex-col max-md:items-center">
+                            <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+
+                        </div>
                     )
                 })
                 }
