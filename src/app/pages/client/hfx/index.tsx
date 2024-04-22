@@ -80,8 +80,8 @@ export function HFX() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 600px",
-                end: "bottom 2000px",
+                start: "top 500px",
+                end: "bottom 1000px",
                 scrub: 1,
             }
         })
@@ -98,7 +98,7 @@ export function HFX() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 600px",
+                start: "top 200px",
                 end: "bottom 800px",
                 scrub: 1,
             }
@@ -116,8 +116,8 @@ export function HFX() {
             scrollTrigger: {
                 trigger: ".cards",
                 // markers: true,
-                start: "top 600px",
-                end: "bottom 200px",
+                start: "top 200px",
+                end: "bottom 400px",
                 scrub: 1,
             }
         })
