@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const http = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+    baseURL: 'https://i5juvmriyb.execute-api.sa-east-1.amazonaws.com/prod/mss-hfx',
 });
