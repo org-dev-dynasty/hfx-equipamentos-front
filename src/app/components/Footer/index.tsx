@@ -9,7 +9,7 @@ export function Footer() {
                 <nav className='mt-8 text-white'>
                     <h3 className='text-large font-bold'>Navegação</h3>
                     <ul className='flex flex-col gap-2'>
-                        <li><Link to="/home">{`> Home`}</Link></li>
+                        <li><Link to="/">{`> Home`}</Link></li>
                         <li><Link to="/hfx">{`> Sobre`}</Link></li>
                         <li><Link to="/product">{`> Produto`}</Link></li>
                         <li><Link to="/service">{`> Serviço`}</Link></li>
