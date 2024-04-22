@@ -4,7 +4,11 @@ import { Footer } from "../../../components/Footer";
 import { Navbar } from "../../../components/Navbar";
 import { Bulldozer, HardHat, Pipe } from "@phosphor-icons/react";
 
-import Tool from "../../../assets/Rompedor.png";
+import EngateRapido from "../../../assets/Engate.png";
+import TesouraHidraulica from "../../../assets/Tesoura.png";
+import Compactadores from "../../../assets/Compactador.png";
+import Rompedores from "../../../assets/Rompedor.png";
+
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../../context/product_context";
 
@@ -68,7 +72,7 @@ export function ProductDetail() {
 
                 <section className="w-full mt-16">
                     <div className="bg-white flex max-md:items-center shadow-2xl max-md:flex-col">
-                        <img className="w-64 object-contain" src={Tool} alt="Imagem do Rompedor" />
+                        <img className="w-64 object-contain" src={(product as { name: string }).name == "Engate Rápido" ? EngateRapido : (product as { name: string }).name == "Tesoura Hidráulica" ? TesouraHidraulica : (product as { name: string }).name == "Compactadores" ? Compactadores : (product as { name: string }).name == "Rompedores" ? Rompedores : ""} alt="Imagem do Rompedor" />
                         <div className="w-1/3 flex flex-col justify-between p-2 max-md:w-full max-md:gap-4">
                             <select onChange={handleProduct} className="w-full p-2 rounded-lg shadow-xl border-2">
                                 <option selected value={[]}>Selecione o modelo</option>
