@@ -374,7 +374,7 @@ export function Home() {
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 {/* <ImageSlider /> */}
 
-                <video src={videoHome} autoPlay loop muted className="w-full" />
+                <video src={videoHome} autoPlay loop muted className="w-full h-[80vh] object-cover" />
 
                 <section className="products mt-10">
                     <div className="titleOne opacity-0 text-center">
