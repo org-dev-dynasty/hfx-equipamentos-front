@@ -2,7 +2,6 @@
 // import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
 import PhotoCard from "../../../assets/imagemCardHome.png"
-import videoHome from "../../../assets/videoHome.mp4"
 
 import { useLayoutEffect } from "react";
 
@@ -374,7 +373,7 @@ export function Home() {
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 {/* <ImageSlider /> */}
 
-                <video src={videoHome} autoPlay loop muted className="w-full h-[70vh] object-cover" />
+                <video src={'https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/homeVideo.mp4'} autoPlay loop muted className="w-full h-[70vh] object-cover" />
 
                 <section className="products mt-10 flex justify-center flex-col">
                     <div className="titleOne opacity-0 text-center">
