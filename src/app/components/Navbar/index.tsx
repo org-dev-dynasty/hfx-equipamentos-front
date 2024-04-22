@@ -32,7 +32,7 @@ export function Navbar({ page }: { page: string }) {
         <nav className={`${page != "Home" ? "" : "fixed"} top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-transparent' : ''} py-4 px-4  w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
             <Link to={'/'}>
                 <button className="ml-3" >
-                    <img src={logo} className="h-10 w-full " alt="Logo Azul" />
+                    <img src={logo} className="h-10 w-full max-sm:h-7" alt="Logo Azul" />
                 </button>
             </Link>
 
@@ -59,10 +59,11 @@ export function Navbar({ page }: { page: string }) {
                                     </Link>
                                     {submenuOpen && (
                                         <div className="absolute top-full left-0 bg-white w-48 mt-1 py-2 px-4 border border-gray-200 rounded shadow-lg">
-                                            <Link to="/product/1" className="block text-black hover:text-primary duration-200 py-2">Produto 1</Link>
+                                            <Link to="/product/1" className="block text-black hover:text-primary duration-200 py-2">Engate Rápido</Link>
                                             <div className=" md:hidden lg:hidden  max-sm:border-b border-gray-300 w-50 "></div>
-                                            <Link to="/product/2" className="block text-black hover:text-primary duration-200 py-2">Produto 2</Link>
-                                            <Link to="/product/3" className="block text-black hover:text-primary duration-200 py-2">Produto 3</Link>
+                                            <Link to="/product/2" className="block text-black hover:text-primary duration-200 py-2">Tesoura Hidraulica</Link>
+                                            <Link to="/product/3" className="block text-black hover:text-primary duration-200 py-2">Compactadores</Link>
+                                            <Link to="/product/3" className="block text-black hover:text-primary duration-200 py-2">Rompedores</Link>
                                         </div>
                                     )}
                                 </div>
@@ -93,14 +94,14 @@ export function Navbar({ page }: { page: string }) {
                 </div>
 
                 {menuOpen && (
-                    <div className="sm:hidden absolute top-16 right-0 bg-white w-full mt-10 py-2 px-1">
+                    <div className="sm:hidden absolute top-16 right-0 bg-white w-full py-2 px-1 z-50">
                         <div className="flex flex-col items-center py-4 gap-4">
                             <button className=" hover:text-white w-full text-center">
                                 <Link to={'/'} className={`font-bold ${page == "Home" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Home</Link>
                             </button>
 
                             <button className="w-full h-full text-center">
-                                <Link to={'/company'} className={`font-bold ${page == "Company" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Sobre à HFX</Link>
+                                <Link to={'/hfx'} className={`font-bold ${page == "HFX" ? "text-primary underline decoration-primary" : "text-black"} duration-200 text-medium hover:text-primary hover:underline hover:decoration-primary`}>Sobre à HFX</Link>
                             </button>
 
                             <button className="w-full h-full text-center">

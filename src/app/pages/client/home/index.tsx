@@ -50,7 +50,7 @@ export function Home() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 600px",
+                end: "bottom 1300px",
                 scrub: 1,
             }
         })
@@ -68,7 +68,7 @@ export function Home() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 600px",
+                end: "bottom 1000px",
                 scrub: 1,
             }
         })
@@ -86,7 +86,7 @@ export function Home() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 600px",
+                end: "bottom 700px",
                 scrub: 1,
             }
         })
@@ -104,7 +104,7 @@ export function Home() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 200px",
-                end: "bottom 600px",
+                end: "bottom 700px",
                 scrub: 1,
             }
         })
@@ -121,8 +121,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
-                start: "top 600px",
-                end: "bottom 1100px",
+                start: "top 200px",
+                end: "bottom 1500px",
                 scrub: 1,
             }
         })
@@ -139,8 +139,8 @@ export function Home() {
             scrollTrigger: {
                 trigger: ".products",
                 // markers: true,
-                start: "top 600px",
-                end: "bottom 1100px",
+                start: "top 200px",
+                end: "bottom 1400px",
                 scrub: 1,
             }
         })
@@ -158,7 +158,7 @@ export function Home() {
                 trigger: ".datas",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 800px",
+                end: "bottom 500px",
                 scrub: 1,
             }
         })
@@ -176,7 +176,7 @@ export function Home() {
                 trigger: ".imageDatas",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 800px",
+                end: "bottom 500px",
                 scrub: 1,
             }
         })
@@ -208,50 +208,44 @@ export function Home() {
             <Navbar page="Home" />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 <ImageSlider />
+                {/* <iframe src=""></iframe> */}
                 <section className="title">
-                    <h1 className="firstTitle translate-y-[80rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium">Alguns de nossos principios</h1>
+                    <h1 className="firstTitle translate-y-[100rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos principios</h1>
                 </section>
 
                 <section className="cards bg-primary p-5  lg:grid-cols-2 max-lg:grid-cols-2 sm:grid grid-cols-1 max-md:grid-cols-2 gap-5 ">
-                    <div className="cardOne opacity-0 -translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[60%] max-sm:w-[80%]">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
+
+                        <div className="cardOne -translate-x-[80rem] flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[60%] max-sm:w-full mb-10">
                             <div className="h-0">
                                 <Invoice size={24} className="text-secondary ml-2" />
                             </div>
                             <div>
                                 <h1 className=" text-large max-md:text-medium">ExperIência de Mercado</h1>
-                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
+                                <p className="mt-8 w-[100%] text-medium h-[100%] max-md:text-small">Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="cardTwo opacity-0 translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
-                            <div className="h-0">
+                     
+                        <div className="cardTwo opacity-0 translate-x-[80rem] flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[50%] max-sm:w-full mb-10">
+                            <div className="">
                                 <Timer size={24} className="text-secondary ml-2" />
                             </div>
-                            <div>
+                            <div className="">
                                 <h1 className=" text-large max-md:text-medium">Eficiência Garantida</h1>
-                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Fornecemos soluções eficientes e de alta qualidade para demolição, compactação de solos e mineração, garantindo que nossos clientes possam confiar na HXF para atender às suas necessidades. Nosso suporte especializado garante que você não perca dias de trabalho, devido ao auxílio técnico que irá te auxiliar para minimizar os impactos</p>
+                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small max-sm:h-[50%]">Fornecemos soluções eficientes e de alta qualidade para demolição, compactação de solos e mineração, garantindo que nossos clientes possam confiar na HXF para atender às suas necessidades. Nosso suporte especializado garante que você não perca dias de trabalho, devido ao auxílio técnico que irá te auxiliar para minimizar os impactos</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="cardThree opacity-0 -translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
+                            
+                        <div className="cardThree opacity-0 -translate-x-[80rem] flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto mb-0 max-md:h-[100%] max-sm:h-[50%] max-sm:w-full max-sm:mb-10 ">
                             <div className="h-0">
                                 <Gear size={24} className="text-secondary ml-2" />
                             </div>
                             <div>
                                 <h1 className=" text-large max-md:text-medium">Soluções Personalizadas</h1>
-                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
+                                <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small max-sm:h-[50%]">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
                             </div>
                         </div>
-                    </div>
-
-
-                    <div className="cardFour opacity-0 translate-x-[10rem] p-3 w-[90%] rounded-xl mx-auto mt-10 max-md:w-[80%] max-sm:w-[80%]">
-                        <div className="flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%]">
+                                      
+                        <div className="cardFour translate-x-[80rem] opacity-0 flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:w-full">
                             <div className="h-0">
                                 <Lightbulb size={24} className="text-secondary ml-2" />
                             </div>
@@ -260,11 +254,11 @@ export function Home() {
                                 <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small">Possuímos compromisso com a inovação, destacando o desenvolvimento de soluções de última geração que não apenas melhoram a eficiência operacional, mas também minimizam o impacto ambiental.</p>
                             </div>
                         </div>
-                    </div>
+
                 </section>
 
                 <section className="products mt-10">
-                    <div className="titleOne opacity-0 translate-x-[60rem] text-center">
+                    <div className="titleOne opacity-0 translate-x-[10rem] text-center">
                         <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
                         <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
                     </div>

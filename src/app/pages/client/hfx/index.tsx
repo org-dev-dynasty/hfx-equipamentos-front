@@ -20,7 +20,7 @@ export function HFX() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 800px",
+                end: "bottom 2000px",
                 scrub: 1,
             }
         })
@@ -38,7 +38,7 @@ export function HFX() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 800px",
+                end: "bottom 2000px",
                 scrub: 1,
             }
         })
@@ -56,7 +56,7 @@ export function HFX() {
                 trigger: ".cards",
                 // markers: true,
                 start: "top 600px",
-                end: "bottom 800px",
+                end: "bottom 2000px",
                 scrub: 1,
             }
         })
@@ -123,8 +123,7 @@ export function HFX() {
         <>
             <Navbar page='HXF' />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden overflow-y-hidden">
-
-                <AuroraBackground>
+                <AuroraBackground className='relative'>
                         <motion.div
                             initial={{ opacity: 0.0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -144,10 +143,11 @@ export function HFX() {
                                 Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
                             </div>
                         </motion.div>
+
                 </AuroraBackground>
 
                 <section className="cards flex flex-col items-center gap-8 ">
-                    <div className="cardOne opacity-0 -translate-x-[50rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse">
+                    <div className="cardOne opacity-0 -translate-x-[50rem] w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse max-sm:h-[90%]">
                         <div className="p-8 flex flex-col gap-8">
                             <div className="flex justify-between text-2xlarge gap-4">
                                 <h2>Missão</h2>
