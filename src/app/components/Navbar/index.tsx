@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logoLogin.png"
 
 import { useEffect, useState } from "react";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+// import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 
 export function Navbar({ page }: { page: string }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [submenuOpen, setSubmenuOpen] = useState(false);
+    // const [submenuOpen, setSubmenuOpen] = useState(false);
 
-    const toggleSubmenu = () => {
-        setSubmenuOpen(!submenuOpen);
-    };
+    // const toggleSubmenu = () => {
+    //     setSubmenuOpen(!submenuOpen);
+    // };
 
     const toggleMenum = () => {
         setMenuOpen(!menuOpen);
@@ -55,9 +55,9 @@ export function Navbar({ page }: { page: string }) {
                                         className={`flex font-bold ${page === "Product" ? "text-primary underline decoration-primary" : "text-black"} duration-500 text-medium hover:text-primary hover:underline hover:decoration-primary`}
                                     >
                                         PRODUTOS
-                                        {submenuOpen ? <FaAngleUp onClick={toggleSubmenu} className="self-center  ml-1" /> : <FaAngleDown onClick={toggleSubmenu} className=" self-center ml-1" />}
+                                        {/* {submenuOpen ? <FaAngleUp onClick={toggleSubmenu} className="self-center  ml-1" /> : <FaAngleDown onClick={toggleSubmenu} className=" self-center ml-1" />} */}
                                     </Link>
-                                    {submenuOpen && (
+                                    {/* {submenuOpen && (
                                         <div onMouseEnter={()=>setSubmenuOpen(true)} onMouseLeave={()=>setSubmenuOpen(false)} className={`${submenuOpen ? "absolute" : "hidden"} top-full left-0 bg-white w-48 mt-1 py-2 px-4 border border-gray-200 rounded shadow-lg`}>
                                             <Link to="/product/1" className="block text-black hover:text-primary duration-200 py-2">Engate Rápido</Link>
                                             <div className=" md:hidden lg:hidden  max-sm:border-b border-gray-300 w-50 "></div>
@@ -65,7 +65,7 @@ export function Navbar({ page }: { page: string }) {
                                             <Link to="/product/3" className="block text-black hover:text-primary duration-200 py-2">Compactadores</Link>
                                             <Link to="/product/3" className="block text-black hover:text-primary duration-200 py-2">Rompedores</Link>
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                             </div>
                         </div>
