@@ -49,13 +49,13 @@ export function Home() {
     //     gsap.to(".firstTitle", {
     //         y: 0,
     //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".title",
-    //             // markers: true,
-    //             start: "top 600px",
-    //             end: "bottom 400px",
-    //             scrub: 1,
-    //         }
+    //         // scrollTrigger: {
+    //         //     trigger: ".title",
+    //         //     // markers: true,
+    //         //     start: "top 600px",
+    //         //     end: "bottom 400px",
+    //         //     scrub: 1,
+    //         // }
     //     })
     //     return () => {
     //         gsap.killTweensOf(".firstTitle")
@@ -67,13 +67,13 @@ export function Home() {
     //     gsap.to(".cardOne", {
     //         x: 0,
     //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 250px",
-    //             end: "bottom 2500px ",
-    //             scrub: 1,
-    //         }
+    //         // scrollTrigger: {
+    //         //     trigger: ".cards",
+    //         //     // markers: true,
+    //         //     start: "top 250px",
+    //         //     end: "bottom 2500px ",
+    //         //     scrub: 1,
+    //         // }
     //     })
     //     return () => {
     //         gsap.killTweensOf(".cardOne")
@@ -85,72 +85,54 @@ export function Home() {
     //     gsap.to(".cardTwo", {
     //         x: 0,
     //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 200px",
-    //             end: "bottom 1500px ",
-    //             scrub: 1,
-    //         }
+    //         // scrollTrigger: {
+    //         //     trigger: ".cards",
+    //         //     // markers: true,
+    //         //     start: "top 200px",
+    //         //     end: "bottom 1500px ",
+    //         //     scrub: 1,
+    //         // }
     //     })
     //     return () => {
     //         gsap.killTweensOf(".cardTwo")
     //     }
     // })
 
-    mq.add("(max-width: 640px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardTwo", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 200px",
-                end: "bottom 1200px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardTwo")
-        }
-    })
+    // mq.add("(max-width: 640px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardThree", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 200px",
+    //             end: "bottom 700px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardThree")
+    //     }
+    // })
 
-    mq.add("(max-width: 640px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardThree", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 200px",
-                end: "bottom 700px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardThree")
-        }
-    })
-
-    mq.add("(max-width: 640px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardFour", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 200px",
-                end: "bottom 500px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardFour")
-        }
-    })
+    // mq.add("(max-width: 640px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardFour", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 200px",
+    //             end: "bottom 500px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardFour")
+    //     }
+    // })
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
@@ -224,113 +206,113 @@ export function Home() {
         }
     }, [])
 
-    mq.add("(max-width: 1280px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".firstTitle", {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".title",
-                // markers: true,
-                start: "top 600px",
-                end: "bottom 400px",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".firstTitle")
-        }
-    })
+    // mq.add("(max-width: 1280px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".firstTitle", {
+    //         y: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".title",
+    //             // markers: true,
+    //             start: "top 600px",
+    //             end: "bottom 400px",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".firstTitle")
+    //     }
+    // })
 
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".firstTitle", {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".title",
-                // markers: true,
-                start: "top 400px",
-                end: "bottom 300px",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".firstTitle")
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".firstTitle", {
+    //         y: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".title",
+    //             // markers: true,
+    //             start: "top 400px",
+    //             end: "bottom 300px",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".firstTitle")
+    //     }
+    // }, [])
 
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardOne", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 250px",
-                end: "bottom 1000px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardOne")
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardOne", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 250px",
+    //             end: "bottom 1000px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardOne")
+    //     }
+    // }, [])
 
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardTwo", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 250px",
-                end: "bottom 1000px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardTwo")
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardTwo", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 250px",
+    //             end: "bottom 1000px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardTwo")
+    //     }
+    // }, [])
 
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardThree", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 250px",
-                end: "bottom 900px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardThree")
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardThree", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 250px",
+    //             end: "bottom 900px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardThree")
+    //     }
+    // }, [])
 
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardFour", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 250px",
-                end: "bottom 900px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardFour")
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardFour", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 250px",
+    //             end: "bottom 900px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardFour")
+    //     }
+    // }, [])
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -395,12 +377,12 @@ export function Home() {
                 <video src={videoHome} autoPlay loop muted className="w-full" />
 
                 <section className="title">
-                    <h1 className="firstTitle translate-y-[100rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
+                    <h1 className="firstTitle  font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
                 </section>
 
                 <section className="cards bg-primary p-5  lg:grid-cols-2 max-lg:grid-cols-2 sm:grid grid-cols-1 max-md:grid-cols-2 gap-5 ">
 
-                    <div className="cardOne -translate-x-[80rem] opacity-0 flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[60%] max-sm:w-full mb-10">
+                    <div className="cardOne  flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[60%] max-sm:w-full mb-10">
                         <div className="h-0">
                             <Invoice size={24} className="text-secondary ml-2" />
                         </div>
@@ -410,7 +392,7 @@ export function Home() {
                         </div>
                     </div>
 
-                    <div className="cardTwo opacity-0 translate-x-[80rem] flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[50%] max-sm:w-full mb-10">
+                    <div className="cardTwo   flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[50%] max-sm:w-full mb-10">
                         <div className="">
                             <Timer size={24} className="text-secondary ml-2" />
                         </div>
@@ -420,7 +402,7 @@ export function Home() {
                         </div>
                     </div>
 
-                    <div className="cardThree opacity-0 -translate-x-[80rem] flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto mb-0 max-md:h-[100%] max-sm:h-[50%] max-sm:w-full max-sm:mb-10 ">
+                    <div className="cardThree   flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto mb-0 max-md:h-[100%] max-sm:h-[50%] max-sm:w-full max-sm:mb-10 ">
                         <div className="h-0">
                             <Gear size={24} className="text-secondary ml-2" />
                         </div>
@@ -430,7 +412,7 @@ export function Home() {
                         </div>
                     </div>
 
-                    <div className="cardFour translate-x-[80rem] opacity-0 flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:w-full">
+                    <div className="cardFour   flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:w-full">
                         <div className="h-0">
                             <Lightbulb size={24} className="text-secondary ml-2" />
                         </div>
