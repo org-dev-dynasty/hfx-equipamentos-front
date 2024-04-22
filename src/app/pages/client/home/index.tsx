@@ -44,61 +44,59 @@ export function Home() {
 
     const mq = gsap.matchMedia();
 
-    mq.add("(max-width: 640px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".firstTitle", {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".title",
-                // markers: true,
-                start: "top 600px",
-                end: "bottom 400px",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".firstTitle")
-        }
-    })
+    // mq.add("(max-width: 640px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".firstTitle", {
+    //         y: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".title",
+    //             // markers: true,
+    //             start: "top 600px",
+    //             end: "bottom 400px",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".firstTitle")
+    //     }
+    // })
 
+    // mq.add("(max-width: 640px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardOne", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 250px",
+    //             end: "bottom 2500px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardOne")
+    //     }
+    // })
 
-
-    mq.add("(max-width: 640px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardOne", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 250px",
-                end: "bottom 2500px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardOne")
-        }
-    })
-
-    mq.add("(max-width: 640px)", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to(".cardTwo", {
-            x: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: ".cards",
-                // markers: true,
-                start: "top 200px",
-                end: "bottom 1500px ",
-                scrub: 1,
-            }
-        })
-        return () => {
-            gsap.killTweensOf(".cardTwo")
-        }
-    })
+    // mq.add("(max-width: 640px)", () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.to(".cardTwo", {
+    //         x: 0,
+    //         opacity: 1,
+    //         scrollTrigger: {
+    //             trigger: ".cards",
+    //             // markers: true,
+    //             start: "top 200px",
+    //             end: "bottom 1500px ",
+    //             scrub: 1,
+    //         }
+    //     })
+    //     return () => {
+    //         gsap.killTweensOf(".cardTwo")
+    //     }
+    // })
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);

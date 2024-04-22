@@ -31,23 +31,23 @@ export function HFX() {
         }
     })
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardOne", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 600px",
-    //             end: "bottom 2000px",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardOne")
-    //     }
-    // }, [])
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardOne", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 2000px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardOne")
+        }
+    }, [])
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
