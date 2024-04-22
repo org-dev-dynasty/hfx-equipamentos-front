@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // import { ImageSlider } from "../../../components/ImageSlider";
 import { Navbar } from "../../../components/Navbar";
-import PhotoCard from "../../../assets/image 11.png"
+import PhotoCard from "../../../assets/imagemCardHome.png"
 import videoHome from "../../../assets/videoHome.mp4"
 
 import { useLayoutEffect } from "react";
@@ -376,6 +376,25 @@ export function Home() {
 
                 <video src={videoHome} autoPlay loop muted className="w-full" />
 
+                <section className="products mt-10">
+                    <div className="titleOne opacity-0 text-center">
+                        <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
+                        <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
+                    </div>
+                    <hr className="mt-3 mx-2 " />
+
+                    <div className="productCard opacity-0 -translate-x-[70rem] flex justify-center">
+                        <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
+                            {products.map((product: any) => {
+                                return (
+                                    <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+                                )
+                            })
+                            }
+                        </div>
+                    </div>
+                </section>
+
                 <section className="title">
                     <h1 className="firstTitle  font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
                 </section>
@@ -424,35 +443,18 @@ export function Home() {
 
                 </section>
 
-                <section className="products mt-10">
-                    <div className="titleOne opacity-0 text-center">
-                        <h1 className="text-xlarge text-main font-bold max-md:text-large max-sm:text-medium ">Mais vendidos</h1>
-                        <p className="text-large max-md:text-medium max-sm:text-small ">Abaixo encontram-se os produtos em destaque da HXF.</p>
-                    </div>
-                    <hr className="mt-3 mx-2 " />
-
-                    <div className="productCard opacity-0 -translate-x-[70rem] flex justify-center">
-                        <div className="gap-12 my-8 grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-                            {products.map((product: any) => {
-                                return (
-                                    <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
-                                )
-                            })
-                            }
-                        </div>
-                    </div>
-                </section>
+             
 
                 <section className="datas flex justify-center my-10">
-                    <div className="imageData opacity-0 -translate-x-[80rem] relative w-4/5">
-                        <img src={PhotoCard} alt="Photo Card" className="object-cover brightness-50 mx-auto" />
-                        <p className="absolute bottom-0 p-10 text-white lg:w-4/5 text-2xlarge  md:w-full max-md:text-xlarge  max-sm:text-small">
+                    <div className="imageData opacity-0 -translate-x-[80rem] relative w-4/5 ">
+                        <img src={PhotoCard} alt="Photo Card" className="object-cover brightness-50 mx-auto w-full h-[30%] rounded-xl" />
+                        <p className="absolute bottom-0 h-[80%]  p-10 text-white lg:w-full text-2xlarge  md:w-full max-md:text-xlarge  max-sm:text-small max-sm:h-[85%]">
                         Consultoria, Performance, Liderança
                         </p>
                     </div>
                 </section>
 
-                <section className="imageDatas grid grid-cols-3 mx-auto w-4/6 gap-5 max-sm:grid-cols-1">
+                <section className="imageDatas h-[100%] grid grid-cols-3 mx-auto w-4/6 gap-5 max-sm:grid-cols-1">
                     <div className="dataImage opacity-0 translate-x-[80rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
                         <p className="lg:text-large md:text-medium sm:text-small"> Somos referência nacional em compactação de valas para saneamento básico.</p>
                     </div>

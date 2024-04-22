@@ -1,5 +1,6 @@
 import { Eye, Gear, Headset, Lightbulb, TreasureChest, ListChecks } from "@phosphor-icons/react"
 import PhotoMaquina from "../../../assets/maquina1.png"
+    
 import { Navbar } from "../../../components/Navbar"
 import { Footer } from "../../../components/Footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

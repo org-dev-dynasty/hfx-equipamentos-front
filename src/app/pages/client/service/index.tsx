@@ -4,6 +4,8 @@ import { Navbar } from "../../../components/Navbar";
 import Tornearia from "../../../assets/Tornearia.png";
 import Soldagem from "../../../assets/Soldagem.png";
 import Fresagem from "../../../assets/Fresagem.png";
+import Kit from "../../../assets/instalakit.png";
+import Manutenção from "../../../assets/manutenção.png";
 export function Service() {
     return (
         <>
@@ -46,6 +48,30 @@ export function Service() {
                                 <h2 className="p-2 text-large text-center">Fresagem</h2>
                             </div>
                             <p>Nossos serviços de fresagem utilizam tecnologia avançada para proporcionar resultados de alta qualidade e precisão.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center duration-200 hover:scale-105">
+                        <div className="w-full text-center max-md:w-1/2 max-sm:w-full">
+                            <div className="bg-white rounded-xl shadow-2xl mb-4">
+                                <div className="p-4 border-b-2">
+                                    <img className="w-full h-64 object-cover duration-200 hover:brightness-50" src={Manutenção} alt="Imagem de Fresagem" />
+                                </div>
+                                <h2 className="p-2 text-large text-center">Manutenção</h2>
+                            </div>
+                            <p>"Nós da HXF Equipamentos estamos prontos para prestar uma manutenção eficaz para te ajudar a solucionar qualquer desafio que você tiver"</p>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center duration-200 hover:scale-105">
+                        <div className="w-full text-center max-md:w-1/2 max-sm:w-full">
+                            <div className="bg-white rounded-xl shadow-2xl mb-4">
+                                <div className="p-4 border-b-2">
+                                    <img className="w-full h-64 object-cover duration-200 hover:brightness-50" src={Kit} alt="Imagem de Fresagem" />
+                                </div>
+                                <h2 className="p-2 text-large text-center">Montagem de kits'</h2>
+                            </div>
+                            <p>"A equipe especializada da HXF se prontifica a instalar o kit hidráulico de cada um dos produtos vendidos, garantindo a melhor experiência possível"</p>
                         </div>
                     </div>
                 </section>
