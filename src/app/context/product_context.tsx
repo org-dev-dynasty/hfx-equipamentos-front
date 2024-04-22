@@ -8,6 +8,7 @@ type ProductContextType = {
     getById: (id: string) => Promise<object | undefined>
     create: (product: any) => Promise<object | undefined>
     deleteProduct: (id: string) => Promise<object | undefined>
+    deleteModelOrCategory: (productId: string, type: string, id: string) => Promise<object | undefined>
 }
 
 const defaultProductContext: ProductContextType = {
@@ -21,6 +22,9 @@ const defaultProductContext: ProductContextType = {
         return {};
     },
     deleteProduct: async (_id: string) => {
+        return {};
+    },
+    deleteModelOrCategory: async (_productId: string, _type: string, _id: string) => {
         return {};
     }
 }
@@ -67,8 +71,17 @@ export function ProductContextProvider({ children } : PropsWithChildren){
         }
     }
 
+    async function deleteModelOrCategory(productId: string, type: string, id: string){
+        try {
+            const response = await productRepositoryHttp.deleteModelOrCategory(productId, type, id);
+            return response;
+        } catch (error) {
+            return error;
+        }
+    }
+
     return (
-        <ProductContext.Provider value={{ getAll, getById, create, deleteProduct }}>
+        <ProductContext.Provider value={{ getAll, getById, create, deleteProduct, deleteModelOrCategory }}>
             {children}
         </ProductContext.Provider>
     )
