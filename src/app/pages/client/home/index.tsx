@@ -9,7 +9,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-import { Gear, Invoice, Lightbulb, Timer } from "@phosphor-icons/react";
+import { Crane, Gear, HardHat, Invoice, Lightbulb, PencilRuler, Timer } from "@phosphor-icons/react";
 
 import { Footer } from "../../../components/Footer";
 import { ProductContext } from "../../../context/product_context";
@@ -43,95 +43,113 @@ export function Home() {
 
     const mq = gsap.matchMedia();
 
-    // mq.add("(max-width: 640px)", () => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".firstTitle", {
-    //         y: 0,
-    //         opacity: 1,
-    //         // scrollTrigger: {
-    //         //     trigger: ".title",
-    //         //     // markers: true,
-    //         //     start: "top 600px",
-    //         //     end: "bottom 400px",
-    //         //     scrub: 1,
-    //         // }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".firstTitle")
-    //     }
-    // })
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".firstTitle", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".title",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 300px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".firstTitle")
+        }
+    })
 
-    // mq.add("(max-width: 640px)", () => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardOne", {
-    //         x: 0,
-    //         opacity: 1,
-    //         // scrollTrigger: {
-    //         //     trigger: ".cards",
-    //         //     // markers: true,
-    //         //     start: "top 250px",
-    //         //     end: "bottom 2500px ",
-    //         //     scrub: 1,
-    //         // }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardOne")
-    //     }
-    // })
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".firstTitle", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".title",
+                // markers: true,
+                start: "top 600px",
+                end: "bottom 300px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".firstTitle")
+        }
+    })
 
-    // mq.add("(max-width: 640px)", () => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardTwo", {
-    //         x: 0,
-    //         opacity: 1,
-    //         // scrollTrigger: {
-    //         //     trigger: ".cards",
-    //         //     // markers: true,
-    //         //     start: "top 200px",
-    //         //     end: "bottom 1500px ",
-    //         //     scrub: 1,
-    //         // }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardTwo")
-    //     }
-    // })
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardOne", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 2500px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardOne")
+        }
+    })
 
-    // mq.add("(max-width: 640px)", () => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardThree", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 200px",
-    //             end: "bottom 700px ",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardThree")
-    //     }
-    // })
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardTwo", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 200px",
+                end: "bottom 1500px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardTwo")
+        }
+    })
 
-    // mq.add("(max-width: 640px)", () => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardFour", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 200px",
-    //             end: "bottom 500px ",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardFour")
-    //     }
-    // })
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardThree", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 200px",
+                end: "bottom 700px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardThree")
+        }
+    })
+
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardFour", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 200px",
+                end: "bottom 500px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardFour")
+        }
+    })
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
@@ -196,7 +214,7 @@ export function Home() {
                 trigger: ".products",
                 // markers: true,
                 start: "top 400px",
-                end: "bottom 2000px",
+                end: "bottom 800px",
                 scrub: 1,
             }
         })
@@ -205,113 +223,96 @@ export function Home() {
         }
     }, [])
 
-    // mq.add("(max-width: 1280px)", () => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".firstTitle", {
-    //         y: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".title",
-    //             // markers: true,
-    //             start: "top 600px",
-    //             end: "bottom 400px",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".firstTitle")
-    //     }
-    // })
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".firstTitle", {
-    //         y: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".title",
-    //             // markers: true,
-    //             start: "top 400px",
-    //             end: "bottom 300px",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".firstTitle")
-    //     }
-    // }, [])
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".firstTitle", {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".title",
+                // markers: true,
+                start: "top 400px",
+                end: "bottom 300px",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".firstTitle")
+        }
+    }, [])
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardOne", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 250px",
-    //             end: "bottom 1000px ",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardOne")
-    //     }
-    // }, [])
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardOne", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 350px",
+                end: "bottom 1000px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardOne")
+        }
+    }, [])
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardTwo", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 250px",
-    //             end: "bottom 1000px ",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardTwo")
-    //     }
-    // }, [])
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardTwo", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 350px",
+                end: "bottom 1000px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardTwo")
+        }
+    }, [])
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardThree", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 250px",
-    //             end: "bottom 900px ",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardThree")
-    //     }
-    // }, [])
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardThree", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 900px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardThree")
+        }
+    }, [])
 
-    // useLayoutEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     gsap.to(".cardFour", {
-    //         x: 0,
-    //         opacity: 1,
-    //         scrollTrigger: {
-    //             trigger: ".cards",
-    //             // markers: true,
-    //             start: "top 250px",
-    //             end: "bottom 900px ",
-    //             scrub: 1,
-    //         }
-    //     })
-    //     return () => {
-    //         gsap.killTweensOf(".cardFour")
-    //     }
-    // }, [])
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".cardFour", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 250px",
+                end: "bottom 900px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".cardFour")
+        }
+    }, [])
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -395,22 +396,22 @@ export function Home() {
                 </section>
 
                 <section className="title">
-                    <h1 className="firstTitle  font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
+                    <h1 className="firstTitle opacity-0 translate-y-[90rem] font-bold my-10 text-xlarge text-center max-md:text-large max-sm:text-medium ">Alguns de nossos valores</h1>
                 </section>
 
                 <section className="cards bg-primary p-5  lg:grid-cols-2 max-lg:grid-cols-2 sm:grid grid-cols-1 max-md:grid-cols-2 gap-5 ">
 
-                    <div className="cardOne  flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[60%] max-sm:w-full mb-10">
+                    <div className="cardOne opacity-0  flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[60%] max-sm:w-full mb-10">
                         <div className="h-0">
                             <Invoice size={24} className="text-secondary ml-2" />
                         </div>
                         <div>
-                            <h1 className=" text-large max-md:text-medium">ExperIência de Mercado</h1>
+                            <h1 className=" text-large max-md:text-medium">Experiência de Mercado</h1>
                             <p className="mt-8 w-[100%] text-medium h-[100%] max-md:text-small">Possuímos uma experiência na indústria da construção civil, com reputação confiável, transmitindo segurança aos nossos clientes ao escolherem os produtos e serviços da HXF.</p>
                         </div>
                     </div>
 
-                    <div className="cardTwo   flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[50%] max-sm:w-full mb-10">
+                    <div className="cardTwo opacity-0  flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:h-[50%] max-sm:w-full mb-10">
                         <div className="">
                             <Timer size={24} className="text-secondary ml-2" />
                         </div>
@@ -420,17 +421,17 @@ export function Home() {
                         </div>
                     </div>
 
-                    <div className="cardThree   flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto mb-0 max-md:h-[100%] max-sm:h-[50%] max-sm:w-full max-sm:mb-10 ">
+                    <div className="cardThree  opacity-0 flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto mb-0 max-md:h-[100%] max-sm:h-[50%] max-sm:w-full max-sm:mb-10 ">
                         <div className="h-0">
                             <Gear size={24} className="text-secondary ml-2" />
                         </div>
                         <div>
                             <h1 className=" text-large max-md:text-medium">Soluções Personalizadas</h1>
-                            <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small max-sm:h-[50%]">Oferecemos personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
+                            <p className="mt-5 w-[100%] text-medium h-[100%] max-md:text-small max-sm:h-[50%]">Oferecemos soluções personalizadas que atendam às necessidades específicas de cada cliente, demonstrando flexibilidade e adaptabilidade para satisfazer os requisitos individuais de cada projeto.</p>
                         </div>
                     </div>
 
-                    <div className="cardFour   flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:w-full">
+                    <div className="cardFour opacity-0 flex gap-5 bg-blue-800 w-[90%] rounded-xl text-white p-5 mx-auto max-md:h-[100%] max-sm:w-full">
                         <div className="h-0">
                             <Lightbulb size={24} className="text-secondary ml-2" />
                         </div>
@@ -443,23 +444,26 @@ export function Home() {
                 </section>
 
                 <section className="datas m-12 relative">
-                        <div className="imageData opacity-0 -translate-x-[80rem]">
-                            <img src={PhotoCard} alt="" className="w-full h-[650px] max-md:h-[450px] max-sm:h-[250px] object-cover rounded-xl brightness-50" />
-                            <p className="absolute bottom-0 p-4 text-white text-2xlarge max-md:text-xlarge max-sm:text-small">
+                    <div className="imageData opacity-0 -translate-x-[80rem]">
+                        <img src={PhotoCard} alt="" className="w-full h-[650px] max-md:h-[450px] max-sm:h-[250px] object-cover rounded-xl brightness-50" />
+                        <p className="absolute bottom-0 p-4 text-white text-2xlarge max-md:text-xlarge max-sm:text-small">
                             Consultoria, Performance, Liderança
-                            </p>
-                        </div>
+                        </p>
+                    </div>
                 </section>
 
                 <section className="imageDatas h-[100%] grid grid-cols-3 mx-auto w-4/6 gap-5 max-sm:grid-cols-1">
                     <div className="dataImage opacity-0 translate-x-[80rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
-                        <p className="lg:text-large md:text-medium sm:text-small"> Somos referência nacional em compactação de valas para saneamento básico.</p>
+                        <Crane size={32} className="mx-auto mb-3" />
+                        <p className="text-center lg:text-large md:text-medium sm:text-small">Somos referência nacional em compactação de valas para saneamento básico.</p>
                     </div>
                     <div className="dataImage translate-x-[70rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
-                        <p className="lg:text-large md:text-medium sm:text-small">Equipamentos de alta performance aliados ao custo benefício.</p>
+                        <HardHat size={32} className="mx-auto mb-3"/>
+                        <p className="text-center lg:text-large md:text-medium sm:text-small">Equipamentos de alta performance aliados ao custo benefício.</p>
                     </div>
                     <div className="dataImage translate-x-[60rem] bg-gray rounded-lg p-2 text-white w-full max-md:w-full mx-auto max-sm:w-5/6">
-                        <p className="lg:text-large md:text-medium sm:text-small">Consultoria na aplicação de cada produto</p>
+                        <PencilRuler size={32} className="mx-auto mb-3" />
+                        <p className="text-center lg:text-large md:text-medium sm:text-small">Consultoria na aplicação de cada produto</p>
                     </div>
                 </section>
 
