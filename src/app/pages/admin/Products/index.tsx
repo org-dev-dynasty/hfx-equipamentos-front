@@ -111,8 +111,7 @@ export function Products() {
                                     <MagnifyingGlass size={42} className="text-secondary opacity-0 duration-300 group-hover:opacity-100" />
                                 </div>
                                 <img
-                                    // src={product.image ? product.image : 'https://via.placeholder.com/500x500'}
-                                    src='https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/HR130%230195d92b-776d-4662-b233-1d14137b1f95.png'
+                                    src={product.image ? product.image : 'https://via.placeholder.com/500x500'}
                                     alt={product.name}
                                     className="w-full h-40 object-cover transition-transform duration-300 group-hover:brightness-50 transform group-hover:scale-110"
                                 />
