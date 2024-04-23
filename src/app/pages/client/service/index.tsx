@@ -12,7 +12,7 @@ export function Service() {
             <Navbar page="Service"/>
             <main className="p-8 flex flex-col items-center bg-gray-100 font-main">
                 <h1 className="text-xlarge font-bold text-center">Serviços</h1>
-                <p className="w-1/2 max-md:w-full text-small text-center mt-4 mb-12">Conheça os serviços especializados em equipamentos de construção e demolição que a HFX oferece:</p>
+                <p className="w-1/2 max-md:w-full text-small text-center mt-4 mb-12">Conheça os serviços especializados em equipamentos de construção e demolição que a HXF oferece:</p>
 
                 <section className="w-full gap-32 grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
                     <div className={`flex justify-center hover:duration-200 hover:scale-105`}>
@@ -35,7 +35,7 @@ export function Service() {
                                 </div>
                                 <h2 className="p-2 text-large text-center">Soldagem</h2>
                             </div>
-                            <p>Os serviços de soldagem da HFX são executados com excelência e precisão, garantindo durabilidade e resistência.</p>
+                            <p>Os serviços de soldagem da HXF são executados com excelência e precisão, garantindo durabilidade e resistência.</p>
                         </div>
                     </div>
 
