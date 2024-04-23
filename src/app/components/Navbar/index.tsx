@@ -29,7 +29,7 @@ export function Navbar({ page }: { page: string }) {
         };
     }, []);
     return (
-        <nav className={`${page != "Home" ? "" : "sticky"} top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-transparent' : ''} py-4 px-4  w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
+        <nav className={`sticky top-0 z-10 bg-white ${scrollPosition < 10 ? 'bg-transparent' : ''} py-4 px-4  w-full flex justify-between items-center rounded-lg rounded-t-none hover:bg-white duration-500`}>
             <Link to={'/'}>
                 <button className="ml-3" >
                     <img src={logo} className="h-10 max-sm:h-7" alt="Logo Azul" />

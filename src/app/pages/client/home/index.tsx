@@ -171,6 +171,24 @@ export function Home() {
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".productCard", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".products",
+                // markers: true,
+                start: "top 200px",
+                end: "bottom 3000px ",
+                scrub: 1,
+            }
+        })
+        return () => {
+            gsap.killTweensOf(".productCard")
+        }
+    })
+
+    mq.add("(max-width: 640px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
         gsap.to(".imageData", {
             x: 0,
             opacity: 1,
