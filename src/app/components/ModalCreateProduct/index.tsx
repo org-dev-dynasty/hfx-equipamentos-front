@@ -13,6 +13,7 @@ export function ModalCreateProduct(props: any) {
 
     const [nameProduct, setNameProduct] = useState("")
     const [descriptionProduct, setDescriptionProduct] = useState("")
+    const [littleDescription, setLittleDescription] = useState([""])
     const [item, setItem] = useState('')
     const [specifi, setSpecifi] = useState("")
     const [valueSpecifi, setValueSpecifi] = useState("")
@@ -115,12 +116,12 @@ export function ModalCreateProduct(props: any) {
             setSpecifi("")
             setValueSpecifi("")
         }
-    }
-        
+    }   
     async function createProduct() {
-        const json: { name: string; description: string; attributes?: any[]; models?: any[]; categories?: any[]; } = {
+        const json: { name: string; description: string; littleDescription: any[]; attributes?: any[]; models?: any[]; categories?: any[]; } = {
             name: nameProduct,
             description: descriptionProduct,
+            littleDescription: littleDescription,
         }
         if(models.length != 0){
             json.models = models
@@ -131,9 +132,8 @@ export function ModalCreateProduct(props: any) {
         } else {
             ''
         }
-        // console.log(json)
+        console.log(json)
         const response = await create(json)
-        // console.log(response)
         if(response){
             toast.success('Produto Criado com Sucesso', {
                 position: "top-center",
@@ -193,30 +193,12 @@ export function ModalCreateProduct(props: any) {
                                 <div className="flex flex-col">
                                     <textarea onChange={(e)=>setDescriptionProduct(e.target.value)} value={descriptionProduct} rows={6} className="border-b-2 border-l-2 border-primary rounded-bl-xl p-2 focus:outline-none" placeholder="Descrição do Produto: " />
                                 </div>
-                                <div className="flex">
-                                    <label className="flex items-center gap-2 bg-green-500 p-2 text-[#fff] rounded-lg cursor-pointer duration-150 hover:bg-green-700" htmlFor="firstImage">
-                                        <PlusCircle size={20}/>Imagem do Produto
-                                    </label>
-                                    <input className="hidden" type="file" name="firstImage" id="firstImage" />
-                                </div>
                             </form>
                         </div>
-                        {/* IMAGENS PRODUTO */}
+                        {/* IMAGENS */}
                         <div className="bg-[#fff] shadow-2xl rounded-xl p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                                <div className="flex items-center justify-between w-full">
-                                    <h1 className="text-medium font-semibold">Imagens</h1>
-                                    <label className="flex items-center gap-2 bg-green-500 p-2 text-[#fff] rounded-lg cursor-pointer duration-150 hover:bg-green-700" htmlFor="moreImage">
-                                        <PlusCircle size={20}/>Adicionar Imagem
-                                    </label>
-                                </div>
-                                <input className="hidden" type="file" name="moreImage" id="moreImage"/>
-                            </div>
-                            <ul className="ml-4 list-disc">
-                                <li>Imagem 1</li>
-                                <li>Imagem 2</li>
-                                <li>Imagem 3</li>
-                            </ul>
+                            <h1 className="text-medium font-semibold">Pequena Descrição</h1>
+                            <input onChange={(e)=>setLittleDescription([e.target.value])} className="border-b-2 border-l-2 border-primary rounded-bl-xl p-2 w-full focus:outline-none" type="text" />
                         </div>
                         {/* VÍDEOS PRODUTO */}
                         <div className="bg-[#fff] shadow-2xl rounded-xl p-4">

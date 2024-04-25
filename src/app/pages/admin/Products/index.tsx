@@ -4,8 +4,10 @@ import { useContext, useEffect, useState } from 'react';
 import { MagnifyingGlass, Plus, X } from '@phosphor-icons/react';
 import { ProductContext } from '../../../context/product_context';
 
-import CreateProductImage from '../../../assets/CreateProductImage.png';
-import CreateProductExistImage from '../../../assets/CreateProductExistImage.png';
+// import CreateProductImage from '../../../assets/CreateProductImage.png';
+import XOrange from '../../../assets/apenasXorange.png';
+import XBlue from '../../../assets/Prancheta 12.png';
+// import CreateProductExistImage from '../../../assets/CreateProductExistImage.png';
 import { ModalCreateProduct } from '../../../components/ModalCreateProduct';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -77,7 +79,7 @@ export function Products() {
         const response = getAll()
         response.then((res : any) => {
             setProducts(res.products)
-            // console.log(res.products)
+            //console.log((products[3] as any).modelsImages[0])
         }).catch((error) => {
             console.log("error "+ error)
         })
@@ -111,7 +113,7 @@ export function Products() {
                                     <MagnifyingGlass size={42} className="text-secondary opacity-0 duration-300 group-hover:opacity-100" />
                                 </div>
                                 <img
-                                    src={product.image ? product.image : 'https://via.placeholder.com/500x500'}
+                                    src={product.modelsImages != null ? product.modelsImages[0] : 'https://via.placeholder.com/500x500'}
                                     alt={product.name}
                                     className="w-full h-40 object-cover transition-transform duration-300 group-hover:brightness-50 transform group-hover:scale-110"
                                 />
@@ -143,23 +145,25 @@ export function Products() {
                 </div>
                 <div className='min-h-screen flex justify-evenly items-center gap-4 max-sm:flex-col'>
                     <button type='button' onClick={handleCreateProduct} className="h-auto relative group overflow-hidden rounded-xl shadow-md duration-300">
-                        <img
-                            src={CreateProductImage}
-                            alt='name'
-                            className="w-full md:h-96 object-cover transition-transform duration-300 brightness-50 transform group-hover:scale-110"
-                        />
+                        <div className='flex justify-center items-center bg-primary brightness-50'>
+                            <img
+                                src={XOrange}
+                                alt='name'
+                                className="w-1/2 md:h-96 object-contain transition-transform duration-300 transform group-hover:scale-110"
+                            />
+                        </div>
                         <div className="w-full h-full flex justify-center items-center absolute top-0 left-0">
                             <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Criar um novo Produto</label>
                         </div>
                     </button>
                     <button type='button' onClick={handleCreateProductExist} className="h-auto relative group overflow-hidden rounded-xl shadow-md duration-300">
                         <img
-                            src={CreateProductExistImage}
+                            src={XBlue}
                             alt='name'
                             className="w-full md:h-96 object-cover transition-transform duration-300 brightness-50 transform group-hover:scale-110"
                         />
                         <div className="w-full h-full flex justify-center items-center absolute top-0 left-0">
-                            <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Deletar um modelo/categoria de um produto existente</label>
+                            <label className="text-white text-large duration-500 group-hover:text-xlarge hover:cursor-pointer">Deletar modelo/categoria de um produto ou adicionar Imagem</label>
                         </div>
                     </button>
                 </div>
