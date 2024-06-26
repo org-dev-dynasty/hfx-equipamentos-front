@@ -18,6 +18,7 @@ export function ProductDetail() {
     const [category, setCategory] = useState([])
     const [attributes, setAttributes] = useState([])
     const [littleDescription, setLittleDescription] = useState([])
+    const [image, setImage] = useState("")
 
     const { getById } = useContext(ProductContext)
     const id = localStorage.getItem("product")
@@ -33,7 +34,13 @@ export function ProductDetail() {
                 setModels(res.models);
                 setCategory(res.categories);
                 setLittleDescription(res.littleDescription);
-                console.log(res);
+                if(res.categoriesImages !== null && res.categoriesImages.length > 0){
+                    setImage(res.categoriesImages[0]);
+                } else if (res.modelsImages !== null && res.modelsImages.length > 0){
+                    setImage(res.modelsImages[0]);
+                } else {
+                    setImage("https://via.placeholder.com/300");
+                }
             }).catch(err => {
                 console.error("Failed to fetch product details:", err);
             });
@@ -60,7 +67,7 @@ export function ProductDetail() {
 
                 <section className="w-full mt-16">
                     <div className="bg-white flex max-md:items-center shadow-2xl max-md:flex-col">
-                        <img className="w-64 object-contain" src={(product as { name: string }).name == "Engate Rápido" ? EngateRapido : (product as { name: string }).name == "Tesoura Hidráulica" ? TesouraHidraulica : (product as { name: string }).name == "Compactadores" ? Compactadores : (product as { name: string }).name == "Rompedores" ? Rompedores : ""} alt="Imagem do Rompedor" />
+                        <img className="w-64 object-contain" src={(product as { name: string }).name == "Engate Rápido" ? EngateRapido : (product as { name: string }).name == "Tesoura Hidráulica" ? TesouraHidraulica : (product as { name: string }).name == "Compactadores" ? Compactadores : (product as { name: string }).name == "Rompedores" ? Rompedores : image} alt="Imagem" />
                         <div className="w-1/3 flex flex-col justify-between p-2 max-md:w-full max-md:gap-4">
                             <select onChange={handleProduct} className="w-full p-2 rounded-lg shadow-xl border-2">
                                 <option selected value={[]}>Selecione o modelo</option>
