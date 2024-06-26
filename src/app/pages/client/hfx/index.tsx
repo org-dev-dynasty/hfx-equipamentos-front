@@ -9,8 +9,7 @@ import { Footer } from "../../../components/Footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import gsap from 'gsap'
-import { motion } from "framer-motion";
-import { AuroraBackground } from '../../../components/UI/index';
+
 import { useLayoutEffect } from "react";
 
 export function HFX() {
@@ -37,38 +36,38 @@ export function HFX() {
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
-            gsap.to(".cardTwo", {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: ".cards",
-                    // markers: true,
-                    start: "top 100px",
-                    end: "bottom 1200px",
-                    scrub: 1,
-                }
-            })
-            return () => {
-                gsap.killTweensOf(".cardTwo")
+        gsap.to(".cardTwo", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 100px",
+                end: "bottom 1200px",
+                scrub: 1,
             }
+        })
+        return () => {
+            gsap.killTweensOf(".cardTwo")
+        }
     })
 
     mq.add("(max-width: 640px)", () => {
         gsap.registerPlugin(ScrollTrigger);
-            gsap.to(".cardThree", {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: ".cards",
-                    // markers: true,
-                    start: "top 100px",
-                    end: "bottom 1000px",
-                    scrub: 1,
-                }
-            })
-            return () => {
-                gsap.killTweensOf(".cardThree")
+        gsap.to(".cardThree", {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".cards",
+                // markers: true,
+                start: "top 100px",
+                end: "bottom 1000px",
+                scrub: 1,
             }
+        })
+        return () => {
+            gsap.killTweensOf(".cardThree")
+        }
     })
 
 
@@ -186,29 +185,19 @@ export function HFX() {
         <>
             <Navbar page='HXF' />
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden overflow-y-hidden">
-                <AuroraBackground className='relative h-[80vh]'>    
-                    <motion.div
-                        initial={{ opacity: 0.0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                            delay: 0.3,
-                            duration: 0.8,
-                            ease: "easeInOut",
-                        }}
-                        className="relative flex flex-col gap-4 items-center justify-center px-10 "
-                    >
-                        <div className="text-2xl md:text-7xl font-bold text-center">
+                <div className="flex w-full justify-center items-center bg-gray-100">
+                    <div className="flex flex-col justify-center items-center text-center bg-gradient-to-b from-primary to-l-gray from-60% w-full rounded-lg  text-white h-[50vh] max-md:h-[40vh] max-sm:h-[60vh]">
+                        <div className="w-full p-2 text-6xl max-md:text-4xl max-sm:text-3xl">
                             Conheça mais sobre à HXF!
                         </div>
-                        <div className="font-extralight text-base md:text-3xl py-4">
+                        <div className="w-full p-2 mt-10 text-3xl max-md:mt-5 max-md:text-2xl max-sm:text-xl">
                             A HXF tem como diferencial a qualidade inquestionável dos produtos e serviços ofertados.
-
-                            Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor atendermos nossos clientes e parceiros.
+                            Além de agilidade na entrega e garantia. Tudo isso com um preço competitivo, para melhor
+                            atendermos nossos clientes e parceiros.
                         </div>
-                    </motion.div>
-
-                </AuroraBackground>
-
+                    </div>
+                </div>
+              
                 <section className="cards flex flex-col items-center gap-8 mt-10">
                     <div className="cardOne opacity-0 w-3/4 flex justify-between bg-primary text-white rounded-2xl shadow-2xl max-md:flex-col-reverse max-sm:h-[90%]">
                         <div className="p-8 flex flex-col gap-8">
