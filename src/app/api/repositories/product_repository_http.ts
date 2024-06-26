@@ -51,4 +51,17 @@ export class ProductRepositoryHttp {
             console.log("Error: "+error);
         }
     }
+
+    async uploadImage(formData: FormData){
+        try {
+            const response = await http.post("/upload-product-image", formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            return response;
+        } catch (error: any){
+            console.log("Error: "+error);
+        }
+    }
 }

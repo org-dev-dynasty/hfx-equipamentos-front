@@ -16,12 +16,16 @@ export function ModalCreateProduct(props: any) {
     const [item, setItem] = useState('')
     const [specifi, setSpecifi] = useState("")
     const [valueSpecifi, setValueSpecifi] = useState("")
+    const [imageProduct, setImageProduct] = useState<any>([])
+    const [images, setImages] = useState<any>([])
+    const [videos, setVideos] = useState("")
+    const [videosList, setVideosList] = useState<string[]>([])
 
     const [models, setModels] = useState<any>([])
     const [categories, setCategories] = useState<any>([])
     const [attributes, setAttributes] = useState<any>([])
 
-    const { create } = useContext(ProductContext)
+    const { create, uploadImage } = useContext(ProductContext)
 
     function addingCategoryOrModels(type: string, item: string) {
         if(item == ''){
@@ -118,7 +122,7 @@ export function ModalCreateProduct(props: any) {
     }
         
     async function createProduct() {
-        const json: { name: string; description: string; attributes?: any[]; models?: any[]; categories?: any[]; } = {
+        const json: { name: string; description: string; attributes?: string[]; models?: string[]; categories?: string[]; videos?: string[]; } = {
             name: nameProduct,
             description: descriptionProduct,
         }
@@ -131,10 +135,15 @@ export function ModalCreateProduct(props: any) {
         } else {
             ''
         }
+
+        if(videos.length > 0){
+            json.videos = videosList
+        }
         // console.log(json)
-        const response = await create(json)
+        const response:any = await create(json)
         // console.log(response)
         if(response){
+            imageUpload(response.id)
             toast.success('Produto Criado com Sucesso', {
                 position: "top-center",
                 autoClose: 3000,
@@ -160,6 +169,24 @@ export function ModalCreateProduct(props: any) {
                 theme: "light",
             });
         }
+    }
+
+    async function imageUpload(idProduct: string) {
+        console.log(imageProduct)
+        console.log(images)
+        const formData = new FormData();
+        formData.append('image_product', imageProduct[0]);
+        formData.append('productId', idProduct);
+        for (let i = 0; i < images.length; i++) {
+            formData.append('images'+i, images[i][0]);
+        }
+
+        // for (let pair of formData.entries()) {
+        //     console.log(pair[0] + ', ' + pair[1]);
+        // }
+        await uploadImage(formData).then((res: any) => {
+            console.log(res)
+        })
     }
 
     useEffect(() => {
@@ -193,11 +220,12 @@ export function ModalCreateProduct(props: any) {
                                 <div className="flex flex-col">
                                     <textarea onChange={(e)=>setDescriptionProduct(e.target.value)} value={descriptionProduct} rows={6} className="border-b-2 border-l-2 border-primary rounded-bl-xl p-2 focus:outline-none" placeholder="Descrição do Produto: " />
                                 </div>
-                                <div className="flex">
+                                <div className="flex items-center gap-8">
                                     <label className="flex items-center gap-2 bg-green-500 p-2 text-[#fff] rounded-lg cursor-pointer duration-150 hover:bg-green-700" htmlFor="firstImage">
                                         <PlusCircle size={20}/>Imagem do Produto
                                     </label>
-                                    <input className="hidden" type="file" name="firstImage" id="firstImage" />
+                                    <label>{imageProduct[0]?.name}</label>
+                                    <input onChange={(e)=>setImageProduct(e.target.files)} accept="images/*" className="hidden" type="file" name="firstImage" id="firstImage" />
                                 </div>
                             </form>
                         </div>
@@ -210,24 +238,41 @@ export function ModalCreateProduct(props: any) {
                                         <PlusCircle size={20}/>Adicionar Imagem
                                     </label>
                                 </div>
-                                <input className="hidden" type="file" name="moreImage" id="moreImage"/>
+                                <input onChange={(e) => {
+                                    if(images.length < 3){
+                                        setImages([...images, e.target.files])
+                                    }
+                                }} className="hidden" type="file" accept="image/*" name="moreImage" id="moreImage"/>
                             </div>
                             <ul className="ml-4 list-disc">
-                                <li>Imagem 1</li>
-                                <li>Imagem 2</li>
-                                <li>Imagem 3</li>
+                                {images.map((image: any) => {
+                                    return (
+                                        <li>{image[0].name}</li>
+                                    )
+                                })}
                             </ul>
                         </div>
                         {/* VÍDEOS PRODUTO */}
                         <div className="bg-[#fff] shadow-2xl rounded-xl p-4">
                             <div className="mb-2">
-                                <h1 className="text-medium font-semibold">Videos</h1>
-                                <input className="border-b-2 border-l-2 border-primary rounded-bl-xl p-2 w-full focus:outline-none" type="text" placeholder="https://www.youtube.com/..." />
+                                <div className="flex justify-between">
+                                    <h1 className="text-medium font-semibold">Videos</h1>
+                                    <label onClick={()=>{
+                                        if(videosList.length < 3){
+                                            setVideosList([...videosList, videos])
+                                        }
+                                    }} className="flex items-center gap-2 bg-green-500 p-2 text-[#fff] rounded-lg cursor-pointer duration-150 hover:bg-green-700">
+                                        <PlusCircle size={20}/>Adicionar Vídeo
+                                    </label>
+                                </div>
+                                <input onChange={(e)=>{setVideos(e.target.value)}} className="border-b-2 border-l-2 border-primary rounded-bl-xl p-2 w-full focus:outline-none" type="text" placeholder="https://www.youtube.com/..." />
                             </div>
                             <ul className="ml-4 list-disc">
-                                <li>Video 1</li>
-                                <li>Video 2</li>
-                                <li>Video 3</li>
+                                {videosList.map((video: any) => {
+                                    return (
+                                        <li>{video}</li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     </aside>

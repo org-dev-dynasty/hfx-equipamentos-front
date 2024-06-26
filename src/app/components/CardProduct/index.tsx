@@ -4,7 +4,7 @@ import EngateRapido from "../../assets/Engate.png";
 import TesouraHidraulica from "../../assets/Tesoura.png";
 import Compactadores from "../../assets/Compactador.png";
 import Rompedores from "../../assets/Rompedor.png";
-import Xorande from "../../assets/apenasXorange.png";
+import Xwhite from "../../assets/apenasXwhite.png";
 
 export function CardProduct({ id, image, name } : { id: string, image: string, name: string}) {
     const [visible, setVisible] = useState(false);
@@ -18,7 +18,8 @@ export function CardProduct({ id, image, name } : { id: string, image: string, n
 
     function handleNavigate() {
         localStorage.setItem("product", id);
-        window.location.href = "/productDetail";
+        console.log(name)
+        window.location.href = "/productDetail/"+name;
     }
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export function CardProduct({ id, image, name } : { id: string, image: string, n
             <div className="relative">
                 <img className="w-full object-cover h-60 rounded-t-xl" src={name == "Engate Rápido" ? EngateRapido : name == "Tesoura Hidráulica" ? TesouraHidraulica : name == "Compactadores" ? Compactadores : name == "Rompedores" ? Rompedores : image} alt="Imagem do Produto" />
                 <div className="h-full w-full top-0 absolute opacity-0 duration-200 hover:opacity-100 flex justify-center items-center bg-primary bg-opacity-80 rounded-xl">
-                    <img className="w-[100px]" src={Xorande} alt="" />    
+                    <img className="w-[100px] " src={Xwhite} alt="" />    
                 </div>
             </div>
             <div className="flex flex-col items-center py-4">
