@@ -21,11 +21,17 @@ export function ProductDetail() {
     const [image, setImage] = useState("")
 
     const { getById } = useContext(ProductContext)
-    const id = localStorage.getItem("product")
+    // const id = localStorage.getItem("product")
+
+    const id = window.location.pathname.split("/")[2]
 
     const handleProduct = (event: any) => {
         setAttributes((product as { attributes: any }).attributes[event.target.value]);
     };
+
+    const capitalizeFirstLetter = (string: string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     useEffect(() => {
         if (id) {
@@ -45,6 +51,8 @@ export function ProductDetail() {
                 console.error("Failed to fetch product details:", err);
             });
         }
+
+        console.log(attributes)
     }, [])
     return (
         <>
@@ -91,7 +99,7 @@ export function ProductDetail() {
                                 {attributes != undefined && Object.keys(attributes).map((key: any) => (
                                     key !== 'modelId' && key !== 'categoria' ?
                                         <div className="flex gap-2 max-sm:flex-col max-sm:items-center" key={key}>
-                                            <label className="font-bold">{key}:</label>
+                                            <label className="font-bold">{capitalizeFirstLetter(key.split(/(?=[A-Z])/).join(' '))}:</label>
                                             <label>{attributes[key]}</label>
                                         </div>
                                         : null

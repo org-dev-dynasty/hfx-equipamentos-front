@@ -17,7 +17,7 @@ export default function AppRoutes() {
                 <Route path="*" element={<Error404 />} />
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/product"} element={<Product />} />
-                <Route path={"/productDetail/:name"} element={<ProductDetail />} />
+                <Route path={"/productDetail/:id/:name"} element={<ProductDetail />} />
                 <Route path={"/service"} element={<Service />} />
                 <Route path={"/videos"} element={<Videos />} />
                 <Route path={"/contact"} element={<Contact />} />
