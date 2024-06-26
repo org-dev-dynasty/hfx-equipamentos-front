@@ -8,6 +8,11 @@ import CreateProductImage from '../../../assets/CreateProductImage.png';
 import CreateProductExistImage from '../../../assets/CreateProductExistImage.png';
 import { ModalCreateProduct } from '../../../components/ModalCreateProduct';
 
+import EngateRapido from "../../../assets/Engate.png";
+import TesouraHidraulica from "../../../assets/Tesoura.png";
+import Compactadores from "../../../assets/Compactador.png";
+import Rompedores from "../../../assets/Rompedor.png";
+
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { ModalProductExist } from '../../../components/ModalProductExist';
@@ -77,7 +82,7 @@ export function Products() {
         const response = getAll()
         response.then((res : any) => {
             setProducts(res.products)
-            // console.log(res.products)
+            console.log(res.products)
         }).catch((error) => {
             console.log("error "+ error)
         })
@@ -111,7 +116,7 @@ export function Products() {
                                     <MagnifyingGlass size={42} className="text-secondary opacity-0 duration-300 group-hover:opacity-100" />
                                 </div>
                                 <img
-                                    src={product.image ? product.image : 'https://via.placeholder.com/500x500'}
+                                    src={(product as { name: string }).name == "Engate Rápido" ? EngateRapido : (product as { name: string }).name == "Tesoura Hidráulica" ? TesouraHidraulica : (product as { name: string }).name == "Compactadores" ? Compactadores : (product as { name: string }).name == "Rompedores" ? Rompedores : (product as {categoriesImages: string[]}).categoriesImages !== null ? product.categoriesImages[0] : (product as {modelsImages: string[]}).modelsImages !== null ? product.modelsImages[0] : 'https://via.placeholder.com/300'}
                                     alt={product.name}
                                     className="w-full h-40 object-cover transition-transform duration-300 group-hover:brightness-50 transform group-hover:scale-110"
                                 />

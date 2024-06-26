@@ -14,8 +14,8 @@ export function Product () {
     useEffect(() => {
         const response = getAll()
         response.then((res : any) => {
+            // console.log(res.products[1].categoriesImages[0])
             setProducts(res.products)
-            console.log(res.products)
         }).catch((error) => {
             console.log("error "+ error)
         })
@@ -34,7 +34,7 @@ export function Product () {
                 {products.map((product : any) => {
                     return (
                         <div className="max-md:flex max-md:flex-col max-md:items-center">
-                            <CardProduct key={product.id} image={product.image} name={product.name} id={product.id} />
+                            <CardProduct key={product.id} image={product.categoriesImages !== null ? product.categoriesImages[0] : product.modelsImages !== null ? product.modelsImages[0] : "https://via.placeholder.com/500x500"} name={product.name} id={product.id} />
 
                         </div>
                     )

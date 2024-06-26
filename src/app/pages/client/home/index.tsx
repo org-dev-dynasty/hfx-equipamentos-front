@@ -392,7 +392,7 @@ export function Home() {
             <main className="bg-l-gray font-main max-w-screen overflow-x-hidden">
                 {/* <ImageSlider /> */}
 
-                <video src={'https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/homeVideo.mp4'} autoPlay loop muted className="w-full md:h-[70vh] object-cover" />
+                <video src={'https://hfx-equipamentos-images.s3.sa-east-1.amazonaws.com/homeVideo.mp4'} autoPlay loop muted className="w-full md:h-[90vh] object-cover" />
 
                 <section className="products mt-10 flex justify-center flex-col">
                     <div className="titleOne opacity-0 text-center">
