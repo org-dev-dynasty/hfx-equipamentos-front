@@ -18,8 +18,9 @@ export function CardProduct({ id, image, name } : { id: string, image: string, n
 
     function handleNavigate() {
         localStorage.setItem("product", id);
-        console.log(name)
-        window.location.href = "/productDetail/"+name;
+        name = name.replace(" ", "");
+
+        window.location.href = "/productDetail/"+id+"/"+name;
     }
 
     useEffect(() => {
